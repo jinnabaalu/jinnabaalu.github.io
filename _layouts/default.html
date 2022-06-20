@@ -26,10 +26,15 @@
 <!-- change your GA id in _config.yml -->
 <script>
     (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
             (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', '{{site.google_analytics}}', 'auto');
     ga('send', 'pageview');
@@ -145,46 +150,29 @@
 
         </div>
 
-        <!-- Categories Jumbotron
-================================================== -->
-        <div class="jumbotron fortags">
-            <div class="d-md-flex h-100">
-                <div class="col-md-4 transpdark align-self-center text-center h-100">
-                    <div class="d-md-flex align-items-center justify-content-center h-100">
-                        <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span
-                                class="d-none d-md-inline">→</span></h2>
-                    </div>
-                </div>
-                <div class="col-md-8 p-5 align-self-center text-center">
-                    {% assign categories_list = site.categories %}
-                    {% if categories_list.first[0] == null %}
-                    {% for category in categories_list %}
-                    <a class="mt-1 mb-1"
-                        href="{{site.baseurl}}/categories#{{ category | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }}
-                        ({{ site.tags[category].size }})</a>
-                    {% endfor %}
-                    {% else %}
-                    {% for category in categories_list %}
-                    <a class="mt-1 mb-1"
-                        href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}">{{ category[0] | camelcase }}
-                        ({{ category[1].size }})</a>
-                    {% endfor %}
-                    {% endif %}
-                    {% assign categories_list = nil %}
-                </div>
-            </div>
-        </div>
-
-        <!-- Begin Footer
-================================================== -->
         <footer class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 text-center text-lg-left">
-                        <a href="https://www.teacheron.com/tutor-profile/48qN?r=48qN" target="_blank" style="display: inline-block;"><img src="https://www.teacheron.com/resources/assets/img/badges/viewMyProfile.png" style="width: 300px !important; height: 129px !important"></a>
+                        <a href="https://stackexchange.com/users/5468915"><img
+                                src="https://stackexchange.com/users/flair/5468915.png" width="208" height="58"
+                                alt="profile for Jinna Balu on Stack Exchange, a network of free, community-driven Q&amp;A sites"
+                                title="profile for Jinna Balu on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
+
                     </div>
-                    <div class="col-md-6 col-sm-6 text-center text-lg-right">
-                        <a href="https://stackexchange.com/users/5468915"><img src="https://stackexchange.com/users/flair/5468915.png" width="208" height="58" alt="profile for Jinna Balu on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Jinna Balu on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
+                    <div class="col-md-6 col-sm-6 text-right text-lg-right">
+                        <div class="about-social">
+                            <a href="https://twitter.com/JinnaBalu" target="_blank">
+                                <i class="fab fa-twitter fa-md"></i>
+                            </a>
+                            <!-- <a href="https://dev.to/jinnabalu" target="_blank">DEV </a> -->
+                            <a href="https://www.linkedin.com/in/jinna-balu-20368995/" target="_blank">
+                                <i class="fab fa-linkedin fa-md"></i>
+                            </a>
+                            <a href="https://medium.com/@JinnaBalu" target="_blank"><i class="fab fa-medium fa-md"></i> </a>
+                            <a href="https://github.com/JinnaBalu" target="_blank"><i class="fab fa-github fa-md"></i></a>
+                            <a href="https://github.com/JinnaBalu" target="_blank"><i class="fab fa-facebook fa-md"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -198,21 +186,15 @@
                 </div>
             </div>
         </footer>
-        <!-- End Footer
-================================================== -->
 
-    </div> <!-- /.site-content -->
-
-    <!-- Scripts
-================================================== -->
-
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
 
     <script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
 

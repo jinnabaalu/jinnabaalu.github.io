@@ -1,4 +1,12 @@
-# SED 
+---
+layout: post
+title:  "SED"
+metadate: "hide"
+categories: [ sed ]
+tags: [ sed ]
+image: assets/images/sed.png
+---
+
 Sed is a Stream Editor used for modifying the files in unix (or linux)
 
 ## Features of sed

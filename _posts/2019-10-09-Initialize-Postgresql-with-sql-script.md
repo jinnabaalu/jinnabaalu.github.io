@@ -1,9 +1,10 @@
 ---
+layout: post
 title:  "Initialise Postgresql Container with init SQL script"
 metadate: "hide"
 categories: [ Database, PostgreSQL ]
 tags: [ PostgreSQL ]
-image: "https://github.com/JinnaBalu/postgreSQL/blob/master/images/postgresql.svg"
+image: "assets/images/postgresql.svg"
 related_posts: 
       - title: "Initialise Postgresql Container with docker-compose"
         url: "https://platform-ops.tech/Run-Postgres-Container/"
@@ -20,7 +21,7 @@ related_posts:
 
 ## Init SQL script with postgresql container
 
-![](https://github.com/JinnaBalu/postgreSQL/blob/master/images/postgresql.svg)
+![](/assets/images/postgresql.svg)
 
 - Create a `docker-compose.yml` with the following
 

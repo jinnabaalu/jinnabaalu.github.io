@@ -1,10 +1,11 @@
 ---
+layout: post
 title:  "Basic command to run with Postgress Container"
 metadate: "hide"
 categories: [ Database, PostgreSQL ]
 description: "Import or export postgress db, how to run the psql commands, Create a database with postgres container"
 tags: [ PostgreSQL ]
-image: "https://github.com/JinnaBalu/postgreSQL/blob/master/images/postgresql.svg"
+image: "assets/images/postgresql.svg"
 related_posts: 
       - title: "Initialise Postgresql Container with docker-compose"
         url: "https://platform-ops.tech/Run-Postgres-Container/"

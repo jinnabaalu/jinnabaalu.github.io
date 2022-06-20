@@ -3,7 +3,7 @@ layout: post
 title: "Git - Naming Convention"
 description: "Git - Naming Convention"
 author: jinnabalu
-categories: [ Devops, git ]
+categories: [ CleanCode ]
 image: assets/images/NamingConvention.png
 featured: false
 hidden: true
@@ -18,6 +18,6 @@ hidden: true
 
 **SnakeCase** - snake_case (lower_case_with_underscores) - Ex: jinna_balu
 
-              - CAPITALIZED_WITH_UNDERSCORES
+**CAPITALIZED_WITH_UNDERSCORES** - CAPITALIZED_WITH_UNDERSCORES
 
 **kebab-case or lisp-case** - kebeb-case(hyphen-case) - Ex: jinna-balu

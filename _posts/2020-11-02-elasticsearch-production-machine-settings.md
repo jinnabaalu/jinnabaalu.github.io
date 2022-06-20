@@ -3,7 +3,7 @@ layout: post
 title: "Elasticsearch System Configuration"
 author: jinnabalu
 categories: [ Elasticsearch, ElasticsearchSettings ]
-image: assets/images/elasticsearch_system_configuration.png
+image: assets/images/Elasticsearch_main.png
 ---
 
 *Fix the FORBIDDEN Read-Only / Allow Delete Error for Elasticsearch API Requests*

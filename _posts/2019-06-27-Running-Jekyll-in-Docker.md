@@ -49,7 +49,7 @@ cat << EOF > docker-compose.yaml
 version: '3'
 services:
   site:
-    container_name: platformops
+    container_name: jinnabalu
     command: jekyll serve --watch --drafts
     image: jekyll/jekyll:latest
     volumes:
@@ -72,7 +72,7 @@ Application will be running on [http://localhost:4000](http://localhost:4000) or
 
 #### Option #1 : Post running, if we want to install anything manually 
 
-`docker exec -ti platformops gem install "jekyll-theme-hydeout"`
+`docker exec -ti jinnabalu gem install "jekyll-theme-hydeout"`
 
 #### Oprion #2 : If you want to deploy automatically, update `Gemfile'
 
