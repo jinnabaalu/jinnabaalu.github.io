@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Jenkins - Upgrade Jenkins"
+title:  "Jekyll - Running Jekyll in Docker"
 author: jinna
 categories: [ Devops ]
-image: assets/images/jenkins.svg
+image: assets/images/jekyll.png
 ---
 # Running Jekyll in Docker
 
