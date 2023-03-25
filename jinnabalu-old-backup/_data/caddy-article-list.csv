@@ -1,3 +1,0 @@
-title,subTitle,imageUrl,articleLink,linkSource,githubLink
-Caddy Redirections,Caddy is the first and only web server to use HTTPS automatically and by
-            default,/assets/images/caddy-redirections.png,,https://www.linkedin.com/pulse/redirection-caddy-jinna-balu/,LinkedIn,https://github.com/JinnaBalu/docker-caddy
