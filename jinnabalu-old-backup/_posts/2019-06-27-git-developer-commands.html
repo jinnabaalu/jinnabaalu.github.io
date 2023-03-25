@@ -1,0 +1,24 @@
+---
+layout: post
+title: "Git - Basics for a Developer"
+description: "Git - Basics for a Developer"
+author: jinnabalu
+categories: [ Devops, git ]
+image: assets/images/git-developer-commands.png
+featured: false
+hidden: true
+---
+<p>{{site.data.git-commands.developer-intro}}</p>
+<br>
+
+{% for block in site.data.git-commands.developer %}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><b>{{ block.title }}</b></h5>
+    {% if block.description %}
+    <p>{{block.description}}</p>
+    {% endif %}
+    <div class="code">{{ block.command }}</div>
+  </div>
+</div>
+{% endfor %}

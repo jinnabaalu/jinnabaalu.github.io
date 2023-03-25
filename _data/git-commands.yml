@@ -72,7 +72,7 @@ developer:
       git branch -dr [BRANCH_NAME]  <br>
   - title: Merge changes between branches
     description:
-    command: | 
+    command: |
       # 1. Merging changes from feature_branch to develop <br><br>
       # 1.1 Get latest from develop and merge to feature_branch <br>
       git checkout develop <br>
@@ -98,31 +98,30 @@ developer:
       # Hard Reset <br>
       git reset [commit_hash] --hard
 devops:
-  intro:
-    - title: Recursively remove all untracked files in the tree.
-      command: git clean -f
-    - title: throw out all of your changes to existing files, but not new ones
-      command: git reset --hard
-    - title: remove file from staging area
-      command: git rm --cached [file]
-    - title: see diff of files in staging area
-      command: git diff --staged
-    - title: see tracked files
-      command: git ls-files
-    - title: see a branch graph
-      command: git log --graph
-    - title: see all tags
-      command: git tag
-    - title: see list of deleted files
-      command: git ls-files -d
-    - title: restore all deleted files
-      command: git ls-files -d | xargs git checkout --
-    - title: view commits not yet pushed to remote
-      command: git log --branches --not --remotes
-    - title: difference between two branches
-      command: git diff --stat --color master..branch
-    - title: see a list of all objects - `git rev-list --objects --all`
-    - title: remove file from index
-      command: git rm --cached filename.txt
-    - title: get a list of all commit messages for a repo
-      command: git log --pretty=format:'%s'
+  - title: Recursively remove all untracked files in the tree.
+    command: git clean -f
+  - title: throw out all of your changes to existing files, but not new ones
+    command: git reset --hard
+  - title: remove file from staging area
+    command: git rm --cached [file]
+  - title: see diff of files in staging area
+    command: git diff --staged
+  - title: see tracked files
+    command: git ls-files
+  - title: see a branch graph
+    command: git log --graph
+  - title: see all tags
+    command: git tag
+  - title: see list of deleted files
+    command: git ls-files -d
+  - title: restore all deleted files
+    command: git ls-files -d | xargs git checkout --
+  - title: view commits not yet pushed to remote
+    command: git log --branches --not --remotes
+  - title: difference between two branches
+    command: git diff --stat --color master..branch
+  - title: see a list of all objects - `git rev-list --objects --all`
+  - title: remove file from index
+    command: git rm --cached filename.txt
+  - title: get a list of all commit messages for a repo
+    command: git log --pretty=format:'%s'

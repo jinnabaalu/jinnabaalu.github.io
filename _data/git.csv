@@ -1,0 +1,9 @@
+command,description
+init,Initialization of the new repository in local
+clone,Cloning a copy of the repository available in git server
+create branch,Create the new branch in git
+delete branch, Deleting the git branch
+commit,Commit the changes in local to remote repository
+merge, Merge the changes from one branch to another branch
+reset, reset chanages back to a commit in the history 
+switch, git remote URL switch between URLs

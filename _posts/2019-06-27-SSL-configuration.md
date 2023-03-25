@@ -2,9 +2,8 @@
 layout: post
 title: "SSL - Create CSR, CRT, Secure Sockets Layer"
 description: "SSL - Create CSR, CRT, Secure Sockets Layer"
-author: jinnabalu
-categories: [ Security, SSL, Godaddy ]
-image: assets/images/ssl.png
+categories: [ Security, SSL, Godaddy, Caddy, Nginx, Haproxy ]
+image: assets/img/ssl.png
 featured: false
 hidden: true
 ---

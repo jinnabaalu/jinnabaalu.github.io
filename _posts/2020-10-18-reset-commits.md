@@ -3,8 +3,8 @@ layout: post
 title: "Git - Reset Commits"
 description: "Git - Reset Commits"
 author: jinnabalu
-categories: [ Devops, git ]
-image: assets/images/git_reset_commit.png
+categories: [ git ]
+image: assets/img/git_reset_commit.png
 featured: false
 hidden: true
 ---

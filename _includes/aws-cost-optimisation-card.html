@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">How to save cost in AWS ? </span></h5>
+        <div class="activity">
+            {% assign data = site.data.aws-cost-optimisation %}
+            {% for item in data %}
+            <div class="activity-item d-flex">
+                <div class="activite-label-100">{{item.downtime}}</div>
+                <i class='bi bi-circle-fill activity-badge text-{{item.color}} align-self-start'></i>
+                <div class="activity-content">
+                    {{item.title}} <span class="badge bg-{{item.color}}">{{ item.risk_type }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>

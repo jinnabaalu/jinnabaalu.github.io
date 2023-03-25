@@ -1,0 +1,61 @@
+# Site
+name: "Jinna Balu"
+title: "Jinna Balu"
+description: "Software Engineer - Practicing Natural Farming"
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/logo.png'
+baseurl: ''
+google_analytics: 'UA-178018885-1'
+disqus: 'jinna-balu'
+# mailchimp-list: ''
+include: ["_pages"]
+permalink: /:title/
+
+authors:
+  jinnabalu:
+    name: Jinna Balu
+    display_name: Balu
+    gravatar: b72fed5cc697045301354e959f385aa5
+    email: jinna.balu@outlook.com
+    web: https://jinna-balu.tech
+    twitter: https://twitter.com/JinnaBalu
+    description: "DevOps Manager | Platform Engineer | Monitoring | CICD | ODD | SQL/NoSQL | ELK | AWS | Jhipster | Microservices | Agile | Scrum"
+  
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+    
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+    
+# Pagination 
+paginate: 6
+paginate_path: /page:num/
+    
+# Other
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
+adsense: "disabled"
+adsense-data-ad-client: "ca-pub-3412143450191416"
+adsense-data-ad-slot: "1363087678"
+
+# Lazy Images ("enabled" or "disabled")
+lazyimages: "disabled"
+
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]

@@ -1,0 +1,32 @@
+<div class="card h-100">
+    <div class="maxthumb">
+        <a target="_blank" href="{{article.articleLink}}">
+            <img class="img-fluid" src="{{article.imageUrl}}" alt="{{article.title}}">
+        </a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">
+            <a target="_blank" href="{{article.articleLink}}">
+                {{article.title}}
+            </a>
+
+        </h4>
+        <h6 class="card-text">{{article.subTitle}}</h6>
+    </div>
+    <div class="card-footer bg-white">
+        <div class="row">
+            <div class="col-md-6"><a target="_blank"
+                    href="{{article.articleLink}}">
+                    <i class="fab fa-linkedin fa-md"></i>
+                    <span class="post-date"> {{article.linkSource}}</span>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a target="_blank" href="{{article.githubLink}}">
+                    <i class="fab fa-github fa-md"></i>
+                    <span class="post-date"> Github</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

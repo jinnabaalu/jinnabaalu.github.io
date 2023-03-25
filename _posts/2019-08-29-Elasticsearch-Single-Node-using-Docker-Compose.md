@@ -5,14 +5,14 @@ description: Deploying the elasticsearch and Kibana as docker containers
 metadate: "hide"
 categories: [ NoSQL, Search Engine, Elasticsearch ]
 tags: [ Elasticsearch ]
-image: "assets/images/elasticsearch.svg"
+image: "assets/img/elasticsearch.svg"
 ---
 
 {% include docker-prerequisites.md %}
 
 ## Deploy Elasticsearch Single node with docker-compose
 
-![Elasticsarch Single Node on Docker](https://raw.githubusercontent.com/JinnaBalu/elasticsearch/master/images/elasticsearch.svg)
+![Elasticsarch Single Node on Docker](https://raw.githubusercontent.com/JinnaBalu/elasticsearch/master/img/elasticsearch.svg)
 
 Elasticsearch Single Node Instance and Kibana Using Docker Compose. Create the `docker-compose.yml` with the following
 
@@ -59,7 +59,7 @@ volumes:
 ```
 
 
-[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/images/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/JinnaBalu/elasticsearch/master/single-node/docker-compose.yml)
+[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/img/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/JinnaBalu/elasticsearch/master/single-node/docker-compose.yml)
 
 
 ## Run 

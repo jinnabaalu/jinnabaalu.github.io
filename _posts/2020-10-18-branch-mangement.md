@@ -3,8 +3,8 @@ layout: post
 title: "Git - Branch Management"
 description: "Git - Branch Management"
 author: jinnabalu
-categories: [ Devops, git ]
-image: assets/images/git_branch_management.png
+categories: [ git ]
+image: assets/img/git_branch_management.png
 featured: false
 hidden: true
 ---

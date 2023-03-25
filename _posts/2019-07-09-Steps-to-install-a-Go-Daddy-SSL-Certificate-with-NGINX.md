@@ -2,7 +2,7 @@
 layout: post
 title:  "Steps to install a Go Daddy SSL Certificate with NGINX"
 author: jinna
-categories: [ Devops ]
+categories: [ Devops, SSL, Nginx ]
 ---
 
 ### Step1: Generate a CSR and Private Key

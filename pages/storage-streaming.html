@@ -1,0 +1,82 @@
+---
+layout: default
+permalink: /storage-streaming
+canonical_url: "https://jinnabalu.tech/databases"
+title: "jinnabalu | Databases "
+image_url: assets/img/logo.png
+description: ""
+date: 2023-01-05T10:15:00Z
+keywords: ""
+---
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Databases</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item">Databases</li>
+            </ol>
+        </nav>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>SQL</h2>
+            <hr>
+        </div>
+    </div>
+    <section class="section">
+        <div class="row">
+            {% for post in site.posts %}
+            {% if post.categories contains 'SQL' %}
+            {% include postbox.html %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>NoSQL</h2>
+            <hr>
+        </div>
+    </div>
+    <section class="section">
+        <div class="row">
+            {% for post in site.posts %}
+            {% if post.categories contains 'NoSQL' %}
+            {% include postbox.html %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Streaming</h2>
+            <hr>
+        </div>
+    </div>
+    <section class="section">
+        <div class="row">
+            {% for post in site.posts %}
+            {% if post.categories contains 'Streaming' %}
+            {% include postbox.html %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Cache</h2>
+            <hr>
+        </div>
+    </div>
+    <section class="section">
+        <div class="row">
+            {% for post in site.posts %}
+            {% if post.categories contains 'Cache' %}
+            {% include postbox.html %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+</main>

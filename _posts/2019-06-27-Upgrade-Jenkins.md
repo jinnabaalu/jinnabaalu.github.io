@@ -2,8 +2,8 @@
 layout: post
 title:  "Jenkins - Upgrade Jenkins"
 author: jinna
-categories: [ Devops ]
-image: assets/images/jenkins.svg
+categories: [ jenkins ]
+image: assets/img/jenkins.svg
 ---
 
 # Upgrade jenkins latest version 

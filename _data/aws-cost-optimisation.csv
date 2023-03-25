@@ -1,0 +1,9 @@
+title,link,risk_type,downtime,color
+Cleanup the dangling and unused resources, /cleaup-aws,no-risk,NoDowntime,success
+Identify the Backups and set the lifecycle for retention for deletion,/enable-deletion-retention-policy,no-risk,NoDowntime,success
+Migrate from GP2 to GP3 based on throughput two save 20% on EBS cost,/migrate-gp2-gp3,low-risk,NoDowntime,warning
+Migrate to latest family,/aws-latest-family,medium-risk,Downtime,warning
+Enable monitoring to understand right sizing,/aws-right-sizing,no-risk,NoDowntime,success
+Reduce the machine conf based on the usage metrics,/identify-usage,no-risk,NoDowntime,success
+Migrate to right family,/aws-right-family,medium-risk,Downtime,warning
+Enable cost savings,/best-practices-to-enable-cost-saving,no-risk,NoDowntime,success

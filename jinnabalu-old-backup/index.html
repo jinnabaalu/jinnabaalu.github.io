@@ -1,0 +1,29 @@
+---
+layout: default
+title: Jinna Balu | DevOps | DevSecOps | Site Reliability Engineer
+---
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to my place on the internet. Here you can find information about me, and read my toil
+        and life!</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-12text-center">
+        {% assign categories_list = site.categories %}
+        {% if categories_list.first[0] == null %}
+        {% for category in categories_list %}
+        <a class="btn btn-link btn-lg"
+            href="{{site.baseurl}}/categories#{{ category | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }}
+            ({{ site.tags[category].size }})</a>
+        {% endfor %}
+        {% else %}
+        {% for category in categories_list %}
+        <a class="btn btn-link btn-lg"
+            href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}">{{ category[0] | camelcase }}
+            ({{ category[1].size }})</a>
+        {% endfor %}
+        {% endif %}
+        {% assign categories_list = nil %}
+    </div>
+</div>
+</div>

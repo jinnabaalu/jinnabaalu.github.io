@@ -3,7 +3,7 @@ layout: post
 title:  "Elasticsearch - Dumping documents from multi-node to single node"
 author: jinna
 categories: [ Storage ]
-image: assets/images/elasticsearch.svg
+image: assets/img/elasticsearch.svg
 description: "Elasticsearch is running as three node cluster, task is to copy and restore the multi-node to single node cluster"
 ---
 
@@ -22,7 +22,7 @@ As the shards getting distributed between nodes so no single node will have the 
 - Create the single node cluster using the `docker-compose` file
 
 ```yml
-cluster.name: vibhuvi_cluster
+cluster.name: jinnabalu_cluster
 #node.name: "node-one"
 #index.number_of_shards: 1
 #index.number_of_replicas: 0
@@ -38,8 +38,8 @@ cluster.routing.allocation.disk.watermark.high: 300mb
 ```yml
 version: '2'
 services:
-    vibhuvi_cluster-elasticsearch:
-        container_name: vibhuvi_cluster-elasticsearch
+    jinnabalu_cluster-elasticsearch:
+        container_name: jinnabalu_cluster-elasticsearch
         image: elasticsearch:2.4.1
         environment:
             - "ES_JAVA_OPTS=-Xms1g -Xmx1g"

@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Elasticsearch + Kibana using Docker Compose
+categories: [ Storage, Elasticsearch ]
 description: Deploying the elasticsearch and Kibana as docker containers 
-image: "assets/images/elasticsearch.svg"
+image: "assets/img/elasticsearch.svg"
 ---
 
 {% include docker-prerequisites.md %}
@@ -37,7 +38,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - vibhuviesdata:/usr/share/elasticsearch/data
+      - jinnabaluesdata:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
       - 9300:9300
@@ -63,7 +64,7 @@ services:
     restart: "unless-stopped"
     
 volumes:
-  vibhuviesdata:
+  jinnabaluesdata:
     driver: local
 
 networks:

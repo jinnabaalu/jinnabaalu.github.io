@@ -2,9 +2,8 @@
 layout: post
 title:  "Linux - sed command"
 description: "Linux - sed command"
-author: jinnabalu
 categories: [ sed ]
-image: assets/images/sed.png
+image: assets/img/sed.png
 featured: false
 hidden: true
 ---

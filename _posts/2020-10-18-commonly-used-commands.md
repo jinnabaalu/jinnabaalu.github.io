@@ -3,8 +3,8 @@ layout: post
 title: "Git - Common Commands"
 description: "Git - Common Commands"
 author: jinnabalu
-categories: [ Devops, git ]
-image: assets/images/git_common_commands.png
+categories: [ git ]
+image: assets/img/git_common_commands.png
 featured: false
 hidden: true
 ---

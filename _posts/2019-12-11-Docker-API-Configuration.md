@@ -1,9 +1,9 @@
 ---
 title:  "Docker API Configuration"
 metadate: "hide"
-categories: [ DockerAPI ]
+categories: [ DockerAPI, Docker ]
 tags: [ Jenkins ]
-image: "assets/images/docker-engine-components-flow.png"
+image: "assets/img/docker-engine-components-flow.png"
 ---
 
 
@@ -39,7 +39,7 @@ sudo service docker restart
 ### Test the configuration 
 
 ```bash
-curl http://localhost:2375/images/json
+curl http://localhost:2375/img/json
 ```
 
 Replace `localhost` with the respective `IP` if we need to connect to a remote docker deamon. 

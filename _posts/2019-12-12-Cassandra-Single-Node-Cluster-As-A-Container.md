@@ -2,9 +2,8 @@
 layout: post
 title: "Cassandra - Cassandra single node cluster as a container"
 description: "Cassandra - Single Node using Docker Compose"
-author: jinnabalu
-categories: [ Cassandra, Docker, NOSQL ]
-image: assets/images/Cassandra_single_node.png
+categories: [ Cassandra, Docker, NOSQL, Database ]
+image: assets/img/Cassandra_single_node.png
 featured: false
 hidden: true
 ---
@@ -49,6 +48,6 @@ services:
     
 ```
 
-[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/images/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/JinnaBalu/cassandra/master/single-node-cluster/cassandra.yml){:target="_blank"}
+[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/img/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/JinnaBalu/cassandra/master/single-node-cluster/cassandra.yml){:target="_blank"}
 
 - To maintain the persistency of the data uncomment the volumes in the service and respective Volume 

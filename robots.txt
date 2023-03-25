@@ -1,0 +1,3 @@
+User-agent: *
+Crawl-delay: 5
+Sitemap: https://jinnabalu.tech/staging-app/sitemap.xml

@@ -1,0 +1,75 @@
+---
+layout: default
+title: Caddy Grid
+permalink: /caddygrid
+---
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Caddy</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item">Caddy</li>
+            </ol>
+        </nav>
+    </div>
+    <br>
+    <section class="section">
+        <div class="row">
+            {% for post in site.posts %}
+            {% if post.categories contains 'Caddy' %}
+            {% include postbox.html %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+</main>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-lg-6 text-left">
+            <h3 class="header-text">{{ page.title }}</h3>
+        </div>
+        <div class="col-lg-6 text-right">
+            <i class="ri-github-fill"></i>
+            <a href="https://github.com/JinnaBalu/docker-caddy" target="_blank"> Caddy GitHub Configurations</a>
+        </div>
+    </div>
+    <br><br>
+    <div class="row hidden-md-up">
+        <div class="col-lg-4 col-md-6 mb-30px card-group">
+            <div class="card h-100">
+                <div class="maxthumb">
+                    <a target="_blank" href="https://www.linkedin.com/pulse/redirection-caddy-jinna-balu/">
+                        <img class="img-fluid" src="/assets/img/caddy-redirections.png" alt="Caddy Redirections">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a target="_blank" href="https://www.linkedin.com/pulse/redirection-caddy-jinna-balu/">Caddy
+                            Redirections</a>
+
+                    </h4>
+                    <h6 class="card-text">Caddy is the first and only web server to use HTTPS automatically and by
+                        default.</h6>
+                </div>
+                <div class="card-footer bg-white">
+                    <div class="row">
+                        <div class="col-md-6"><a target="_blank"
+                                href="https://www.linkedin.com/pulse/redirection-caddy-jinna-balu/">
+                                <i class="bi bi-linkedin"></i>
+                                <span class="post-date"> LinkedIn</span>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a target="_blank" href="https://github.com/JinnaBalu/docker-caddy">
+                                <i class="ri-github-fill"></i>
+                                <span class="post-date"> Github</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><br>
+</div>

@@ -1,11 +1,10 @@
 ---
+layout: post
 title:  "CICD Jenkins - Send email with default content"
-author: jinna
 metadate: "hide"
-categories: [ Devops ]
-image: assets/images/jenkins.svg
+categories: [ jenkins ]
+image: assets/img/jenkins.svg
 ---
-
 
 # Send email with default content as the build output
 

@@ -1,9 +1,8 @@
 ---
 layout: post
 title:  "Docker - dockerize the nodejs application"
-author: jinnabalu
-categories: [ Application, NodeJs, Container ]
-image: assets/images/docker_nodejs.jpeg
+categories: [ Application, NodeJs, Container, Dev ]
+image: assets/img/docker_nodejs.jpeg
 description: "Create a nodejs application | Dockerize nodejs application"
 featured: false
 hidden: true

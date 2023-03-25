@@ -3,8 +3,8 @@ layout: post
 title: "Git - Cheat Sheet"
 description: "Git - Cheat Sheet"
 author: jinnabalu
-categories: [ Devops, git ]
-image: assets/images/git-bc.png
+categories: [ git ]
+image: assets/img/git-bc.png
 featured: false
 hidden: true
 ---

@@ -1,9 +1,9 @@
 ---
 title:  "Cassandra Architecture"
 metadate: "hide"
-categories: [ Cassandra, NoSQL ]
+categories: [ Cassandra, NoSQL, Database ]
 tags: [ Cassandra ]
-image: "assets/images/cassandra.svg"
+image: "assets/img/cassandra.svg"
 layout: post
 ---
 
@@ -16,7 +16,7 @@ All the nodes exchange information with each other using Gossip protocol. Gossip
 
 # Components of Cassandra
 
-![Components of Cassandra](https://platform-ops.tech/assets/images/components.png)
+![Components of Cassandra](https://platform-ops.tech/assets/img/components.png)
 
 - **Node**, where data is stored
 
@@ -36,7 +36,7 @@ CommitLog, MemTable, and SSTable are 3 core components of cassandra.
 
 High level life cycle of the data from the time it is written from a cassandra client to the time it is persisted to SSTables
 
-![Lifecycle of Data](https://platform-ops.tech/assets/images/cassandra_durability.png)
+![Lifecycle of Data](https://platform-ops.tech/assets/img/cassandra_durability.png)
 
 **Step 1** Request is received by a random node in the cluster.
 

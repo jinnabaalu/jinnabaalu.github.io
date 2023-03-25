@@ -2,8 +2,8 @@
 layout: post
 title:  "Jekyll - Running Jekyll in Docker"
 author: jinna
-categories: [ Devops ]
-image: assets/images/jekyll.png
+categories: [ jekyll, Dev ]
+image: assets/img/jekyll.png
 ---
 # Running Jekyll in Docker
 

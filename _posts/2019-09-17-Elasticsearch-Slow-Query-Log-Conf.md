@@ -4,7 +4,7 @@ title:  "Elasticsearch Slow Query Log Configuration"
 metadate: "hide"
 categories: [ NoSQL, Elasticsearch ]
 tags: [ Elasticsearch ]
-image: "assets/images/elasticsearch.svg"
+image: "assets/img/elasticsearch.svg"
 ---
 
 ## Slow Logs in Elasticsearch

@@ -2,9 +2,9 @@
 layout: post
 title:  "Initialise Postgresql Container with docker-compose"
 metadate: "hide"
-categories: [ Database, PostgreSQL ]
+categories: [ Database, PostgreSQL, SQL ]
 tags: [ PostgreSQL ]
-image: "assets/images/postgresql.svg"
+image: "assets/img/postgresql.svg"
 related_posts: 
       - title: "Initialise Postgresql Container with docker-compose"
         url: "https://platform-ops.tech/Run-Postgres-Container/"

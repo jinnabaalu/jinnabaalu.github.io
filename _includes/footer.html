@@ -1,0 +1,102 @@
+<div class="container-fluid">
+    <footer id="footer" class="footer">
+        <div class="row">
+            <div class="col-md-3 col-sm-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="card-title">Stackoverflow Profile</h5>
+                        
+                    </div>
+                </div>
+                <a href="https://stackexchange.com/users/5468915">
+                    <img src="https://stackexchange.com/users/flair/5468915.png" width="300" height="100"
+                        alt="profile for Jinna Balu on Stack Exchange, a network of free, community-driven Q&amp;A sites"
+                        title="profile for Jinna Balu on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
+
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="card-title">Categories</h5>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {% assign categories_list = site.categories %}
+                        {% if categories_list.first[0] == null %}
+                        {% for category in categories_list %}
+                        <a type="button" class="btn btn-primary mb-1" href="{{site.baseurl}}/categories#{{ category | url_escape | strip | replace: ' ', '-' }}">
+                            {{ category | camelcase }} <span class="badge bg-white text-secondary">{{ site.tags[category].size }}</span>
+                        </a>
+                        
+                        {% endfor %}
+                        {% else %}
+                        {% for category in categories_list %}
+                        <a type="button" class="btn btn-primary mb-1" href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}"">
+                            {{ category[0] | camelcase }}
+                            <span class="badge bg-white text-secondary">{{ category[1].size }}</span>
+                        </a>
+                        {% endfor %}
+                        {% endif %}
+                        {% assign categories_list = nil %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="card-title">I am Social Platforms</h5>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <section class="section">
+                            <div class="iconslist">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a href="https://twitter.com/JinnaBalu" target="_blank">
+                                            <div class="icon">
+                                                <i class="bi bi-twitter"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a href="https://www.linkedin.com/in/jinna-balu-20368995/" target="_blank">
+                                            <div class="icon"> <i class="bi bi-linkedin"></i>
+
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a href="https://medium.com/@JinnaBalu" target="_blank">
+                                            <div class="icon">
+                                                <i class="ri-medium-line"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a href="https://github.com/JinnaBalu" target="_blank">
+                                            <div class="icon"> <i class="ri-github-fill"></i>
+
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row text-center">
+            <div class="col-md-12 col-sm-12">
+                <small>
+                    &copy; Copyright <strong><span>JinnaBalu</span></strong>. All Rights Reserved |
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </small>
+            </div>
+        </div>
+    </footer>
+</div>

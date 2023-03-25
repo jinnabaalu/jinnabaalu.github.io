@@ -3,8 +3,8 @@ layout: post
 title: "Git - Switch Remote URL"
 description: "Git - Switch Remote URL | HTTPS | SSH"
 author: jinnabalu
-categories: [ Devops, git ]
-image: assets/images/git_remote_url.png
+categories: [ git ]
+image: assets/img/git_remote_url.png
 featured: false
 hidden: true
 ---

@@ -1,15 +1,21 @@
-# Site
 name: "Jinna Balu"
-title: "Jinna Balu"
-description: "Software Engineer - Practicing Natural Farming"
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
+description: "IT Services | DevOps as a Service | DevSecOps as a service | AWS Cost Optimisation"
+meta_description: "IT Services | DevOps as a Service | DevSecOps as a service | AWS Cost Optimisation"
+logo: 'assets/img/logo.png'
+favicon: 'assets/img/icon/favicon.ico'
+paginate: 12
 baseurl: ''
+url: 'https://jinnabalu.com/'
+email: 'help@jinnabalu.com'
+title: "Jinna Balu"
+locale: en_US
+icons:
+  57: assets/img/icons/apple-touch-icon-57x57.png
+
 google_analytics: 'UA-178018885-1'
 disqus: 'jinna-balu'
-# mailchimp-list: ''
 include: ["_pages"]
-permalink: /:title/
+permalink: /:title
 
 authors:
   jinnabalu:
@@ -19,43 +25,43 @@ authors:
     email: jinna.balu@outlook.com
     web: https://jinna-balu.tech
     twitter: https://twitter.com/JinnaBalu
-    description: "DevOps Manager | Platform Engineer | Monitoring | CICD | ODD | SQL/NoSQL | ELK | AWS | Jhipster | Microservices | Agile | Scrum"
-  
-plugins:
+    description: "Infrastructure Solution Architect | SRE | DevOps Manager | Platform Engineer | Monitoring | CICD | ODD | SQL/NoSQL | ELK | AWS | Jhipster | Microservices | Agile | Scrum"
+
+
+plugins: 
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-archives
-    
-# Archives
-jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
-  permalinks:
-    category: '/category/:name/'
-    
-# Pagination 
-paginate: 6
-paginate_path: /page:num/
-    
-# Other
-markdown: kramdown
+  - jekyll-sitemap
 
+sass:
+  style: compressed
+    
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
+markdown: kramdown
+highlighter: rouge
+    
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+# Google Tag Manager Integration
+google-tag-manager-id: GTM-MTFQ8TF
+google-analytics-id: G-E0ZW5NRN6K
 
-# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
-adsense: "disabled"
-adsense-data-ad-client: "ca-pub-3412143450191416"
-adsense-data-ad-slot: "1363087678"
+## Verify ownership with several services at once using the following format
+webmaster_verifications:
+  google: xVEmwX6PFrFabJWC30aDEuvWSbnr11QegyS-B9UbDB8
+  bing: 1E642F36EC0479DC69135F989CDC274A
+  yandex: 43039f2f4b41e2c3
+  baidu: 1234
+  facebook: 1234
+  ahrefs: 51bddb95e8fc130687b6ef65736ca7afb4c52168083b13a5e11eb5f1f2a536d7
 
-# Lazy Images ("enabled" or "disabled")
-lazyimages: "disabled"
-
-exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
+  

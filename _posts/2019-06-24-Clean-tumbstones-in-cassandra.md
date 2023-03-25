@@ -2,10 +2,9 @@
 layout: post
 title:  "Tombstones in Cassandra - Clean"
 description: "Cleaning the tomb_stones in cassandra with GC_GRACE_SECONDS for the table"
-author: jinnabalu
 categories: [ Cassandra, NoSQL, Storage ]
 tags: [red, yellow]
-image: assets/images/Cassandra_gc_grace_seconds.png
+image: assets/img/Cassandra_gc_grace_seconds.png
 featured: false
 hidden: true
 ---
@@ -36,7 +35,7 @@ Wait for 30-60 seconds to cleanup the tombstones and continue to alter to the la
 This cleans up all the garbage from whole keyspace or a specific table. 
 
 ```bash
-nodetool garbagecollect [vibhuvi_keyspace] [universe_table]
+nodetool garbagecollect [jinnabalu_keyspace] [universe_table]
 ```
 
 

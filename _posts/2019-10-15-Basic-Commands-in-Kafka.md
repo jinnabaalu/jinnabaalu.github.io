@@ -1,9 +1,9 @@
 ---
 title:  "Basic Kafka Container commands"
 metadate: "hide"
-categories: [ Storage ]
+categories: [ Storage, Streaming ]
 tags: [ Kafka ]
-image: "assets/images/kafka.svg"
+image: "assets/img/kafka.svg"
 ---
 
 

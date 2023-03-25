@@ -2,8 +2,8 @@
 layout: post
 title:  "Jenkins - Schedule"
 author: jinna
-categories: [ Devops ]
-image: assets/images/jenkins.svg
+categories: [ jenkins ]
+image: assets/img/jenkins.svg
 ---
 
 ## Schedule
@@ -12,7 +12,7 @@ image: assets/images/jenkins.svg
 - Configure
 - Build Triggers --> Build Periodically --> Schedule, periodically build you can schedule the build definition by the date or day of the week and the time to execute the build
 
-![Build triggers](https://github.com/JinnaBalu/platform-engineering-concepts/blob/master/images/jenkins-build-periodically.png)
+![Build triggers](https://github.com/JinnaBalu/platform-engineering-concepts/blob/master/img/jenkins-build-periodically.png)
 
 - Jenkins schedule format
 #### Schedule Format
@@ -42,7 +42,7 @@ To specify multiple values for one field, the following operators are available.
 
 - Jenkins schedule format is nothing but a cron schedule expression
 
-![Cron Schedule Expression](https://github.com/JinnaBalu/platform-engineering-concepts/blob/master/images/jenkins-schedule-format.png)
+![Cron Schedule Expression](https://github.com/JinnaBalu/platform-engineering-concepts/blob/master/img/jenkins-schedule-format.png)
 
 #### Examples
 

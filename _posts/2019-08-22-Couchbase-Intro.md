@@ -3,8 +3,8 @@ layout: post
 title:  "Couchbase Introduction"
 description: "Couchbase is an open-source, distributed multi-model NoSQL document-oriented database, multinode cluster. Couchbase Server is designed to provide easy-to-scale key-value or JSON document access with low latency and high sustained throughput"
 author: jinna
-categories: [ Storage ]
-image: assets/images/couchbase_main.png
+categories: [ Storage, Couchbase ]
+image: assets/img/couchbase_main.png
 ---
  
 ### What is Couchbase Server? 

@@ -1,0 +1,86 @@
+<div class="row pt-3">
+    <div class="col-md-12">
+        <h1 dir="auto">
+            <a id="user-content-git-init" class="anchor" aria-hidden="true" href="#git-init"><svg
+                    class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                    aria-hidden="true">
+                    <path
+                        d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">
+                    </path>
+                </svg>
+            </a>
+            git init
+        </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p>You are not connected to any git server, with <code>git init</code> command you can initialise the
+            repository to use the git features in the current directory where you initialise the git, which is local
+            git server
+        </p>
+        <p dir="auto">
+            <code>git init</code>, to initiate the current directory to connect to the version controlling
+            system or any git server</p>
+        <p>
+            What you will do in this reading is,
+        </p>
+        <ul dir="auto">
+            <li>Create the directory</li>
+            <li>Change to directory</li>
+            <li>Initialize the directory with git and check for hiden folders in the directory</li>
+        </ul>
+
+        <div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto">
+            <pre>
+                <code>mkdir learn-git/</code>
+                <code>cd learn-git/</code>
+                <code>git init</code>
+            </pre>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <blockquote>
+            <p dir="auto">O/P : Initialized empty Git repository in <code>learn-git</code> directory</p>
+        </blockquote>
+        <ul dir="auto">
+            <li>After initializing the repository, it will create the hidden folder in the directory
+                <code>/home/user/current-path/learn-git</code>.</li>
+            <li>To view hidden fine in direct <code>Ctrl + H</code></li>
+            <li>Directory file structure looks like this</li>
+        </ul>
+        <div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto">
+            <pre>
+                <code>
+                root
+                branch/
+                config
+                description
+                HEAD
+                hooks/
+                    applypatch-msg.sample
+                    commit-msg.sample
+                    fsmonitor-watchman.sample
+                    post-update.sample
+                    pre-applypatch.sample
+                    pre-commit.sample
+                    prepare-commit-msg.sample
+                    pre-push.sample
+                    pre-rebase.sample
+                    pre-receive.sample
+                    update.sample
+                info/
+                    exclude
+                objects/
+                    info/
+                    pack/
+                refs/
+                    heads/
+                    tags/
+                </pre>
+            </code>
+        </div>
+    </div>
+</div>

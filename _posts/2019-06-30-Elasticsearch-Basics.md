@@ -2,8 +2,8 @@
 layout: post
 title:  "Elasticsearch - Basics of Elasticsearch"
 author: jinna
-categories: [ Storage ]
-image: assets/images/elasticsearch.svg
+categories: [ Storage, Elasticsearch ]
+image: assets/img/elasticsearch.svg
 description: "Elasticsearch is the distributed search and analytics engine at the heart of the Elastic Stack. Logstash and Beats facilitate collecting, aggregating, and enriching your data and storing it in Elasticsearch. "
 rating: 4.5
 ---

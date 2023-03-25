@@ -1,0 +1,53 @@
+---
+layout: default
+permalink: /scm
+canonical_url: "https://jinnabalu.tech/scm"
+title: "jinnabalu | SCM "
+image_url: assets/img/logo.png
+description: "jinnabalu is an agriculture company engaging in research to make agriculture a profitable cooperative
+engagement for rural societies"
+date: 2023-01-05T10:15:00Z
+keywords: "Productive, agricultural, Rural, Livelihood, environmental, health, Seed, Conservation"
+---
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Git - Source Code Management</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item">Git</li>
+            </ol>
+        </nav>
+    </div>
+    <br>
+    <section class="section">
+        <div class="row">
+            <div class="col-md-6">
+                {% include git-dev.html %}
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="card-title">Posts on Git</span></h5>
+                        <hr>
+                        <div class="row">
+                            {% for post in site.posts %}
+                            {% if post.categories contains 'git' %}
+                            {% assign author = site.authors[post.author] %}
+                            <div class="col-md-6">
+                                {% include post-card.html %}
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                            {% include git-devops.html %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,19 +1,19 @@
 ---
 layout: post
-title:  "Open JDK docker container commands"
+title:  "Open JDK docker container commands shell access to the container"
 author: jinna
 categories: [ Devops ]
-image: assets/images/Logo.png
+image: assets/img/Logo.png
 ---
 
 # Run commands in open jdk docker container
 
 Example : 
-  container name : vibhuviops
+  container name : jinnabaluops
 
 - to enter into the open jdk container
 
-  `docker exec -it vibhuviops /bin/sh`
+  `docker exec -it jinnabaluops /bin/sh`
 
 - run the commands as required example `echo $USER`
 

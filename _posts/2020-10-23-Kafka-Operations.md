@@ -3,8 +3,8 @@ layout: post
 title: "Kafka - Ops"
 description: "Kafka - Ops"
 author: jinnabalu
-categories: [ Devops, Kafka, Docker ]
-image: assets/images/kafka.svg
+categories: [ kafka, Streaming ]
+image: assets/img/kafka.svg
 featured: false
 hidden: true
 ---

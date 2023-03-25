@@ -4,7 +4,7 @@ title:  "Create Indexes in elasticsearch and  frequently used commands"
 metadate: "hide"
 categories: [ NoSQL, Search Engine, Elasticsearch ]
 tags: [ Elasticsearch ]
-image: "assets/images/elasticsearch.svg"
+image: "assets/img/elasticsearch.svg"
 ---
 
 {% include docker-prerequisites.md %}

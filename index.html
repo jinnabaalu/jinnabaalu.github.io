@@ -1,29 +1,45 @@
 ---
 layout: default
-title: Jinna Balu | DevOps | DevSecOps | Site Reliability Engineer
+permalink: /
+canonical_url: "https://jinnabalu.tech/"
+title: "jinnabalu | Home "
+image_url: assets/img/logo.png
+description: "jinnabalu is an agriculture company engaging in research to make agriculture a profitable cooperative
+engagement for rural societies"
+date: 2023-01-05T10:15:00Z
+keywords: "Productive, agricultural, Rural, Livelihood, environmental, health, Seed, Conservation"
 ---
-<div class="jumbotron">
-    <h1 class="display-4">Welcome to my place on the internet. Here you can find information about me, and read my toil
-        and life!</h1>
-</div>
+<main id="main" class="main">
 
-<div class="row">
-    <div class="col-md-12text-center">
-        {% assign categories_list = site.categories %}
-        {% if categories_list.first[0] == null %}
-        {% for category in categories_list %}
-        <a class="btn btn-link btn-lg"
-            href="{{site.baseurl}}/categories#{{ category | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }}
-            ({{ site.tags[category].size }})</a>
-        {% endfor %}
-        {% else %}
-        {% for category in categories_list %}
-        <a class="btn btn-link btn-lg"
-            href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}">{{ category[0] | camelcase }}
-            ({{ category[1].size }})</a>
-        {% endfor %}
-        {% endif %}
-        {% assign categories_list = nil %}
+  <div class="pagetitle">
+    <h1>Services</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+    </nav>
+  </div>
+
+  <section class="section dashboard pt-3">
+    <div class="row">
+      <div class="col-lg-4">
+        <h4>Observability Driven Development</h4>
+        <hr>
+        {% include observability-why.html %}
+      </div>
+      <div class="col-lg-4">
+        <h4>AWS Cost Optimisation</h4>
+        <hr>
+        {% include aws-cost-optimisation-card.html %}
+      </div>
     </div>
-</div>
-</div>
+    <div class="row">
+      <div class="col-lg-12">
+        <h4>Tech Stack</h4>
+        <hr>
+        {% include tech-grid.html %}
+      </div>
+    </div>
+  </section>
+</main>

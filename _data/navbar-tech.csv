@@ -1,0 +1,10 @@
+title,link,icon_class,tooltip
+SCM,/scm,bx bxl-git,source code management system
+Dev,/dev,bx bxl-dev-to,Developement
+CICD,/cicd,bx bx-repost,Continuous Integration/Continuous Deployment or Continuous Delivery
+AWS,/aws,bx bxl-aws, Amazon Web Services
+Docker,/containerisation,bx bxl-docker, Docker Containerisation tool
+Kubernetes,/kubernetes,bx bxl-kubernetes,Kubernetes Orchestration Service 
+Storage | Streaming | Cache,/storage-streaming,bi bi-server,SQL, NoSQL, Cache and Streaming searvices
+Observability,/observability,bi bi-gem, Observability APM | RUM | Uptime | Centralised Logging
+Security,/security,bx bx-slider,Security | Compliance | VAPT

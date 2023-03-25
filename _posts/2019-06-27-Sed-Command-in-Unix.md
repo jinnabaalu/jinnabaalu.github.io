@@ -4,7 +4,7 @@ title:  "SED"
 metadate: "hide"
 categories: [ sed ]
 tags: [ sed ]
-image: assets/images/sed.png
+image: assets/img/sed.png
 ---
 
 Sed is a Stream Editor used for modifying the files in unix (or linux)

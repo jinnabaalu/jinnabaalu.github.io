@@ -3,8 +3,8 @@ layout: post
 title: "Elasticsearch Disk Space is too low"
 description: "Elasticsearch - [FORBIDDEN/12/index read-only / allow delete (api)];];"
 author: jinnabalu
-categories: [ ElasticsearchIssues ]
-image: assets/images/Elasticsearch_watermark.png
+categories: [ ElasticsearchIssues, Database ]
+image: assets/img/Elasticsearch_watermark.png
 ---
 
 *Fix the FORBIDDEN Read-Only / Allow Delete Error for Elasticsearch API Requests*

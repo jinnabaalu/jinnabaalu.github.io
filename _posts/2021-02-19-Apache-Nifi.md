@@ -3,8 +3,8 @@ layout: post
 title: "Single Node Apache Nifi Container"
 description: "Single Node Apache Nifi Container"
 author: jinnabalu
-categories: [ Nifi, Docker ]
-image: assets/images/nifi_single_node_container.png
+categories: [ Nifi, Docker, ETL, Storage ]
+image: assets/img/nifi_single_node_container.png
 featured: false
 hidden: true
 ---
@@ -42,4 +42,4 @@ services:
     
 ```
 
-[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/images/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/JinnaBalu/infinite-stack/master/nifi/docker-compose.yml){:target="_blank"}
+[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/img/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/JinnaBalu/infinite-stack/master/nifi/docker-compose.yml){:target="_blank"}

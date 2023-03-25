@@ -1,9 +1,6 @@
 ---
-title:  "Cassandra Replication Strategy"
-metadate: "hide"
-categories: [ Cassandra, NoSQL ]
+categories: [ Cassandra, NoSQL, Database ]
 tags: [ Cassandra ]
-image: "assets/images/cassandra.svg"
 ---
 
 
@@ -25,7 +22,7 @@ For ensuring there is no single point of failure, **replication factor must be t
 
 SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.
 
-![Replication Strategy - SimpleStrategy](https://platform-ops.tech/assets/images/replication_strategy_simple_strategy.png)
+![Replication Strategy - SimpleStrategy](https://platform-ops.tech/assets/img/replication_strategy_simple_strategy.png)
 
 **NetworkTopologyStrategy**
 

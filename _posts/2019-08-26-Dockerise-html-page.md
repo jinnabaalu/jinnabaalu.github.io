@@ -3,8 +3,8 @@ layout: post
 title:  "Dockerise HTML"
 description: "Running the Static HTML webpages as container on docker"
 author: jinna
-categories: [ Dockerization ]
-image: assets/images/html-5.svg
+categories: [ Dockerization, Docker, HTML, Dev ]
+image: assets/img/html-5.svg
 ---
 
 {% include docker-prerequisites.md %}

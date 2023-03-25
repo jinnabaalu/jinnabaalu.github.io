@@ -3,8 +3,8 @@ layout: post
 title: "Git - Create Branch"
 description: "Git - Create Branch"
 author: jinnabalu
-categories: [ Devops, git ]
-image: assets/images/git_new_branch.png
+categories: [ git ]
+image: assets/img/git_new_branch.png
 featured: false
 hidden: true
 ---

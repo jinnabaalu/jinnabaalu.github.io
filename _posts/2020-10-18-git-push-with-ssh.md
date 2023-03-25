@@ -3,8 +3,8 @@ layout: post
 title: "Git - Push with SSH"
 description: "Git - Push with SSH"
 author: jinnabalu
-categories: [ Devops, git ]
-image: assets/images/git_push_ssh.png
+categories: [ git ]
+image: assets/img/git_push_ssh.png
 featured: false
 hidden: true
 ---
@@ -59,9 +59,9 @@ The key's randomart image is:
 
 ### 2. Go to github [account settings](https://github.com/settings/keys) page
 
-[![Github Settings]({{ site.url }}/assets/images/git_settings_ssh_keys.png)](https://github.com/settings/keys)
+[![Github Settings]({{ site.url }}/assets/img/git_settings_ssh_keys.png)](https://github.com/settings/keys)
 
-### 3. Click on [![New SSH key]({{ site.url }}/assets/images/new_ssh_key.png)](https://github.com/settings/ssh/new)
+### 3. Click on [![New SSH key]({{ site.url }}/assets/img/new_ssh_key.png)](https://github.com/settings/ssh/new)
 
 ### 4. Add title and paste the copied ssh key from the local
 
@@ -80,11 +80,11 @@ Hi JinnaBalu! You've successfully authenticated, but GitHub does not provide she
 
 ### 6. Update the Remote URL of the repository with the ssh url in place of https
 
-- Copy the url from the ![clone repository]({{ site.url }}/assets/images/clone_repo.png) button with ssh
+- Copy the url from the ![clone repository]({{ site.url }}/assets/img/clone_repo.png) button with ssh
 
 - Copy Clone with ssh URL - Clock *Use SSH* as in first screenshot
 
-![click_use_ssh]({{ site.url }}/assets/images/click_use_ssh.png) ![copy_ssh_url]({{ site.url }}/assets/images/copy_ssh_url.png)
+![click_use_ssh]({{ site.url }}/assets/img/click_use_ssh.png) ![copy_ssh_url]({{ site.url }}/assets/img/copy_ssh_url.png)
 
 ```bash
  git remote set-url origin git@github.com:JinnaBalu/GitCheatSheet.git

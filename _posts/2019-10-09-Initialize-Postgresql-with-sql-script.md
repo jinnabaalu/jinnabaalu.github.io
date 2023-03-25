@@ -2,9 +2,9 @@
 layout: post
 title:  "Initialise Postgresql Container with init SQL script"
 metadate: "hide"
-categories: [ Database, PostgreSQL ]
+categories: [ Database, PostgreSQL, SQL ]
 tags: [ PostgreSQL ]
-image: "assets/images/postgresql.svg"
+image: "assets/img/postgresql.svg"
 related_posts: 
       - title: "Initialise Postgresql Container with docker-compose"
         url: "https://platform-ops.tech/Run-Postgres-Container/"
@@ -21,7 +21,7 @@ related_posts:
 
 ## Init SQL script with postgresql container
 
-![](/assets/images/postgresql.svg)
+![](/assets/img/postgresql.svg)
 
 - Create a `docker-compose.yml` with the following
 
@@ -60,7 +60,7 @@ networks:
 
 ```
 
-[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/images/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/JinnaBalu/postgreSQL/master/postgres-with-init-user-and-db.yml)
+[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/img/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/JinnaBalu/postgreSQL/master/postgres-with-init-user-and-db.yml)
 
 - Created a `init.sql` with the following
 

@@ -3,8 +3,8 @@ layout: post
 title: "Elasticsearch - Single Node using Docker Compose"
 description: "Elasticsearch - Single Node using Docker Compose"
 author: jinnabalu
-categories: [ Elasticsearch, Docker ]
-image: assets/images/Elasticsearch_main.png
+categories: [ Elasticsearch, Docker, Database ]
+image: assets/img/Elasticsearch_main.png
 featured: false
 hidden: true
 ---
@@ -29,9 +29,9 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
     container_name: elasticsearch
     environment:
-      - node.name=vibhuvi-node
+      - node.name=jinnabalu-node
       - discovery.type=single-node
-      - cluster.name=vibhuvi-es-data-cluster
+      - cluster.name=jinnabalu-es-data-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
     ulimits:
@@ -39,7 +39,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - vibhuviesdata:/usr/share/elasticsearch/data
+      - jinnabaluesdata:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
@@ -48,7 +48,7 @@ networks:
   elastic:
     driver: bridge  
 volumes:
-  vibhuviesdata:
+  jinnabaluesdata:
 ```
 
 ## Run 
@@ -61,7 +61,7 @@ docker-compose up -d
 Elasticsearch Single Node container with Kibana Using Docker Compose. Create the `docker-compose.yml` with the following
 
 ```yaml
-https://raw.githubusercontent.com/JinnaBalu/vibhuvi-infinite-containers/master/elasticsearch/single-node.yml
+https://raw.githubusercontent.com/JinnaBalu/jinnabalu-infinite-containers/master/elasticsearch/single-node.yml
 ```
 
 ```yaml
@@ -70,13 +70,13 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
     environment:
-      - node.name=vibhuvi-node
+      - node.name=jinnabalu-node
       - discovery.type=single-node
-      - cluster.name=vibhuvi-es-data-cluster
+      - cluster.name=jinnabalu-es-data-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
     volumes:
-      - vibhuviesdata:/usr/share/elasticsearch/data
+      - jinnabaluesdata:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
@@ -109,7 +109,7 @@ services:
 networks:
   elastic:
 volumes:
-  vibhuviesdata:
+  jinnabaluesdata:
 ```
 
 ## Run 

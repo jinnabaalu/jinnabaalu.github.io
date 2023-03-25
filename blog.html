@@ -4,24 +4,29 @@ title: Blog
 permalink: /blog
 ---
 {% if page.url == "/blog" %}
-
-<section class="recent-posts">
-
-    <div class="section-title">
-
-        <h2><span>Stories</span></h2>
-
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Blog</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item">All Blogs</li>
+            </ol>
+        </nav>
     </div>
+    <br>
+    <section class="section">
 
-    <div class="row listrecent">
+        <div class="row">
 
-        {% for post in site.posts %}
+            {% for post in site.posts %}
 
-        {% include postbox.html %}
+            {% include postbox.html %}
 
-        {% endfor %}
+            {% endfor %}
 
-    </div>
+        </div>
 
-</section>
+    </section>
+</main>
 {% endif %}

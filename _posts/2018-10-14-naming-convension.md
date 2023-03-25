@@ -2,9 +2,8 @@
 layout: post
 title: "Git - Naming Convention"
 description: "Git - Naming Convention"
-author: jinnabalu
-categories: [ CleanCode ]
-image: assets/images/NamingConvention.png
+categories: [ CleanCode, Dev ]
+image: assets/img/NamingConvention.png
 featured: false
 hidden: true
 ---

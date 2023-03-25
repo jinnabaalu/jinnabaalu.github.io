@@ -1,0 +1,14 @@
+<h5 class="card-title">Git for Developers</span></h5>
+<hr>
+<div class="activity">
+    {% for item in site.data.git-commands.developer %}
+    <div class="card pt-3">
+        <div class="card-body">
+            <h2>{{ item.title }}</h2>
+            <hr>
+            <p>{{ item.description }}</p>
+            <pre><code>{{ item.command }}</code></pre>
+        </div>
+    </div>
+    {% endfor %}
+</div>
