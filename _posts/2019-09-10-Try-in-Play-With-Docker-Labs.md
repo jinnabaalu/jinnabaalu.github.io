@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Adding Try in PWD button to README file"
-description: "Adding Try in PWD button to README file to click and play with services in play with doicker"
+description: "Adding Try in PWD button to README file to click and play with services in play with docker"
 categories: [ Docker ]
 author: jinna
 image: assets/img/play-with-docker.png
@@ -16,7 +16,7 @@ The "Try in PWD" actually supports to deploy any stack file that's available on 
 [![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/img/button.png)](http://play-with-docker.com?stack=https://<my_stack_url>)
 ```
 
-- Example to run wordpress as a container with the follwoing
+- Example to run wordpress as a container with the following
 
 This is how the script looks like
 
