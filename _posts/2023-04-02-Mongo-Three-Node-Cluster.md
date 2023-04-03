@@ -2,7 +2,7 @@
 layout: post
 title:  "MongoDB Three Node Cluster with Replicaset in a Single Server for POC"
 categories: [ MongoDB, NoSQL ]
-image: assets/img/mongodb/1.png
+image: assets/img/mongodb/2.png
 featured: false
 hidden: true
 githublink: https://github.com/JinnaBalu/docker-mongo
