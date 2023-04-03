@@ -120,7 +120,8 @@ devops:
     command: git log --branches --not --remotes
   - title: difference between two branches
     command: git diff --stat --color master..branch
-  - title: see a list of all objects - `git rev-list --objects --all`
+  - title: see a list of all objects 
+    command: git rev-list --objects --all
   - title: remove file from index
     command: git rm --cached filename.txt
   - title: get a list of all commit messages for a repo

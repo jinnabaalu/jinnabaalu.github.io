@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MongoDB Single Node Cluster with Replicaset"
+title:  "MongoDB Three Node Cluster with Replicaset for Production"
 categories: [ MongoDB, NoSQL ]
 image: assets/img/mongodb/1.png
 featured: false
@@ -16,7 +16,7 @@ docker: true
 
 ### Create the docker-compose 
 
-- Create the `docker-compose.yml` in `single-node-rs` directory
+- Create the `docker-compose.yml` in `three-node-rs` directory
 
     `$ cd docker-mongo && mkdir single-node-rs && touch docker-compose.yml`
 

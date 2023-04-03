@@ -169,7 +169,9 @@ post_class: post-template
                                 </div>
                                 {% for post in site.posts %}
                                 {% if post.categories[1] == page.categories[1] %}
+                                {% if post.categories[0] != page.categories[0] %}
                                 <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+                                {% endif %}
                                 {% endif %}
                                 {% endfor %}
                             </div>
