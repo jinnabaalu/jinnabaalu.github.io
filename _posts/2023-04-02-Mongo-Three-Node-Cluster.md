@@ -125,6 +125,7 @@ docker: true
       mongo3-data:
 
     ```
+
 ### Run the Application
 
 - Run the application
@@ -151,6 +152,23 @@ Expected Output is
 { ok: 1 }
 ```
 
+### Validate the Cluster 
+
+Verify and validate the multi-node replica set with mongoDB 
+
+- Verify the cluster
+```bash
+docker exec -it mongo1 mongosh --eval "rs.status()"
+docker exec -it mongo2 mongosh --eval "rs.status()"
+docker exec -it mongo3 mongosh --eval "rs.status()"
+```
+- Stop any node, `mongo1` and verify cluster connecting to `mongo2` or `mongo3`
+
+```bash
+docker stop mongo1
+docker exec -it mongo2 mongosh --eval "rs.status()"
+docker exec -it mongo3 mongosh --eval "rs.status()"
+```
 
 - Check the status whether the docker service is up or down `$ docker ps -a`
 
