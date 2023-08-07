@@ -1003,7 +1003,7 @@ pre {
   max-width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.25rem;
-  padding-top: 15px;
+  /*padding-top: 15px;*/
 }
 
 .iconslist .icon {
@@ -1011,7 +1011,7 @@ pre {
   border-radius: 0.25rem;
   text-align: center;
   color: #012970;
-  padding: 15px 0;
+  /* padding: 15px 0; */
 }
 
 .iconslist i {
