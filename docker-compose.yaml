@@ -1,9 +1,8 @@
-version: '3'
 services:
   site:
     container_name: jinnabalu
     command: jekyll serve
-    image: jekyll/jekyll:3.8.6
+    image: jekyll/jekyll:latest
     volumes:
       -  .:/srv/jekyll:Z
     ports:
