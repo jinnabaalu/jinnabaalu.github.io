@@ -23,236 +23,99 @@ Elasticsearch, MongoDB"
   <br>
   <div class="row">
     <div class="col-md-12">
-      <h2 style="font-size: 2.5rem;">Infrastructure Solution Architect
-      </h2>
-    </div>
-    
-    
-    </div>
-    <hr>
-    <div class="row">
-    <div class="col-md-2">
-      <h2>
-        <a href="https://stackexchange.com/users/5468915">
-          <img src="https://stackexchange.com/users/flair/5468915.png" alt="Jinna Balu stackoverflow">
-        </a>
-      </h2>
-    </div>
-    <div class="col-md-4">
-      <h2>
-        <div class="iconslist">
-          <div class="row">
-            <div class="col-md-3 col-sm-3 col-lg-3">
-              <a href="https://www.linkedin.com/in/jinnabaalu/" target="_blank">
-                <div class="icon"> <i class="bi bi-linkedin"></i>
-
-                </div>
-              </a>
-            </div>
-            <div class="col-md-3 col-sm-3 col-lg-3">
-              <a href="https://jinnabaalu.medium.com/" target="_blank">
-                <div class="icon">
-                  <i class="ri-medium-line"></i>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-3 col-sm-3 col-lg-3">
-              <a href="https://github.com/jinnabaalu" target="_blank">
-                <div class="icon"> <i class="ri-github-fill"></i>
-
-                </div>
-              </a>
-            </div>
-            <div class="col-md-3 col-sm-3 col-lg-3">
-              <a href="https://stackoverflow.com/users/4348824/jinna-balu" target="_blank">
-                <div class="icon">
-                  <i class="bi bi-stack-overflow"></i>
-                </div>
-              </a>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Infrastructure Solution Architect
+          </h2>
         </div>
-      </h2>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-4">
+          <h2>
+            <a href="https://stackexchange.com/users/5468915">
+              <img src="https://stackexchange.com/users/flair/5468915.png" alt="Jinna Balu stackoverflow">
+            </a>
+          </h2>
+        </div>
+        <div class="col-md-8">
+          <h2>
+            <div class="iconslist">
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-lg-3">
+                  <a href="https://www.linkedin.com/in/jinnabaalu/" target="_blank">
+                    <div class="icon"> <i class="bi bi-linkedin"></i>
+
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-lg-3">
+                  <a href="https://jinnabaalu.medium.com/" target="_blank">
+                    <div class="icon">
+                      <i class="ri-medium-line"></i>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-lg-3">
+                  <a href="https://github.com/jinnabaalu" target="_blank">
+                    <div class="icon"> <i class="ri-github-fill"></i>
+
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-lg-3">
+                  <a href="https://stackoverflow.com/users/4348824/jinna-balu" target="_blank">
+                    <div class="icon">
+                      <i class="bi bi-stack-overflow"></i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </h2>
+        </div>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <img src="https://github-readme-stats.vercel.app/api?username=jinnabaalu&show_icons=true&theme=dark&locale=en"
+            alt="jinnabalu" />
+        </div>
+        <div class="col-md-3">
+          <img src="https://github-readme-streak-stats.herokuapp.com/?user=jinnabaalu&" alt="jinnabalu" />
+        </div>
+        <div class="col-md-6">
+          <a href="https://github.com/jinnabaalu" target="_blank">
+            <img
+              src="https://github-profile-trophy.vercel.app/?username=jinnabaalu&row=1&column=6&theme=matrix&margin-w=20&margin-h=40"
+              alt="trophy">
+          </a>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Hands On Experience</h4>
+          <div class="stacks">
+            {% for link in site.data.techstack.links %}
+            <a title="{{ link.alt }}" href="{{ link.href }}" target="_blank" rel="noreferrer" class="clip img-circle">
+              {% if link.img_src %}
+              <img src="{{ link.img_src }}" alt="{{ link.alt }}">
+              {% else %}
+              {{ link.text }}
+              {% endif %}
+            </a>
+            {% endfor %}
+          </div>
+          <br>
+        </div>
+      </div>
     </div>
-    <hr>
   </div>
+
   <section class="section dashboard">
-    <div class="row">
-      <div class="col-md-3">
-        <img src="https://github-readme-stats.vercel.app/api?username=jinnabaalu&show_icons=true&theme=dark&locale=en"
-          alt="jinnabalu" />
-      </div>
-      <div class="col-md-3">
-        <img src="https://github-readme-streak-stats.herokuapp.com/?user=jinnabaalu&" alt="jinnabalu" />
-      </div>
-      <div class="col-md-6">
-        <a href="https://github.com/jinnabaalu" target="_blank">
-          <img
-            src="https://github-profile-trophy.vercel.app/?username=jinnabaalu&row=1&column=6&theme=matrix&margin-w=20&margin-h=40"
-            alt="trophy">
-        </a>
-      </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-md-12">
-        <h4>Hands On Experience</h4>
-        <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux"
-            width="60" height="60" />
-        </a>
-        <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img
-            src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="60" height="60" />
-        </a>
-        <a href="https://hub.docker.com/r/ubuntu/bind9" target="_blank" rel="noreferrer">
-          bind9 - DNS
-        </a>
-        <a href="https://www.cloudflare.com/en-gb/" target="_blank" rel="noreferrer">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cloudflare_Logo.svg/440px-Cloudflare_Logo.svg.png"
-            alt="cloudflare" width="80" height="60" />
-        </a>
-        <a href="https://www.nginx.com" target="_blank" rel="noreferrer">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg"
-            alt="nginx" width="60" height="60" />
-        </a>
-        <a href="https://www.caddy.com" target="_blank" rel="noreferrer">
-          <img src="https://caddyserver.com/resources/images/caddy-logo.svg" alt="caddy" width="60" height="60" />
-        </a>
-
-        <a href="https://aws.amazon.com" target="_blank" rel="noreferrer">
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-            alt="aws" width="60" height="60" />
-        </a>
-        <a href="https://aws.amazon.com" target="_blank" rel="noreferrer">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original-wordmark.svg"
-            alt="aws" width="60" height="60" />
-        </a>
-        <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg"
-            alt="docker" width="60" height="60" />
-        </a>
-        <a href="https://kubernetes.io" target="_blank" rel="noreferrer">
-          <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="60"
-            height="60" />
-        </a>
-        <a href="https://helm.sh/" target="_blank" rel="noreferrer">
-          <img src="https://helm.sh/img/helm.svg" alt="helm" width="60" height="60" />
-        </a>
-
-        <a href="https://mesos.apache.org" target="_blank" rel="noreferrer">
-          <img src="https://mesos.apache.org/assets/img/mesos_logo.png" alt="Mesos" width="60" height="60" />
-        </a>
-        <a href="https://www.jenkins.io" target="_blank" rel="noreferrer"> <img
-            src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="jenkins" width="60" height="60" />
-        </a>
-        <a href="https://mariadb.org/" target="_blank" rel="noreferrer">
-          <img src="https://www.vectorlogo.zone/logos/mariadb/mariadb-icon.svg" alt="mariadb" width="60" height="60" />
-        </a>
-        <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg"
-            alt="mysql" width="60" height="60" />
-        </a>
-        <a href="https://www.postgresql.org" target="_blank" rel="noreferrer">
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg"
-            alt="postgresql" width="60" height="60" />
-        </a>
-        <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer">
-          <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="60"
-            height="60" />
-        </a>
-
-        <a href="https://cassandra.apache.org/" target="_blank" rel="noreferrer"> <img
-            src="https://www.vectorlogo.zone/logos/apache_cassandra/apache_cassandra-icon.svg" alt="cassandra"
-            width="60" height="60" />
-        </a>
-        <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer">
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg"
-            alt="mongodb" width="60" height="60" />
-        </a>
-        <a href="https://www.elastic.co" target="_blank" rel="noreferrer"> <img
-            src="https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg" alt="elasticsearch" width="60"
-            height="60" />
-        </a>
-        <a href="https://lucene.apache.org/solr/" target="_blank" rel="noreferrer">
-          <img src="https://www.vectorlogo.zone/logos/apache_solr/apache_solr-icon.svg" alt="solr" width="60"
-            height="60" />
-        </a>
-        <a href="https://kafka.apache.org/" target="_blank" rel="noreferrer">
-          <img src="https://www.vectorlogo.zone/logos/apache_kafka/apache_kafka-icon.svg" alt="kafka" width="60"
-            height="60" />
-        </a>
-        <a href="https://www.rabbitmq.com" target="_blank" rel="noreferrer">
-          <img src="https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg" alt="rabbitMQ" width="60"
-            height="60" />
-        </a>
-        <a href="https://redis.io" target="_blank" rel="noreferrer">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg"
-            alt="redis" width="60" height="60" />
-        </a>
-        <a href="https://prometheus.io/" target="_blank" rel="noreferrer">
-          <img alt="prometheus"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original-wordmark.svg"
-            width="60" height="60" />
-        </a>
-        <a href="https://grafana.com" target="_blank" rel="noreferrer">
-          <img src="https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg" alt="grafana" width="60" height="60" />
-        </a>
-        <a href="https://www.elastic.co/kibana" target="_blank" rel="noreferrer">
-          <img src="https://www.vectorlogo.zone/logos/elasticco_kibana/elasticco_kibana-icon.svg" alt="kibana"
-            width="60" height="60" />
-        </a>
-        <a href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer"> <img
-            src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" alt="flask" width="60"
-            height="60" />
-        </a>
-
-        <a href="https://www.java.com" target="_blank" rel="noreferrer">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java"
-            width="60" height="60" />
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-            alt="javascript" width="60" height="60" />
-        </a>
-        <a href="https://jekyllrb.com/" target="_blank" rel="noreferrer">
-          <img src="https://www.vectorlogo.zone/logos/jekyllrb/jekyllrb-icon.svg" alt="jekyll" width="60" height="60" />
-        </a>
-        <a href="https://nodejs.org" target="_blank" rel="noreferrer">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
-            alt="nodejs" width="60" height="60" />
-        </a>
-
-        <a href="https://www.python.org" target="_blank" rel="noreferrer">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
-            alt="python" width="60" height="60" />
-        </a>
-        <a href="https://spring.io/" target="_blank" rel="noreferrer">
-          <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="spring" width="60" height="60" />
-        </a>
-        <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
-            alt="typescript" width="60" height="60" /> </a>
 
 
-        <a href="https://angular.io" target="_blank" rel="noreferrer">
-          <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="60" height="60" />
-        </a>
-        <a href="https://getbootstrap.com" target="_blank" rel="noreferrer">
-          <img
-            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg"
-            alt="bootstrap" width="60" height="60" />
-        </a>
-        <a href="https://postman.com" target="_blank" rel="noreferrer">
-          <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="60"
-            height="60" />
-        </a>
-        <br>
-      </div>
-    </div>
     <br>
     <div class="row">
       <div class="col-xxl-8 col-md-8">
@@ -261,7 +124,8 @@ Elasticsearch, MongoDB"
             <h5 class="card-title">Experience with Technologies</h5>
             <hr>
             <ul>
-              <li><a href="https://github.com/ContainerTalks" target="_blank">ContainerTalks</a> creator and maintainer</li>
+              <li><a href="https://github.com/ContainerTalks" target="_blank">ContainerTalks</a> creator and maintainer
+              </li>
               <li>Docker, DevOps, Docker Swarm, Kubernetes, Mesos, Continuous Delivery, Cloud Computing,
                 Architecture, and Best Practices,
                 Agile
@@ -438,7 +302,8 @@ Elasticsearch, MongoDB"
       <h2>I am a Natural Farmer</h2>
       <hr>
       <p>I am a natural farmer too, and a heirloom seed conservator</p>
-      <p> I’m working for climate change - doing natural farming, conserving heirloom seeds maintaining the seed purity for the next generation</p>
+      <p> I’m working for climate change - doing natural farming, conserving heirloom seeds maintaining the seed purity
+        for the next generation</p>
       <div class="embed-responsive embed-responsive-4by3">
         <iframe title="Software Engineer From Medak Turns Organic Farmer | V6 Life" class="embed-responsive-item"
           src="https://www.youtube.com/embed/7xHvWH_p6j0" allowfullscreen></iframe>
@@ -451,7 +316,8 @@ Elasticsearch, MongoDB"
 
   <div class="row">
     <div class="col-lg-12">
-      <p>Hoping you are enjoying my site, and you can get in touch with me by commenting on the blog on <a href="https://github.com/ContainerTalks" target="_blank">ContainerTalks</a> articles or
+      <p>Hoping you are enjoying my site, and you can get in touch with me by commenting on the blog on <a
+          href="https://github.com/ContainerTalks" target="_blank">ContainerTalks</a> articles or
         through
         the social platforms.</p>
     </div>

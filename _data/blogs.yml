@@ -1,0 +1,11 @@
+- title: "Elasticsearch remote re-indexing on play with docker"
+  description: "Play with docker to understand how the remote re-indexing works in elastic search."
+  link: "https://jinnabaalu.medium.com/elasticsearch-remote-reindexing-on-play-with-docker-18c0f0406e39"
+  image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*MEglK4Oy97cOgWUGzMBR_w.png"
+  tag: "Medium"
+
+- title: "Elasticsearch on Docker"
+  description: "Running Elasticsearch using Docker Compose"
+  link: "https://jinnabaalu.medium.com/elasticsearch-on-docker-b7854f116062"
+  image: "https://example.com/image2.jpg"
+  tag: "Medium"

@@ -2220,3 +2220,52 @@ a {
   color: #00ab6b;
   transition: all .2s;
 }
+
+.stacks .clip.img-circle {
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  border-radius: 500px;
+}
+
+.stacks .clip {
+  margin: 5px;
+  width: 60px;
+  height: 60px;
+  background-color: #dfdfdf;
+  border: 1px solid #fff;
+  color: #09486b;
+  float: left;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stacks a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.stacks img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.badge-info {
+  color: #fff;
+  background-color: #17a2b8;
+}
+
+.badge {
+  display: inline-block;
+  padding: .25em .4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+}
+
+
