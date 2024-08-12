@@ -2,114 +2,59 @@
 layout: default
 permalink: /
 canonical_url: "https://jinnabalu.com/"
-title: "jinnabalu | Home "
+title: "Jinna Baalu |  "
 image_url: assets/img/logo.png
-description: "Devops As Service, AWS Cost Optimization As Service | Site Reliability Engineer, Infrastructure Solution
-Architect, Infra Ops, DevOps, DevSecOps, SRE"
+description: "Infra Ops, DevOps, DevSecOps, SRE, AWS Cost Optimization, Dev(Sec)Ops Solution Architect, Infra Ops, DevOps, DevSecOps, SRE"
 date: 2023-01-05T10:15:00Z
 keywords: "DevOps, DevOps As Service, SRE, Elasticsearch, ELK Stack, Observability, Distributed Cluster of Cassandra,
 Elasticsearch, MongoDB"
 ---
 <main id="main" class="main">
   <div class="pagetitle">
-    <h1>Jinna Baalu</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item">Jinna Baalu</li>
       </ol>
     </nav>
   </div>
-  <br>
   <div class="row">
     <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-12">
-          <h2>Infrastructure Solution Architect
-          </h2>
-        </div>
-      </div>
+      <h4>Dev(Sec)Ops Solution Architect</h4>
       <hr>
-      <div class="row">
-        <div class="col-md-4">
-          <h2>
-            <a href="https://stackexchange.com/users/5468915">
-              <img src="https://stackexchange.com/users/flair/5468915.png" alt="Jinna Balu stackoverflow">
-            </a>
-          </h2>
-        </div>
-        <div class="col-md-8">
-          <h2>
-            <div class="iconslist">
-              <div class="row">
-                <div class="col-md-3 col-sm-3 col-lg-3">
-                  <a href="https://www.linkedin.com/in/jinnabaalu/" target="_blank">
-                    <div class="icon"> <i class="bi bi-linkedin"></i>
-
-                    </div>
-                  </a>
-                </div>
-                <div class="col-md-3 col-sm-3 col-lg-3">
-                  <a href="https://jinnabaalu.medium.com/" target="_blank">
-                    <div class="icon">
-                      <i class="ri-medium-line"></i>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-md-3 col-sm-3 col-lg-3">
-                  <a href="https://github.com/jinnabaalu" target="_blank">
-                    <div class="icon"> <i class="ri-github-fill"></i>
-
-                    </div>
-                  </a>
-                </div>
-                <div class="col-md-3 col-sm-3 col-lg-3">
-                  <a href="https://stackoverflow.com/users/4348824/jinna-balu" target="_blank">
-                    <div class="icon">
-                      <i class="bi bi-stack-overflow"></i>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </h2>
-        </div>
-        <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <img src="https://github-readme-stats.vercel.app/api?username=jinnabaalu&show_icons=true&theme=dark&locale=en"
+        alt="jinnabalu" />
+    </div>
+    <div class="col-md-3">
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=jinnabaalu&" alt="jinnabalu" />
+    </div>
+    <div class="col-md-6">
+      <a href="https://github.com/jinnabaalu" target="_blank">
+        <img
+          src="https://github-profile-trophy.vercel.app/?username=jinnabaalu&row=1&column=6&theme=matrix&margin-w=20&margin-h=40"
+          alt="trophy">
+      </a>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Hands On Experience</h4>
+      <div class="stacks">
+        {% for link in site.data.techstack.links %}
+        <a title="{{ link.alt }}" href="{{ link.href }}" target="_blank" rel="noreferrer" class="clip img-circle">
+          {% if link.img_src %}
+          <img src="{{ link.img_src }}" alt="{{ link.alt }}">
+          {% else %}
+          {{ link.text }}
+          {% endif %}
+        </a>
+        {% endfor %}
       </div>
-      <div class="row">
-        <div class="col-md-3">
-          <img src="https://github-readme-stats.vercel.app/api?username=jinnabaalu&show_icons=true&theme=dark&locale=en"
-            alt="jinnabalu" />
-        </div>
-        <div class="col-md-3">
-          <img src="https://github-readme-streak-stats.herokuapp.com/?user=jinnabaalu&" alt="jinnabalu" />
-        </div>
-        <div class="col-md-6">
-          <a href="https://github.com/jinnabaalu" target="_blank">
-            <img
-              src="https://github-profile-trophy.vercel.app/?username=jinnabaalu&row=1&column=6&theme=matrix&margin-w=20&margin-h=40"
-              alt="trophy">
-          </a>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-md-12">
-          <h4>Hands On Experience</h4>
-          <div class="stacks">
-            {% for link in site.data.techstack.links %}
-            <a title="{{ link.alt }}" href="{{ link.href }}" target="_blank" rel="noreferrer" class="clip img-circle">
-              {% if link.img_src %}
-              <img src="{{ link.img_src }}" alt="{{ link.alt }}">
-              {% else %}
-              {{ link.text }}
-              {% endif %}
-            </a>
-            {% endfor %}
-          </div>
-          <br>
-        </div>
-      </div>
+      <br>
     </div>
   </div>
 
