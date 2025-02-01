@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Create Indexes in elasticsearch"
+title:  "Create Indexes in elasticsearch and  frequently used commands"
 metadate: "hide"
 categories: [ NoSQL, Search Engine, Elasticsearch ]
 tags: [ Elasticsearch ]
@@ -11,7 +11,68 @@ image: "assets/img/elasticsearch.svg"
 3. Install Elasticsearch or [Run Elasticsearch container](https://github.com/JinnaBalu/elasticsearch/blob/master/2019-08-29-Elasticsearch-Single-Node-using-Docker-Compose.md)
 
 
-## Create the Indice
+## Frequently used commands
+
+- Check the status of the Elasticsearch
+
+- Check the health status of the Elasticsearch
+
+```bash
+curl -X GET "localhost:9200/_cat/health"
+```
+
+- Get the number of nodes of the Elasticsearch Cluster
+
+```bash
+curl -X GET "localhost:9200/_cat/nodes"
+```
+
+- Check with the shards with 
+
+```bash
+curl -X GET "localhost:9200/_cat/shards"
+```
+
+- Get list of indices
+
+```bash
+curl -X GET "localhost:9200/_cat/indices?v"
+```
+
+- Get list of indices with specific column, we want to the column index, which will list the index names
+
+```bash
+curl -X GET "localhost:9200/_cat/indices?v&h=index"
+```
+
+- Get the list of indices sort by column
+
+```bash
+curl -X GET "localhost:9200/_cat/indices?v&s=docs.count:desc"
+
+curl -X GET "localhost:9200/_cat/indices?v&s=docs.count:asc"
+
+curl -X GET "localhost:9200/_cat/indices?v&s=index"
+
+curl -X GET "localhost:9200/_cat/indices?v&s=docs.count:desc"
+
+curl -X GET "localhost:9200/_cat/indices?v&s=docs.count:desc"
+```
+
+- Why the health status of the Elasticsearch is `red`
+
+Number of nodes in the cluster was three so there was no extra node to create the replica, and restore the unassigned indexes, So the health was turning to red. Created the index with settings property and set the number_of_replicas as 0.
+
+```bash
+curl -XPUT 'localhost:9200/_settings' -H 'Content-Type: application/json' -d '
+{
+    "index" : {
+        "number_of_replicas" : 0
+    }
+}'
+```
+
+### Create the Indice
 
 - First, let's create a twitter user, and add some tweets
 
@@ -110,4 +171,57 @@ curl -X PUT "localhost:9200/school?pretty" -H 'Content-Type: application/json' -
     }
 }
 '
+```
+
+### Delete index
+
+```bash
+curl -X DELETE "localhost:9200/school?pretty"
+```
+
+### Get Index
+
+- Get the mappings and setting with the following
+
+```bash
+curl -X GET "localhost:9200/school?pretty"
+
+curl -X GET "localhost:9200/school/_mapping?pretty"
+
+curl -X GET "localhost:9200/school/_settings?pretty"
+
+```
+
+- Checks if an index exists
+
+```bash
+curl -I "localhost:9200/twitter?pretty"
+```
+
+- Get the count of Index
+
+```bash
+curl -I "localhost:9200/twitter?pretty"
+```
+
+- Update index settings API
+
+```bash
+curl -X PUT "localhost:9200/school/_settings?pretty" -H 'Content-Type: application/json' -d'
+{
+    "index" : {
+        "number_of_replicas" : 2
+    }
+}
+'
+```
+
+- Get the Statistics of the index
+
+```bash
+curl -X GET "localhost:9200/school/_stats?pretty"
+
+curl -X GET "localhost:9200/_stats?pretty"
+
+curl -X GET "localhost:9200/index1,index2/_stats?pretty"
 ```
