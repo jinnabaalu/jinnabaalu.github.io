@@ -5,8 +5,7 @@ categories: [ MongoDB, NoSQL ]
 image: assets/img/mongodb/1.png
 featured: false
 hidden: true
-githublink: https://github.com/JinnaBalu/docker-mongo
-githubreponame: docker-mongo
+githublink: https://github.com/jinnabaalu/infinite-containers/tree/main/mongo/single-node-rs
 docker: true
 ---
 

@@ -22,7 +22,7 @@ post_class: post-template
                 <div class="d-grid gap-2">
                     <button type="button" class="btn btn-primary mb-2">
                         <i class="ri-github-fill"></i>
-                        Repo : {{page.githubreponame}}
+                        Github Configuration
                     </button>
                 </div>
             </a>
@@ -132,16 +132,6 @@ post_class: post-template
                     {% endif %}
                     <div class="clearfix"></div>
                 </div>
-                <!-- End Categories -->
-                {% if page.comments != false %}
-                <div class="">
-                    <div id="comments" class="row justify-content-center mb-5">
-                        <div class="col-md-12">
-                            {% include disqus.html %}
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
             </div>
             <div class="col-md-4">
                 <section class="section">
