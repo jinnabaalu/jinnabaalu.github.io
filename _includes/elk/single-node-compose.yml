@@ -1,0 +1,31 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-wolfi:8.17.4
+    container_name: elasticsearch
+    environment:
+      - cluster.name=oio-es-cluster       # Name of your Elasticsearch cluster
+      - node.name=es-node                 # Logical name of the node
+      - discovery.type=single-node        # Single-node mode (no cluster discovery)
+      - bootstrap.memory_lock=true        # Prevent JVM memory from being swapped
+      - network.host=0.0.0.0              # Bind to all network interfaces
+      - xpack.license.self_generated.type=trial  # Enable trial X-Pack license
+      - xpack.security.enabled=false      # Disable security (auth, TLS)
+      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m" # Set JVM heap size to 1GB
+    ports: ['9200:9200']
+    volumes:
+      # Persists Elasticsearch data to a named volume es_data.
+      - 'es_data:/usr/share/elasticsearch/data'
+    # Checks if ES is up every 30s, times out in 10s, retries 5 times on failure.
+    healthcheck:
+      test: curl -s http://localhost:9200 >/dev/null || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 5
+volumes:
+  # Defines the named volume es_data used above.
+  es_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /Users/balu/Personal/profile-website/tmp/elasticsearch/data
+      o: bind

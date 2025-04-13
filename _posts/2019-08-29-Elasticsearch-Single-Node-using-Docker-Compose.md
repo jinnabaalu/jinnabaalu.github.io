@@ -1,71 +1,116 @@
 ---
-layout: post
+layout: blog
 title:  "Elasticsearch Single Node using Docker Compose"
-description: Deploying the elasticsearch and Kibana as docker containers 
-metadate: "hide"
+description: Deploying the elasticsearch as docker containers 
+metadata: "hide"
 categories: [ NoSQL, Search Engine, Elasticsearch ]
 tags: [ Elasticsearch ]
-image: "assets/img/elasticsearch.svg"
+image: "assets/img/elk/ElasticsearchSingleNode.svg"
 ---
 
 {% include docker-prerequisites.md %}
 
 ## Deploy Elasticsearch Single node with docker-compose
 
-![Elasticsarch Single Node on Docker](https://raw.githubusercontent.com/JinnaBalu/elasticsearch/master/img/elasticsearch.svg)
+Elasticsearch Single Node Instance Using Docker Compose. 
 
-Elasticsearch Single Node Instance and Kibana Using Docker Compose. Create the `docker-compose.yml` with the following
+Create the `docker-compose.yml` with the following
 
-```yaml
----
-version: '3.6'
-services:
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
-    container_name: elasticsearch
-    environment:
-      - cluster.name="es-data-cluster"
-      - node.name=es-node
-      - discovery.type=single-node
-      - bootstrap.memory_lock=true
-      - network.host=0.0.0.0
-      - transport.host=0.0.0.0
-      - discovery.zen.minimum_master_nodes=1
-      - xpack.license.self_generated.type=trial
-      - xpack.security.enabled=false
-      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
-      # - xpack.security.enabled='false'
-      # - xpack.monitoring.enabled='false'
-      # - xpack.watcher.enabled='false'
-      # - xpack.ml.enabled='false'
-      # - http.cors.enabled='true'
-      # - http.cors.allow-origin="*"
-      # - http.cors.allow-methods=OPTIONS, HEAD, GET, POST, PUT, DELETE
-      # - http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type, Content-Length
-      # - logger.level: debug
-    ports: ['9200:9200']
-    networks: ['stack']
-    volumes:
-      - 'es_data:/usr/share/elasticsearch/data'
-    healthcheck:
-      test: curl -s https://localhost:9200 >/dev/null; if [[ $$? == 52 ]]; then echo 0; else echo 1; fi
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      
-networks: {stack: {}}
-volumes:
-  es_data:
-```
+<pre> {% include elk/single-node-compose.yml %} </pre>
 
-
-[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/img/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/JinnaBalu/elasticsearch/master/single-node/docker-compose.yml)
-
-
-## Run 
+#### Run 
 
 ```bash
 docker-compose up -d
 ```
 
+#### Container Status
 
+```bash
+docker-compose ps -a
+
+docker container ls 
+
+docker ps -a
+```
+
+#### Check the APIs
+```bash
+# Get nodes
+curl -XGET 'localhost:9200/_cat/nodes?pretty'
+
+# Get health
+curl -XGET 'localhost:9200/_cat/health?pretty'
+
+# Cluster stats
+curl -XGET 'localhost:9200/_cluster/stats?human&pretty'
+
+# Node Stats
+curl -XGET 'localhost:9200/_nodes/stats?pretty'
+
+# A specific node stats:
+
+curl -XGET 'localhost:9200/_nodes/node-1/stats?pretty'
+
+# Index Level Stats:
+
+curl -XGET 'localhost:9200/_nodes/stats/indices?pretty'
+
+# Retrieve data on plugins or ingest:
+
+curl -XGET ‘localhost:9200/_nodes/plugins
+```
+
+#### CRUD Operation
+
+##### Create Index
+```bash
+curl -X PUT http://localhost:9200/ramayana_characters -H "Content-Type: application/json" -d '
+{
+  "mappings": {
+    "properties": {
+      "id": { "type": "keyword" },
+      "name": { "type": "text" },
+      "description": { "type": "text" }
+    }
+  }
+}'
+```
+
+##### Insert Document
+
+```bash
+curl -X POST http://localhost:9200/ramayana_characters/_doc -H "Content-Type: application/json" -d '
+{
+  "id": "uuid-1",
+  "name": "Rama",
+  "description": "Hero of the Ramayana, seventh avatar of Vishnu."
+}'
+```
+
+##### Select All
+
+```bash
+curl -X GET http://localhost:9200/ramayana_characters/_search?pretty
+```
+
+##### Select by ID
+```bash
+curl -X GET http://localhost:9200/ramayana_characters/_doc/[UUID]
+```
+
+##### Update Document
+```bash
+curl -X POST http://localhost:9200/ramayana_characters/_update/[UUID] -H "Content-Type: application/json" -d '
+{
+  "doc": {
+    "name": "Raama"
+  }
+}'
+```
+
+##### Delete Document
+
+```bash
+curl -X DELETE http://localhost:9200/ramayana_characters/_doc/[UUID]
+```
