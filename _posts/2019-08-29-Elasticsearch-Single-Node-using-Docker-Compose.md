@@ -3,6 +3,8 @@ layout: blog
 title:  "Elasticsearch Single Node using Docker Compose"
 description: Deploying the elasticsearch as docker containers 
 metadata: "hide"
+author: jinnabalu
+date: "2019-08-29"
 categories: [ NoSQL, Search Engine, Elasticsearch ]
 tags: [ Elasticsearch ]
 image: "assets/img/elk/ElasticsearchSingleNode.svg"
