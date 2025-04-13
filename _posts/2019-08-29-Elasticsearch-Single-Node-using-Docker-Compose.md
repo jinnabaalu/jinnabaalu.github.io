@@ -58,7 +58,7 @@ curl -XGET 'localhost:9200/_nodes/stats/indices?pretty'
 
 # Retrieve data on plugins or ingest:
 
-curl -XGET ‘localhost:9200/_nodes/plugins
+curl -XGET 'localhost:9200/_nodes/plugins'
 ```
 
 #### CRUD Operation
@@ -114,3 +114,7 @@ curl -X POST http://localhost:9200/ramayana_characters/_update/[UUID] -H "Conten
 ```bash
 curl -X DELETE http://localhost:9200/ramayana_characters/_doc/[UUID]
 ```
+
+## Conclusion
+
+With this setup, you can quickly spin up a single-node Elasticsearch and Kibana stack for development or learning purposes, and start exploring powerful search and analytics capabilities using RESTful APIs.
