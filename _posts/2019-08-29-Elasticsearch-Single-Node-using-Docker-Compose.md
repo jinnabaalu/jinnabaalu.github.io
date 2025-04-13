@@ -8,7 +8,7 @@ tags: [ Elasticsearch ]
 image: "assets/img/elk/ElasticsearchSingleNode.svg"
 ---
 
-{% include docker-prerequisites.md %}
+{% include container-prerequisites.md %}
 
 ## Deploy Elasticsearch Single node with docker-compose
 
