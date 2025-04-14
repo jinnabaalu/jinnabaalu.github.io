@@ -24,8 +24,9 @@ services:
 volumes:
   # Defines the named volume es_data used above.
   es_data:
-    driver: local
-    driver_opts:
-      type: none
-      device: /Users/balu/Personal/profile-website/tmp/elasticsearch/data
-      o: bind
+    # Custom volume
+    # driver: local
+    # driver_opts:
+    #   type: none
+    #   device: <LOCAL_CODE>
+    #   o: bind
