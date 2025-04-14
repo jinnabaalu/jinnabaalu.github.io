@@ -226,6 +226,17 @@ curl -X DELETE "http://localhost:9200/ramayana_characters/_doc/${DOC_ID}?pretty"
 }
 ```
 
+## Homework
+
+#### Deploy & Explore
+Run the Docker Compose setup and use curl commands to explore APIs (nodes, health, indices). This builds confidence.
+
+#### Create & Query
+Create a simple index, insert documents, and run basic queries (_search, get by ID). Understand JSON structure.
+
+#### Understand Mappings
+Compare behavior with and without mappings to grasp how Elasticsearch treats data.
+
 ## Conclusion
 
 With this setup, you can quickly spin up a single-node Elasticsearch and Kibana stack for development or learning purposes, and start exploring powerful search and analytics capabilities using RESTful APIs.
