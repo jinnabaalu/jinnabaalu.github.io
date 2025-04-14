@@ -28,5 +28,5 @@ volumes:
     # driver: local
     # driver_opts:
     #   type: none
-    #   device: <LOCAL_CODE>
+    #   device: <LOCAL_PATH>
     #   o: bind
