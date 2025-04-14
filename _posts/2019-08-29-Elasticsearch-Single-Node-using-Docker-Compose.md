@@ -1,7 +1,7 @@
 ---
 layout: blog
-title:  "Elasticsearch Single Node using Docker Compose"
-description: Deploying the elasticsearch as docker containers 
+title:  "Elasticsearch single node instance using Docker Compose"
+description: Deploying Elasticsearch as Docker containers
 metadata: "hide"
 categories: [ NoSQL, Search Engine, Elasticsearch ]
 tags: [ Elasticsearch ]
@@ -12,11 +12,11 @@ image: "assets/img/elk/ElasticsearchSingleNode.svg"
 
 ## Deploy Elasticsearch Single node with docker-compose
 
-Elasticsearch Single Node Instance Using Docker Compose. 
+Elasticsearch single node instance using Docker Compose
 
 Create the `docker-compose.yml` with the following
 
-<pre> {% include elk/single-node-compose.yml %} <pre>
+<pre> {% include elk/single-node-compose.yml %} </pre>
 
 #### Run 
 
@@ -52,7 +52,7 @@ curl -XGET 'localhost:9200/_nodes/stats?pretty'
 
 curl -XGET 'localhost:9200/_nodes/es-node/stats?pretty'
 
-# GET Indices, initally there are no custom indices
+# GET Indices, initially there are no custom indices
 
 curl -XGET 'localhost:9200/_cat/indices?pretty'
 
@@ -201,7 +201,7 @@ curl -X POST "http://localhost:9200/ramayana_characters/_update/${DOC_ID}?pretty
 }
 ```
 
-Try GET call again and see the updated value. 
+Try the GET call again to see the updated value.
 
 ##### Delete Document
 
@@ -236,6 +236,10 @@ Create a simple index, insert documents, and run basic queries (_search, get by 
 
 #### Understand Mappings
 Compare behavior with and without mappings to grasp how Elasticsearch treats data.
+
+#### Check the Cluster Health, it turns yellow
+
+Investigate the reason behind the yellow status of a cluster after creating the first index. Understand the concept of primary shards and replica shards.
 
 ## Conclusion
 
