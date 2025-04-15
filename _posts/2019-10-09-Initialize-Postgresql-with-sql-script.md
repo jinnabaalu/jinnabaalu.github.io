@@ -1,83 +1,62 @@
 ---
-layout: post
-title:  "Initialise Postgresql Container with init SQL script"
-metadate: "hide"
-categories: [ Database, PostgreSQL, SQL ]
-tags: [ PostgreSQL ]
-image: "assets/img/postgresql.svg"
-related_posts: 
-      - title: "Initialise Postgresql Container with docker-compose"
-        url: "https://platform-ops.tech/Run-Postgres-Container/"
-      - title: "Initialise Postgresql Container with init SQL script"
-        url: "https://platform-ops.tech/Initialize-Postgresql-with-sql-script/"
-      - title: "Basic command to run with Postgress Container"
-        url: "https://platform-ops.tech/Basic-Commands-in-postgress-container/"
+layout: blog
+title:  "PostgreSQL with Init Data using Docker Compose"
+description: Initialise PostgreSQL container with user, database, and seed data
+categories: [ Database, PostgreSQL ]
+tags: [ PostgreSQL, Docker ]
+image: "assets/img/postgres/PostgresInitData.svg"
 ---
 
-## Prerequisite
+{% include container-prerequisites.md %}
 
-1. Install [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-2. install [docker-compose](https://docs.docker.com/compose/install/)
+## Deploy PostgreSQL with Init Data using Docker Compose
 
-## Init SQL script with postgresql container
+Create the `docker-compose.yml` with the following:
 
-![](/assets/img/postgresql.svg)
+<pre> {% include postgres/init-data-compose.yml %} </pre>
 
-- Create a `docker-compose.yml` with the following
+Create the `init.sql` with the following content:
 
-```yml
----
-version: '3.6'
-services:
-  postgresql:
-    image: postgres:11.3
-    container_name: postgres
-    volumes:
-      # Uncomment below to maintain the peristant data
-      # - platops-data:/var/lib/postgresql/data/
-      # Uncomment bellow to intialize the container with data by creating the respective file
-      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-    environment:
-      - POSTGRES_USER=postgress
-      - POSTGRES_PASSWORD=postgress
-    ports: ['5432:5432']
-    networks: ['stack']
-    healthcheck:
-      test: curl -s https://localhost:5432 >/dev/null; if [[ $$? == 52 ]]; then echo 0; else echo 1; fi
-      interval: 30s
-      timeout: 10s
-      retries: 5
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
+<pre> {% include postgres/init.sql %} </pre>
 
-volumes:
-  platops-data:
-networks:
-  stack:
-
-```
-
-[![Try in PWD](https://cdn.rawgit.com/play-with-docker/stacks/cff22438/assets/img/button.png)](http://play-with-docker.com?stack=https://raw.githubusercontent.com/JinnaBalu/postgreSQL/master/postgres-with-init-user-and-db.yml)
-
-- Created a `init.sql` with the following
-
-```sql
-CREATE USER platops WITH PASSWORD 'platops';
-CREATE DATABASE platopsdb;
-GRANT ALL PRIVILEGES ON DATABASE platopsdb TO platops;
-```
-
-- RUN container with `docker-compose up -d`, this will start your container with initializing the database with the above scripts.
-
-### See that it's working
+#### Run
 
 ```bash
-docker logs -f postgres
-
-# OR
-
-docker logs postgres
+docker-compose up -d
 ```
+
+#### Verify
+```bash
+# Container status
+docker ps -a
+# Check the Data is pre initialised
+docker exec -it postgres bash
+psql -U vbv -d vbvdb
+SELECT * FROM employees;
+```
+
+**OUTPUT**
+```bash
+docker ps -a                                                                            ░▒▓ 2 ✘  01:48:36 am 
+CONTAINER ID  IMAGE                          COMMAND     CREATED         STATUS                   PORTS                   NAMES
+52c54521505e  docker.io/library/postgres:17  postgres    20 seconds ago  Up 21 seconds (healthy)  0.0.0.0:5432->5432/tcp  postgres
+
+~/jinnabalu.github.io/_i/postgres:/# docker exec -it postgres bash                                    ░▒▓ ✔  01:48:47 am 
+root@52c54521505e:/# psql -U vbv -d vbvdb
+psql (17.4 (Debian 17.4-1.pgdg120+2))
+Type "help" for help.
+
+vbvdb=> SELECT * FROM employees;
+ id | name  | position  |  salary
+----+-------+-----------+-----------
+  1 | Bhuvi | Manager   | 675000.00
+  2 | Vibhu | Developer | 555000.00
+  3 | Rudra | Analyst   | 460000.00
+(3 rows)
+```
+
+####  Activity log
+[https://gist.github.com/jinnabaalu/89bd8eeba3b8845cf337b85a807748f1](https://gist.github.com/jinnabaalu/89bd8eeba3b8845cf337b85a807748f1)
+
+## Conclusion
+Now that we’ve had hands-on experience initializing a PostgreSQL container with data, following the above steps, you’ve provisioned a container that automatically sets up a database, user, and seed data using a simple SQL script. This setup is perfect for local development, testing environments, and CI/CD pipelines where consistent and repeatable database states are essential.
