@@ -1,0 +1,13 @@
+title: "Elasticsearch Operations"
+components:
+  - title: "Postgresql Container with Docker Compose"
+    imageUrl: "/assets/img/postgres/PostgresContainer.svg"
+    description: "Run container with compose"
+    url: "/Run-Postgres-Container"
+  - title: "PostgreSQL with Init Data using Docker Compose"
+    imageUrl: "/assets/img/postgres/PostgresInitData.svg"
+    description: "Pre init with data along with runing the container using .sql file mount"
+    url: "/Initialize-Postgresql-with-sql-script"
+  - title: "Basic command to run with Postgress Container"
+    description: "Export and Import, How to exec into the container, How to access database"
+    url: "/Basic-Commands-in-postgress-container"

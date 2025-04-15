@@ -1,0 +1,28 @@
+<div class="card info-card">
+    <div class="card-body">
+        <h5 class="card-title">{{ site.data.elasticsearch-home-data.title }}</h5>
+        <hr>
+        {% for item in site.data.elasticsearch-home-data.components %}
+        <div class="d-flex">
+            <div class="card-icon rounded-circle d-flex justify-content-center">
+                {% if item.imageUrl %}
+                <img src="{{ item.imageUrl }}" alt="{{ item.title }}">
+                {% endif %}
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <h4>{{ item.title }}</h4>
+                    {% if item.description %}
+                    <span class="text-muted small pt-2 ps-1">{{ item.description }}</span>
+                    {% endif %}
+                </div>
+                <div class="col-md-2">
+                    <a href="{{item.url}}">Blog</a>
+                </div>
+            </div>
+        </div>
+        {% unless forloop.last %}
+        <hr>{% endunless %}
+        {% endfor %}
+    </div>
+</div>

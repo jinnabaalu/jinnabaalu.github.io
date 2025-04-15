@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<main id="main" class="main">
+    <div class="pagetitle">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">{{page.breadcrumb}}</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section dashboard">
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                {% include render-include.html file=page.include_home_page %}
+            </div>
+        </div>
+    </section>
+</main>
