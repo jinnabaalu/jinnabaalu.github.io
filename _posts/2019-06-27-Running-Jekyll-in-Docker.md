@@ -15,10 +15,7 @@ According to the official documentation og jekyll, Jekyll is a blog-aware, stati
 
 If you’re not familiar with these tools (ruby , gem, bundle, ….) then getting up and running can be time consuming. But if you are familiar with `docker run` command is the only pre requisite to make app up and running with the `jekyll/jekyll` docker image.
 
-##Prerequisites
-
-* docker
-* docker-compose
+{% include container-prerequisites.md %}
 
 ## Create the jekyll app
 

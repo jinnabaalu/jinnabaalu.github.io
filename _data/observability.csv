@@ -1,5 +1,0 @@
-tech_source,technology,route,image_url,title,description
-Observability,ELK,/elk,elasticsearch.svg,Elasticsearch Stack
-Observability,Prometheus Stack,/prometheus-stack,prometheus.svg,Prometheus Stack
-Observability,Grafana,/grafana,grafana.svg, Grafana
-observability,logstash

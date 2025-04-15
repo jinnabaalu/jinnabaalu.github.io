@@ -5,13 +5,6 @@ metadate: "hide"
 categories: [ Database, PostgreSQL, SQL ]
 tags: [ PostgreSQL ]
 image: "assets/img/postgresql.svg"
-related_posts: 
-      - title: "Initialise Postgresql Container with docker-compose"
-        url: "https://platform-ops.tech/Run-Postgres-Container/"
-      - title: "Initialise Postgresql Container with init SQL script"
-        url: "https://platform-ops.tech/Initialize-Postgresql-with-sql-script/"
-      - title: "Basic command to run with Postgress Container"
-        url: "https://platform-ops.tech/Basic-Commands-in-postgress-container/"
 ---
 
 ## Prerequisite

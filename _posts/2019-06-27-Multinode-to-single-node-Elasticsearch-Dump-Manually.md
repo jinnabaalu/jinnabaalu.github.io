@@ -19,7 +19,7 @@ node 3 : "http://node2:9300, http://node3:9200"
 ```
 As the shards getting distributed between nodes so no single node will have the complete data. When we manually copy and restore to single node instance there will be an unassigned shards of each node. Follow these steps to restore from multi node to single node.
 
-- Create the single node cluster using the `docker-compose` file
+- Create the single node cluster using the `docker-compose.yml` file
 
 ```yml
 cluster.name: jinnabalu_cluster

@@ -8,7 +8,7 @@ image: "assets/img/elasticsearch.svg"
 
 {% include docker-prerequisites.md %}
 
-## Deploy Elasticsearch + Kibana with docker-compose
+## Deploy Elasticsearch + Kibana with Docker Compose
 
 Elasticsearch Single Node Instance and Kibana Using Docker Compose. Create the `docker-compose.yml` with the following
 

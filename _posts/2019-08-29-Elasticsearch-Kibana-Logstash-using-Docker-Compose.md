@@ -8,7 +8,7 @@ image: "assets/img/elasticsearch.svg"
 
 {% include docker-prerequisites.md %}
 
-## Deploy Elasticsearch Single node with docker-compose
+## Deploy Elasticsearch Single node with Docker Compose
 The ELK Stack (Elasticsearch, Logstash and Kibana) can be installed on a variety of different operating systems and in various different setups. 
 
 
