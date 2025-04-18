@@ -16,7 +16,7 @@ Elasticsearch single node instance using Docker Compose
 
 Create the `docker-compose.yml` with the following
 
-{% include elk/single-node-compose.yml %} 
+<pre> {% include elk/single-node-compose.yml %} </pre>
 
 #### Run 
 
