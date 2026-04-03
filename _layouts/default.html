@@ -10,8 +10,71 @@ layout: compress
   <title>{{ page.title }}</title>
   <meta name="description" content="{{ page.description }}" />
   <meta name="keywords" content="{{ page.keywords }}" />
+  {% if page.canonical_url %}
   <link rel="canonical" href="{{ page.canonical_url }}" />
+  {% else %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  {% endif %}
   {% include seo.html %}
+
+  <!-- Structured Data for Google Sitelinks -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Jinna Balu",
+    "url": "https://jinnabalu.com/",
+    "description": "Dev(Sec)Ops Solution Architect — Infrastructure, DevSecOps, Observability, and Open Source Products",
+    "sameAs": [
+      "https://github.com/jinnabaalu",
+      "https://jinnabaalu.medium.com/",
+      "https://www.linkedin.com/in/jinnabaalu/",
+      "https://stackoverflow.com/users/4348824/jinna-baalu"
+    ],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://jinnabalu.com/tech-timeline?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jinna Balu",
+    "url": "https://jinnabalu.com/",
+    "image": "https://jinnabalu.com/assets/img/jinnabalu.jpeg",
+    "jobTitle": "Dev(Sec)Ops Solution Architect",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "VibhuviOiO"
+    },
+    "sameAs": [
+      "https://github.com/jinnabaalu",
+      "https://jinnabaalu.medium.com/",
+      "https://www.linkedin.com/in/jinnabaalu/",
+      "https://stackoverflow.com/users/4348824/jinna-baalu"
+    ]
+  }
+  </script>
+  {% if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VibhuviOiO",
+    "url": "https://jinnabalu.com/vibhuvioio",
+    "logo": "https://jinnabalu.com/assets/img/logo.png",
+    "founder": {
+      "@type": "Person",
+      "name": "Jinna Balu"
+    },
+    "description": "DevOps consulting, DevSecOps, AWS cost optimization, and open-source infrastructure products."
+  }
+  </script>
+  {% endif %}
+  {% include breadcrumb-json-ld.html %}
   <!-- Favicons -->
   <link href="assets/img/logo.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
