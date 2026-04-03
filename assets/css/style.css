@@ -2470,7 +2470,7 @@ a {
   padding: 28px 24px;
   height: 100%;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  border-left: 4px solid #4154f1;
+  border: 1px solid rgba(0,0,0,0.06);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -2479,9 +2479,9 @@ a {
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
-.expertise-card.border-green  { border-left-color: #00ab6b; }
-.expertise-card.border-orange { border-left-color: #f0a500; }
-.expertise-card.border-purple { border-left-color: #7c3aed; }
+.expertise-card.border-green,
+.expertise-card.border-orange,
+.expertise-card.border-purple { /* no colored border */ }
 
 .expertise-card h5 {
   font-size: 1.1rem;
@@ -2513,18 +2513,18 @@ a {
 }
 
 .expertise-card.border-green .tech-tags .badge {
-  background: #e6f7f0;
-  color: #00ab6b;
+  background: #f0f2ff;
+  color: #4154f1;
 }
 
 .expertise-card.border-orange .tech-tags .badge {
-  background: #fff8e6;
-  color: #c48800;
+  background: #f0f2ff;
+  color: #4154f1;
 }
 
 .expertise-card.border-purple .tech-tags .badge {
-  background: #f3eeff;
-  color: #7c3aed;
+  background: #f0f2ff;
+  color: #4154f1;
 }
 
 /* --- Featured Work --- */
