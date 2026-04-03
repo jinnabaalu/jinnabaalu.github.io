@@ -46,7 +46,7 @@ layout: compress
 <body>
   <div class="sharethis-sticky-share-buttons"></div>
   {% include navbar.html %}
-  <div class="p-5">
+  <div class="{% unless page.full_width %}p-5{% endunless %}">
     {{ content }}
   </div>
   {% include footer.html %}
