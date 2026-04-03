@@ -3,7 +3,7 @@ layout: post
 title:  "Open JDK docker container commands shell access to the container"
 author: jinna
 categories: [ Devops ]
-image: assets/img/Logo.png
+image: assets/img/logo.png
 ---
 
 # Run commands in open jdk docker container

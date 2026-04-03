@@ -10,11 +10,11 @@ ansible,ansible-grid.png,/ansible-grid
 cassandra,cassandra-grid.png,/cassandragrid
 elasticsearch,elasticsearch-grid.png,/elasticsearch-grid
 opensearch,opensearch-grid.png,/opensearch-grid
-redis,redis-grid.png./redis-grid
-postgres,postgres-grid.png./postgres-grid
-mongodb,mongodb-grid.png./mongodb-grid
-mysql,mysql-grid.png./mysql-grid
-mariadb,mariadb-grid.png./mariadb-grid
+redis,redis-grid.png,/redis-grid
+postgres,postgres-grid.png,/postgres-grid
+mongodb,mongodb-grid.png,/mongodb-grid
+mysql,mysql-grid.png,/mysql-grid
+mariadb,mariadb-grid.png,/mariadb-grid
 monitoring,monitoring-grid.png,/monitoring-grid
 kafka,kafka-grid.png,/kafka-grid
 nifi,nifi-grid.png,/nifi-grid
