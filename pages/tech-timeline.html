@@ -18,34 +18,71 @@ keywords: "DevOps, Docker, Elasticsearch, Cassandra, Git, Kafka, PostgreSQL, Mon
   </div>
   <br>
 
-  <!-- Full chronological timeline grouped by year -->
-  {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-  {% for year in posts_by_year %}
-  <div class="row mt-4">
-    <div class="col-md-12">
-      <h3>{{ year.name }}</h3>
-      <hr>
-      <div class="table-responsive">
-        <table class="table table-hover">
-          <tbody>
-            {% for post in year.items %}
-            {% if post.title and post.title != "" %}
-            <tr>
-              <td style="width:110px"><small>{{ post.date | date: "%b %d" }}</small></td>
-              <td><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></td>
-              <td>
-                {% for cat in post.categories %}
-                <span class="badge bg-secondary">{{ cat }}</span>
-                {% endfor %}
-              </td>
-            </tr>
-            {% endif %}
-            {% endfor %}
+  <!-- Build a merged + sorted timeline from posts and external articles -->
+  {% assign all_items = "" | split: "" %}
+
+  {% for post in site.posts %}
+    {% if post.title and post.title != "" %}
+      {% capture item %}{{ post.date | date: "%Y-%m-%d" }}||{{ post.title }}||{{ site.baseurl }}{{ post.url }}||{{ post.categories | join: "," }}||blog{% endcapture %}
+      {% assign all_items = all_items | push: item %}
+    {% endif %}
+  {% endfor %}
+
+  {% for ext in site.data.external-articles %}
+    {% capture item %}{{ ext.date }}||{{ ext.title }}||{{ ext.url }}||{{ ext.categories | join: "," }}||{{ ext.source }}{% endcapture %}
+    {% assign all_items = all_items | push: item %}
+  {% endfor %}
+
+  {% assign all_items = all_items | sort | reverse %}
+
+  {% assign current_year = "" %}
+  {% for item in all_items %}
+    {% assign parts = item | split: "||" %}
+    {% assign item_date = parts[0] %}
+    {% assign item_title = parts[1] %}
+    {% assign item_url = parts[2] %}
+    {% assign item_cats = parts[3] | split: "," %}
+    {% assign item_source = parts[4] %}
+    {% assign item_year = item_date | slice: 0, 4 %}
+
+    {% if item_year != current_year %}
+      {% if current_year != "" %}
           </tbody>
         </table>
       </div>
     </div>
   </div>
+      {% endif %}
+      {% assign current_year = item_year %}
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h3>{{ current_year }}</h3>
+      <hr>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <tbody>
+    {% endif %}
+            <tr>
+              <td style="width:110px"><small>{{ item_date | date: "%b %d" }}</small></td>
+              <td>
+                {% if item_source == "blog" %}
+                <a href="{{ item_url }}">{{ item_title }}</a>
+                {% else %}
+                <a href="{{ item_url }}" target="_blank">{{ item_title }}</a>
+                <span class="badge bg-info">{{ item_source }}</span>
+                {% endif %}
+              </td>
+              <td>
+                {% for cat in item_cats %}
+                <span class="badge bg-secondary">{{ cat }}</span>
+                {% endfor %}
+              </td>
+            </tr>
   {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
 </main>

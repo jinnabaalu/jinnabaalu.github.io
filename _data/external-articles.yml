@@ -1,0 +1,262 @@
+# External articles published on Medium, Dev Genius, etc.
+# These appear in the Tech Timeline as links (no local content duplication)
+#
+# Add entries with: date, title, url, source, categories
+
+- date: 2017-11-14
+  title: "Dockerizing a Node.js web application"
+  url: "https://jinnabaalu.medium.com/dockerizing-a-node-js-web-application-f335342ef91e"
+  source: Medium
+  categories: [Docker, NodeJs]
+
+- date: 2017-11-14
+  title: "Dangling or Unused Images in Docker"
+  url: "https://jinnabaalu.medium.com/docker-frequently-used-commands-on-images-b812d76a4b8e"
+  source: Medium
+  categories: [Docker]
+
+- date: 2017-11-14
+  title: "Universal Docker Tips: How to Use Docker the Right Way"
+  url: "https://jinnabaalu.medium.com/hacks-for-docker-548f8ac55e02"
+  source: Medium
+  categories: [Docker]
+
+- date: 2017-12-14
+  title: "Docker Swarm in 5min"
+  url: "https://jinnabaalu.medium.com/docker-swarm-in-5min-fedcfe07ede"
+  source: Medium
+  categories: [Docker, Swarm]
+
+- date: 2018-04-07
+  title: "Wordpress app dockerization"
+  url: "https://jinnabaalu.medium.com/wordpress-app-dockerization-10b0491d131c"
+  source: Medium
+  categories: [Docker, Wordpress]
+
+- date: 2018-04-14
+  title: "Git Cheat Sheet"
+  url: "https://jinnabaalu.medium.com/git-cheat-sheet-136d4f4db0f9"
+  source: Medium
+  categories: [Git]
+
+- date: 2018-10-10
+  title: "Install the latest Docker"
+  url: "https://jinnabaalu.medium.com/install-the-latest-docker-facc6c1bfc1a"
+  source: Medium
+  categories: [Docker]
+
+- date: 2019-01-01
+  title: "GoDaddy Domain with GitHub Pages"
+  url: "https://jinnabaalu.medium.com/godaddy-domain-with-github-pages-62aed906d4ef"
+  source: Medium
+  categories: [GitHub, DNS]
+
+- date: 2019-02-20
+  title: "Kubernetes Basics"
+  url: "https://jinnabaalu.medium.com/kubernetes-basics-7a9a2436c617"
+  source: Medium
+  categories: [Kubernetes]
+
+- date: 2019-02-20
+  title: "Create a file in bash using EOF"
+  url: "https://jinnabaalu.medium.com/create-a-file-in-bash-using-eof-af5af33c0d1f"
+  source: Medium
+  categories: [Linux, Bash]
+
+- date: 2019-02-22
+  title: "Create an Amazon EKS Cluster"
+  url: "https://jinnabaalu.medium.com/create-a-amezon-eks-cluster-using-the-amezon-eks-5f8f8c56d238"
+  source: Medium
+  categories: [AWS, EKS, Kubernetes]
+
+- date: 2019-02-22
+  title: "Kafka cluster on Amazon EKS Cluster"
+  url: "https://jinnabaalu.medium.com/kafka-cluster-on-amezon-eks-cluster-5850d67ae723"
+  source: Medium
+  categories: [Kafka, AWS, EKS]
+
+- date: 2019-02-25
+  title: "Run Postgres on Docker"
+  url: "https://jinnabaalu.medium.com/run-postgres-on-docker-8e249f3c23dd"
+  source: Medium
+  categories: [PostgreSQL, Docker]
+
+- date: 2019-02-25
+  title: "IAM in AWS"
+  url: "https://jinnabaalu.medium.com/iam-in-aws-da1356ef33ea"
+  source: Medium
+  categories: [AWS, IAM]
+
+- date: 2019-02-26
+  title: "Elasticsearch on Docker"
+  url: "https://jinnabaalu.medium.com/elasticsearch-on-docker-b7854f116062"
+  source: Medium
+  categories: [Elasticsearch, Docker]
+
+- date: 2019-03-05
+  title: "Building a Startup or a Team"
+  url: "https://jinnabaalu.medium.com/building-a-startup-or-a-team-ce1576096275"
+  source: Medium
+  categories: [Leadership]
+
+- date: 2019-03-05
+  title: "Who is my guru?"
+  url: "https://jinnabaalu.medium.com/who-is-my-guru-b25eea17cc7"
+  source: Medium
+  categories: [Personal]
+
+- date: 2019-03-16
+  title: "Play with Docker | Docker Swarm"
+  url: "https://jinnabaalu.medium.com/play-with-docker-docker-swarm-80a77d64371f"
+  source: Medium
+  categories: [Docker, Swarm]
+
+- date: 2020-03-02
+  title: "Kafka Single Node Container"
+  url: "https://jinnabaalu.medium.com/kafka-single-node-container-91db6ac1c1f3"
+  source: Medium
+  categories: [Kafka, Docker]
+
+- date: 2020-03-03
+  title: "Elasticsearch remote reindexing on Play with Docker"
+  url: "https://jinnabaalu.medium.com/elasticsearch-remote-reindexing-on-play-with-docker-18c0f0406e39"
+  source: Medium
+  categories: [Elasticsearch, Docker]
+
+- date: 2020-03-23
+  title: "Warning in Logstash"
+  url: "https://jinnabaalu.medium.com/warning-in-logstash-e7bd76db1054"
+  source: Medium
+  categories: [Logstash, ELK]
+
+- date: 2020-04-24
+  title: "Scaling Down an Elasticsearch Cluster"
+  url: "https://jinnabaalu.medium.com/scaling-down-an-elasticsearch-cluster-da92d5c64c97"
+  source: Medium
+  categories: [Elasticsearch]
+
+- date: 2020-06-09
+  title: "Create the Python Microservice with pyms"
+  url: "https://jinnabaalu.medium.com/create-the-python-microservice-with-pyms-d46248187d74"
+  source: Medium
+  categories: [Python, Microservices]
+
+- date: 2020-06-17
+  title: "Is Git a must-have skill?"
+  url: "https://jinnabaalu.medium.com/is-git-a-must-have-skill-5f72ac8c5212"
+  source: Medium
+  categories: [Git]
+
+- date: 2020-06-17
+  title: "Git vs Github/Bitbucket/Gitlab"
+  url: "https://jinnabaalu.medium.com/git-vs-github-bitbucket-gitlab-1e4c064789a0"
+  source: Medium
+  categories: [Git]
+
+- date: 2020-08-09
+  title: "Simulate Cassandra Scenarios"
+  url: "https://jinnabaalu.medium.com/simulate-cassandra-scenarios-a4fc7bf4aa39"
+  source: Medium
+  categories: [Cassandra]
+
+- date: 2020-08-09
+  title: "Clean Code Collection"
+  url: "https://jinnabaalu.medium.com/clean-code-collection-e13212bb104"
+  source: Medium
+  categories: [Clean Code]
+
+- date: 2020-11-02
+  title: "Elasticsearch Disk Space is too low"
+  url: "https://jinnabaalu.medium.com/elasticsearch-disk-space-is-too-low-2b7049a13272"
+  source: Medium
+  categories: [Elasticsearch]
+
+- date: 2020-12-26
+  title: "Docker Volumes — Persistence"
+  url: "https://jinnabaalu.medium.com/docker-volumes-persistence-913427f52315"
+  source: Medium
+  categories: [Docker]
+
+- date: 2022-03-20
+  title: "Identify the Active Controller In Kafka"
+  url: "https://jinnabaalu.medium.com/identify-the-active-controller-in-kafka-cd43ab039367"
+  source: Medium
+  categories: [Kafka]
+
+- date: 2022-03-20
+  title: "Healthy Kafka Cluster — Zero Under Replicated Partition"
+  url: "https://jinnabaalu.medium.com/healthy-kafka-cluster-zero-under-replicated-partition-37409486fc4c"
+  source: Medium
+  categories: [Kafka]
+
+- date: 2022-05-22
+  title: "How to reduce AWS EBS cost by 20%"
+  url: "https://jinnabaalu.medium.com/how-to-reduce-aws-ebs-cost-by-20-991d904461b3"
+  source: Medium
+  categories: [AWS]
+
+- date: 2022-06-19
+  title: "Caddy HTTP to HTTPS Redirections"
+  url: "https://jinnabaalu.medium.com/caddy-http-to-https-redirections-7321bdce0aa8"
+  source: Medium
+  categories: [Caddy]
+
+- date: 2023-12-14
+  title: "Running Verdaccio a Self Hosted Private NPM with Docker"
+  url: "https://jinnabaalu.medium.com/running-verdaccio-a-self-hosted-private-npm-with-docker-8506953ac4a5"
+  source: Medium
+  categories: [Docker, NPM]
+
+- date: 2024-08-13
+  title: "Skip the Kafka Installation: Use Docker to Run Kafka Commands Instantly"
+  url: "https://blog.devgenius.io/skip-the-kafka-installation-use-docker-to-run-kafka-commands-instantly-d9f9e8fbf79b"
+  source: Dev Genius
+  categories: [Kafka, Docker]
+
+- date: 2024-08-15
+  title: "Installing Ansible on macOS: Controlling Remote macOS and Raspberry Pi"
+  url: "https://jinnabaalu.medium.com/installing-ansible-on-macos-controlling-remote-macos-and-raspberry-pi-390a2ab2f9db"
+  source: Medium
+  categories: [Ansible, macOS]
+
+- date: 2024-09-01
+  title: "Setting up K8s Local Cluster"
+  url: "https://jinnabaalu.medium.com/setting-up-k8s-local-cluster-b50152c9556e"
+  source: Medium
+  categories: [Kubernetes, Docker]
+
+- date: 2024-10-04
+  title: "Initialise postgres container with data"
+  url: "https://jinnabaalu.medium.com/initialise-postgres-container-with-data-d6aeef722b47"
+  source: Medium
+  categories: [PostgreSQL, Docker]
+
+- date: 2024-12-19
+  title: "Cloudflare: Migrating Load Balancing Configuration Between Accounts"
+  url: "https://jinnabaalu.medium.com/cloudflare-%EF%B8%8F-migrating-load-balancing-configuration-between-accounts-65ae40b2515d"
+  source: Medium
+  categories: [Cloudflare]
+
+- date: 2025-01-01
+  title: "Cassandra Operations: Setup, Maintenance, and Optimisation"
+  url: "https://jinnabaalu.medium.com/cassandra-operations-06105dde6d22"
+  source: Medium
+  categories: [Cassandra]
+
+- date: 2025-01-01
+  title: "Running Single Node Cassandra Container"
+  url: "https://jinnabaalu.medium.com/running-single-node-cassandra-container-d983e0273258"
+  source: Medium
+  categories: [Cassandra, Docker]
+
+- date: 2025-01-01
+  title: "Accessing and Interacting with Cassandra Containers via CQL"
+  url: "https://jinnabaalu.medium.com/accessing-and-interacting-with-cassandra-containers-via-cql-3c56e5a84631"
+  source: Medium
+  categories: [Cassandra, Docker]
+
+- date: 2025-12-23
+  title: "Built a Modern Web UI for Docker Registry with Trivy — Now Open Source!"
+  url: "https://jinnabaalu.medium.com/built-a-modern-web-ui-for-docker-registry-with-trivy-in-build-now-open-source-5a4777e371b2"
+  source: Medium
+  categories: [Docker, Open Source]

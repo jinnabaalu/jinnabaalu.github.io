@@ -16,6 +16,7 @@ body {
   font-family: "Open Sans", sans-serif;
   background: #f6f9ff;
   color: #444444;
+  overflow-x: hidden;
 }
 
 a {
@@ -2227,6 +2228,12 @@ a {
   border-radius: 500px;
 }
 
+.stacks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
 .stacks .clip {
   margin: 5px;
   width: 60px;
@@ -2234,9 +2241,8 @@ a {
   background-color: #dfdfdf;
   border: 1px solid #fff;
   color: #09486b;
-  float: left;
   text-align: center;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 }
@@ -2266,6 +2272,369 @@ a {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: .25rem;
+}
+
+/* ============================================================
+   PROFILE REDESIGN — Custom Styles
+   ============================================================ */
+
+/* --- Hero Section --- */
+.hero-section {
+  background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 50%, #0d2137 100%);
+  color: #fff;
+  padding: 80px 0 60px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(65,84,241,0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(0,171,107,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-section .container { position: relative; z-index: 1; }
+
+.hero-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,0.2);
+  object-fit: cover;
+}
+
+.hero-section h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 20px 0 8px;
+  color: #fff;
+}
+
+.hero-section .tagline {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.hero-social a {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.4rem;
+  margin: 0 10px;
+  transition: color 0.2s;
+}
+
+.hero-social a:hover { color: #fff; }
+
+/* --- Stats Bar --- */
+.stats-bar {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 28px 16px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 8px 12px;
+}
+
+.stat-item .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #012970;
+  line-height: 1;
+}
+
+.stat-item .stat-label {
+  font-size: 0.82rem;
+  color: #6c757d;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- Section Styling --- */
+.profile-section {
+  padding: 50px 0 30px;
+}
+
+.profile-section .section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #012970;
+  margin-bottom: 8px;
+}
+
+.profile-section .section-subtitle {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+/* --- Expertise Cards --- */
+.expertise-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  height: 100%;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-left: 4px solid #4154f1;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.expertise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.expertise-card.border-green  { border-left-color: #00ab6b; }
+.expertise-card.border-orange { border-left-color: #f0a500; }
+.expertise-card.border-purple { border-left-color: #7c3aed; }
+
+.expertise-card h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #012970;
+  margin-bottom: 6px;
+}
+
+.expertise-card .expertise-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.expertise-card .tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.expertise-card .tech-tags .badge {
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #f0f2ff;
+  color: #4154f1;
+}
+
+.expertise-card.border-green .tech-tags .badge {
+  background: #e6f7f0;
+  color: #00ab6b;
+}
+
+.expertise-card.border-orange .tech-tags .badge {
+  background: #fff8e6;
+  color: #c48800;
+}
+
+.expertise-card.border-purple .tech-tags .badge {
+  background: #f3eeff;
+  color: #7c3aed;
+}
+
+/* --- Featured Work --- */
+.featured-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  height: 100%;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.featured-card .featured-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.featured-card h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #012970;
+}
+
+.featured-card p {
+  color: #6c757d;
+  font-size: 0.9rem;
+  flex-grow: 1;
+}
+
+.featured-card .featured-link {
+  margin-top: auto;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* --- Services (VibhuviOiO) --- */
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  height: 100%;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.service-card .service-icon {
+  font-size: 2.5rem;
+  color: #4154f1;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.service-card h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #012970;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* --- Latest Articles --- */
+.article-row {
+  padding: 14px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.article-row:last-child { border-bottom: none; }
+
+.article-row .article-date {
+  font-size: 0.8rem;
+  color: #6c757d;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.article-row a {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* --- CTA Section --- */
+.cta-section {
+  background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  margin: 40px 0 20px;
+  clear: both;
+}
+
+.cta-section h3 {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.cta-section p {
+  color: rgba(255,255,255,0.7);
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+
+.btn-cta {
+  background: #4154f1;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  transition: background 0.2s;
+}
+
+.btn-cta:hover {
+  background: #3041d4;
+  color: #fff;
+}
+
+.btn-cta-outline {
+  background: transparent;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: all 0.2s;
+}
+
+.btn-cta-outline:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* --- Product Cards --- */
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  height: 100%;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.product-card h5 {
+  font-weight: 700;
+  color: #012970;
+  font-size: 1.05rem;
+}
+
+.product-card p {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.product-card .badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .hero-section { padding: 50px 0 40px; }
+  .hero-section h1 { font-size: 1.8rem; }
+  .stat-item .stat-number { font-size: 1.5rem; }
+  .stats-bar { margin-top: -24px; }
 }
 
 
