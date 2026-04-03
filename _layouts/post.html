@@ -4,6 +4,31 @@ disqus: false
 archive: false
 post_class: post-template
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title | escape }}",
+  "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}",
+  "author": {
+    "@type": "Person",
+    "name": "Jinna Balu",
+    "url": "https://jinnabalu.com/about"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Jinna Balu"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jinnabalu.com{{ page.url }}"
+  }{% if page.image %},
+  "image": "{% if page.image contains '://' %}{{ page.image }}{% else %}https://jinnabalu.com/{{ page.image }}{% endif %}"
+  {% endif %}
+}
+</script>
 <main id="main" class="main container">
     <div class="row">
         <div class="col-md-8">

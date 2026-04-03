@@ -1,0 +1,22 @@
+{% if page.url != "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://jinnabalu.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title }}",
+      "item": "{% if page.canonical_url %}{{ page.canonical_url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}"
+    }
+  ]
+}
+</script>
+{% endif %}
