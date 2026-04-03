@@ -56,7 +56,7 @@ High level life cycle of the data from the time it is written from a cassandra c
 
 # Testing Cassandra Durability
 
-- Create a [single node cluster](https://platform-ops.tech/Cassandra-Single-Node-Cluster-As-A-Container/)
+- Create a [single node cluster]({{ site.baseurl }}/Cassandra-Single-Node-Cluster-As-A-Container)
 - Let us put cassandra's durability to test with a real world ecommerce use case.
 - Let us assume we have a keyspace that manages user cart or orders and given a scenario of node failure let us put cassandra's durability to test.
 

@@ -22,7 +22,7 @@ For ensuring there is no single point of failure, **replication factor must be t
 
 SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.
 
-![Replication Strategy - SimpleStrategy](https://platform-ops.tech/assets/img/replication_strategy_simple_strategy.png)
+![Replication Strategy - SimpleStrategy](/assets/img/replication_strategy_simple_strategy.png)
 
 **NetworkTopologyStrategy**
 
@@ -32,4 +32,4 @@ In NetworkTopologyStrategy, replicas are set for each data center separately. Ne
 
 This strategy tries to place replicas on different racks in the same data center. This is due to the reason that sometimes failure or problem can occur in the rack. Then replicas on other nodes can provide data.
 
-![Replication Strategy - NetworkTopologyStrategy](./replication_strategy_network_topology_strategy.png)
+![Replication Strategy - NetworkTopologyStrategy](/assets/img/replication_strategy_network_topology_strategy.png)

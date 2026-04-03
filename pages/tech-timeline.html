@@ -1,0 +1,51 @@
+---
+layout: default
+title: "Tech Timeline"
+permalink: /tech-timeline
+canonical_url: "https://jinnabalu.com/tech-timeline"
+description: "All blog posts organized by technology and timeline - Git, Docker, Elasticsearch, Cassandra, Kafka, PostgreSQL, MongoDB, Kubernetes, Jenkins, and more"
+keywords: "DevOps, Docker, Elasticsearch, Cassandra, Git, Kafka, PostgreSQL, MongoDB, Kubernetes, Jenkins"
+---
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>Tech Timeline</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item">Tech Timeline</li>
+      </ol>
+    </nav>
+  </div>
+  <br>
+
+  <!-- Full chronological timeline grouped by year -->
+  {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in posts_by_year %}
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h3>{{ year.name }}</h3>
+      <hr>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <tbody>
+            {% for post in year.items %}
+            {% if post.title and post.title != "" %}
+            <tr>
+              <td style="width:110px"><small>{{ post.date | date: "%b %d" }}</small></td>
+              <td><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></td>
+              <td>
+                {% for cat in post.categories %}
+                <span class="badge bg-secondary">{{ cat }}</span>
+                {% endfor %}
+              </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+</main>

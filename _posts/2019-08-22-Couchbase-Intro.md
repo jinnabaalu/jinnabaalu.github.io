@@ -28,5 +28,5 @@ Couchbase is normally a CP type system meaning it provides [Consistency](https:/
 
 Now the question, how do we run Couchbase as a container, Following are the Articles related to the containerisation of couchbase.
 
-1. [Run Single Node Couchbase Container]({{ site.baseurl }}/Single-Node-Couchbase-Container/)
+1. [Run Single Node Couchbase Container]({{ site.baseurl }}/Single-Node-Couchbase-Container)
 
