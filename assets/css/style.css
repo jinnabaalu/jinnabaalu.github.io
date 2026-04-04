@@ -2625,6 +2625,258 @@ a {
   font-size: 0.95rem;
 }
 
+/* --- Stack Overflow --- */
+.so-summary-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  height: 100%;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.so-summary-card h5,
+.so-summary-card h6 {
+  color: #012970;
+  font-weight: 700;
+}
+
+.gh-summary-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  height: 100%;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.gh-summary-card h5 {
+  color: #012970;
+  font-weight: 700;
+}
+
+.gh-summary-text {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.gh-account-links {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.gh-account-link {
+  align-items: center;
+  background: #f7f9fc;
+  border-radius: 10px;
+  color: #012970;
+  display: flex;
+  font-size: 0.9rem;
+  font-weight: 600;
+  justify-content: space-between;
+  padding: 12px 14px;
+}
+
+.gh-account-link span {
+  color: #6c757d;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.so-summary-text {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.so-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.so-metrics-single {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.so-metric-box {
+  background: #f7f9fc;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.so-metric-value {
+  display: block;
+  color: #012970;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.so-metric-label {
+  display: block;
+  color: #6c757d;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.so-tag-list,
+.so-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.so-tag-list {
+  margin-top: 16px;
+}
+
+.so-tag-pill,
+.so-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.so-tag-pill {
+  background: #fff3e6;
+  color: #b35a00;
+}
+
+.so-meta-pill {
+  background: #f3f6fa;
+  color: #526277;
+}
+
+.so-accepted-pill {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.so-footnote {
+  color: #8b97a8;
+  font-size: 0.8rem;
+  margin-top: 16px;
+}
+
+.so-answer-list {
+  height: 100%;
+}
+
+.gh-repo-list {
+  height: 100%;
+}
+
+.gh-repo-row {
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+}
+
+.gh-repo-row:last-child {
+  border-bottom: none;
+}
+
+.gh-repo-head {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.gh-repo-title {
+  color: #012970;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.gh-repo-description {
+  color: #6c757d;
+  font-size: 0.92rem;
+  margin: 8px 0 10px;
+}
+
+.gh-star-pill {
+  align-items: center;
+  background: #24292f;
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 700;
+  gap: 6px;
+  line-height: 1;
+  min-width: 58px;
+  padding: 6px 11px;
+  text-align: center;
+}
+
+.so-answer-row {
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.so-answer-row:last-child {
+  border-bottom: none;
+}
+
+.so-answer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.so-answer-title {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #012970;
+}
+
+.so-score-pill {
+  background: #f48024;
+  color: #fff;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 44px;
+  text-align: center;
+}
+
+.so-answer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 0.88rem;
+}
+
+.so-answer-links span {
+  color: #9aa6b2;
+}
+
+@media (max-width: 767px) {
+  .gh-repo-head,
+  .so-answer-head {
+    flex-direction: column;
+  }
+
+  .gh-star-pill,
+  .so-score-pill {
+    align-self: flex-start;
+  }
+
+  .so-metrics,
+  .so-metrics-single {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* --- CTA Section --- */
 .cta-section {
   background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%);

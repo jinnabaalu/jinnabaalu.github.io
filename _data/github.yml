@@ -1,0 +1,76 @@
+summary:
+  total_count: 51
+  total_stars: 142
+  personal_count: 39
+  personal_stars: 82
+  organization_count: 12
+  organization_stars: 60
+  personal_url: "https://github.com/jinnabaalu"
+  organization_url: "https://github.com/orgs/VibhuviOiO"
+  last_updated: "2026-04-04"
+
+featured_repositories:
+  - name: infinite-containers
+    owner: VibhuviOiO
+    source: Organization
+    url: "https://github.com/VibhuviOiO/infinite-containers"
+    description: "Various docker-compose files used on development and production infrastructure."
+    stars: 44
+    language: "Go Template"
+    updated: "2026-02-23"
+  - name: GitCheatSheet
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/GitCheatSheet"
+    description: "Git cheat sheet with practical commands, workflows, and version control references."
+    stars: 42
+    language: "Documentation"
+    updated: "2025-11-06"
+  - name: docker-registry-ui
+    owner: VibhuviOiO
+    source: Organization
+    url: "https://github.com/VibhuviOiO/docker-registry-ui"
+    description: "Modern web UI for Docker Registry with container image visibility and security workflows."
+    stars: 9
+    language: JavaScript
+    updated: "2026-04-02"
+  - name: caddy-operations
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/caddy-operations"
+    description: "Caddy deployment patterns and operational use cases for production web infrastructure."
+    stars: 8
+    language: HTML
+    updated: "2025-10-14"
+  - name: openldap-docker
+    owner: VibhuviOiO
+    source: Organization
+    url: "https://github.com/VibhuviOiO/openldap-docker"
+    description: "OpenLDAP tutorial and deployment stack for container-based identity infrastructure."
+    stars: 4
+    language: Shell
+    updated: "2026-03-08"
+  - name: jekyll-seed
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/jekyll-seed"
+    description: "Jekyll seed project with static site conventions and practical starting defaults."
+    stars: 3
+    language: HTML
+    updated: "2025-08-13"
+  - name: jinnabaalu.github.io
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/jinnabaalu.github.io"
+    description: "Personal profile website and long-form technical writing archive."
+    stars: 3
+    language: HTML
+    updated: "2026-04-03"
+  - name: verdaccio-docker-compose
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/verdaccio-docker-compose"
+    description: "Local npm package registry setup using Verdaccio and Docker Compose."
+    stars: 3
+    language: "Container Config"
+    updated: "2025-02-13"
