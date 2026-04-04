@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jinna Balu | DevOps Solution Architect | SRE Lead</title>
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Open Sans", sans-serif; color: #444444; line-height: 1.6; background: #f6f9ff; overflow-x: hidden; }
+  h1, h2, h3, h4, h5, h6 { font-family: "Nunito", sans-serif; }
+  a { color: #2702a6; text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
+  a:hover { color: #012970; }
+  strong { font-weight: 700; }
+
+  .container { max-width: 1200px; width: 92%; margin: 0 auto; padding: 30px 0 30px; }
+
+  .cv-header { display: flex; align-items: center; gap: 20px; padding-bottom: 14px; border-bottom: 2px solid #012970; }
+  .cv-avatar { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #012970; flex-shrink: 0; order: 2; }
+  .cv-intro { flex: 1; min-width: 0; order: 1; }
+  .cv-name { font-size: 2.4rem; color: #012970; margin: 0 0 2px; font-weight: 800; line-height: 1.2; }
+  .cv-title { font-size: 1.15rem; color: #2702a6; font-weight: 600; margin: 0 0 8px; letter-spacing: 0.02em; }
+
+  .cv-contact { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; font-size: 0.92rem; color: #52607a; margin-bottom: 0; }
+  .cv-contact span { display: inline-flex; align-items: center; gap: 5px; }
+  .cv-contact .cv-contact-group { display: inline-flex; align-items: center; gap: 14px; }
+  .cv-contact svg { color: #2702a6; flex-shrink: 0; }
+
+  .cv-recognition { display: flex; align-items: center; gap: 8px; padding: 12px 0; border-bottom: 2px solid #012970; font-size: 0.92rem; color: #52607a; }
+  .cv-recognition svg { color: #d4a017; flex-shrink: 0; }
+  .cv-recognition strong { color: #012970; }
+
+  .cv-body { display: grid; grid-template-columns: minmax(0, 1fr) 32%; gap: 36px; padding-top: 28px; }
+  .cv-sidebar { order: 2; min-width: 0; }
+  .cv-main { order: 1; min-width: 0; }
+
+  .cv-sidebar .cv-block + .cv-block { margin-top: 30px; padding-top: 24px; border-top: 1px solid rgba(1,41,112,0.1); }
+  .cv-sidebar h3.cv-subheading { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: #012970; margin: 14px 0 4px; font-weight: 700; }
+  .cv-sidebar h3.cv-subheading:first-of-type { margin-top: 0; }
+  .cv-sidebar p { font-size: 0.88rem; color: #52607a; line-height: 1.7; margin: 0; }
+
+  .cv-edu-item { margin-bottom: 12px; }
+  .cv-edu-item strong { display: block; color: #012970; font-size: 0.92rem; }
+  .cv-edu-item p { margin: 2px 0; }
+
+  .cv-plain-list { list-style: none; padding: 0; margin: 0; }
+  .cv-plain-list li { font-size: 0.9rem; color: #52607a; padding: 3px 0; }
+
+  .cv-muted { color: #7c8aa5; font-size: 0.85rem; }
+
+  .cv-block + .cv-block { margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(1,41,112,0.1); }
+
+  .cv-heading { font-size: 1.2rem; color: #012970; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; margin: 0 0 14px; padding-bottom: 8px; border-bottom: 2px solid #2702a6; display: inline-block; }
+  .cv-sidebar .cv-heading { font-size: 1rem; margin-bottom: 12px; }
+
+  .cv-main > .cv-block > p { font-size: 0.95rem; color: #3a4a5e; line-height: 1.85; margin: 0; }
+
+  .cv-bars { display: grid; gap: 10px; }
+  .cv-bar-item { display: flex; align-items: center; gap: 14px; }
+  .cv-bar-label { width: 120px; flex-shrink: 0; font-size: 0.82rem; color: #012970; font-weight: 600; }
+  .cv-bar-track { flex: 1; height: 8px; background: #e8ecf4; border-radius: 4px; overflow: hidden; }
+  .cv-bar-fill { display: block; height: 100%; background: linear-gradient(90deg, #2702a6 0%, #1f0185 100%); border-radius: 4px; }
+
+  .cv-role { margin-bottom: 28px; }
+  .cv-role:last-child { margin-bottom: 0; }
+  .cv-role-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 8px; }
+  .cv-role-head h3 { font-size: 1.05rem; color: #012970; margin: 0; font-weight: 700; }
+  .cv-date { font-size: 0.85rem; color: #2702a6; font-weight: 600; white-space: nowrap; }
+  .cv-role ul { margin: 0; padding-left: 18px; }
+  .cv-role li { font-size: 0.9rem; color: #3a4a5e; line-height: 1.75; margin-bottom: 4px; }
+
+  .cv-projects { margin-top: 18px; padding-top: 14px; border-top: 1px dashed rgba(1,41,112,0.12); }
+  .cv-projects h4 { font-size: 0.95rem; color: #012970; margin: 16px 0 4px; font-weight: 700; }
+  .cv-projects h4:first-child { margin-top: 0; }
+  .cv-projects p { font-size: 0.88rem; color: #3a4a5e; line-height: 1.7; margin: 0 0 4px; }
+  .cv-tech { font-size: 0.82rem; color: #7c8aa5; font-style: italic; }
+
+  /* Full-width section for last role */
+  .cv-full-width { margin-top: 28px; padding-top: 0; border-top: none; }
+
+  @page { size: A4; margin: 12mm 14mm; }
+
+  @media print {
+    body { font-size: 10px; background: #fff; }
+    .container { width: 100%; max-width: 100%; padding: 0; }
+    .cv-body { gap: 24px; }
+    .cv-header { gap: 20px; }
+    .cv-avatar { width: 110px; height: 110px; }
+    .cv-name { font-size: 1.6rem; }
+    .cv-role { margin-bottom: 18px; }
+    .cv-block + .cv-block { margin-top: 20px; padding-top: 18px; }
+    .cv-sidebar .cv-block + .cv-block { margin-top: 18px; padding-top: 14px; }
+    a { color: #2702a6; text-decoration: none; }
+  }
+
+  @media (max-width: 991px) {
+    .cv-body { grid-template-columns: 1fr; gap: 30px; }
+    .cv-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 30px; }
+    .cv-sidebar .cv-block + .cv-block { margin-top: 0; padding-top: 0; border-top: none; }
+  }
+
+  @media (max-width: 768px) {
+    .cv-header { flex-direction: column; text-align: center; gap: 20px; }
+    .cv-avatar { order: -1; width: 140px; height: 140px; }
+    .cv-contact { justify-content: center; }
+    .cv-recognition { justify-content: center; text-align: center; }
+    .cv-name { font-size: 1.8rem; }
+    .cv-body { grid-template-columns: 1fr; gap: 30px; }
+    .cv-sidebar { grid-template-columns: 1fr; }
+    .cv-role-head { flex-direction: column; gap: 4px; }
+    .cv-bar-label { width: 120px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="cv-header">
+    <div class="cv-intro">
+      <h1 class="cv-name">Jinna Balu</h1>
+      <p class="cv-title">DevOps Solution Architect &bull; SRE Lead</p>
+      <div class="cv-contact">
+        <!-- Row 1 -->
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Hyderabad, India
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <a href="https://jinnabalu.com" target="_blank">jinnabalu.com</a>
+        </span>
+        <!-- Row 2 -->
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:jinna.baalu@gmail.com">jinna.baalu@gmail.com</a>
+        </span>
+        <span class="cv-contact-group">
+          <a href="https://github.com/jinnabaalu" target="_blank" style="display:inline-flex;align-items:center;gap:5px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/jinnabaalu/" target="_blank" style="display:inline-flex;align-items:center;gap:5px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </span>
+      </div>
+    </div>
+    <img src="../img/profile.jpg" alt="Jinna Balu" class="cv-avatar">
+  </div>
+
+  <!-- RECOGNITION -->
+  <div class="cv-recognition">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+    <strong>Value Ambassador Award</strong> &mdash; @ Wisestep, 2020 &bull; Platform Engineering Role
+  </div>
+
+  <!-- TWO-COLUMN BODY -->
+  <div class="cv-body">
+
+    <!-- SIDEBAR -->
+    <aside class="cv-sidebar">
+
+      <div class="cv-block">
+        <h2 class="cv-heading">Responsibilities</h2>
+        <div class="cv-bars">
+          <div class="cv-bar-item"><span class="cv-bar-label">Platform Engg</span><span class="cv-bar-track"><span class="cv-bar-fill" style="width:80%"></span></span></div>
+          <div class="cv-bar-item"><span class="cv-bar-label">DevOps</span><span class="cv-bar-track"><span class="cv-bar-fill" style="width:80%"></span></span></div>
+          <div class="cv-bar-item"><span class="cv-bar-label">DevSecOps</span><span class="cv-bar-track"><span class="cv-bar-fill" style="width:80%"></span></span></div>
+          <div class="cv-bar-item"><span class="cv-bar-label">Cloud</span><span class="cv-bar-track"><span class="cv-bar-fill" style="width:50%"></span></span></div>
+          <div class="cv-bar-item"><span class="cv-bar-label">SRE Practices</span><span class="cv-bar-track"><span class="cv-bar-fill" style="width:50%"></span></span></div>
+          <div class="cv-bar-item"><span class="cv-bar-label">Developer</span><span class="cv-bar-track"><span class="cv-bar-fill" style="width:60%"></span></span></div>
+          <div class="cv-bar-item"><span class="cv-bar-label">Team Management</span><span class="cv-bar-track"><span class="cv-bar-fill" style="width:30%"></span></span></div>
+          <div class="cv-bar-item"><span class="cv-bar-label">System Design</span><span class="cv-bar-track"><span class="cv-bar-fill" style="width:40%"></span></span></div>
+        </div>
+      </div>
+
+      <div class="cv-block">
+        <h2 class="cv-heading">Skills</h2>
+
+        <h3 class="cv-subheading">Cloud Services</h3>
+        <p>AWS, Azure, Digital Ocean, IAM, S3, EKS, ECS, EC2, SES, AKS, AGIC, Audit Manager, Security Hub, Config, GuardDuty, Capacity Planning</p>
+
+        <h3 class="cv-subheading">Containerisation</h3>
+        <p>Docker, Podman, Docker Swarm, Kubernetes, DC/OS, Mesos, Marathon, Helm</p>
+
+        <h3 class="cv-subheading">CI/CD &amp; Automation</h3>
+        <p>Jenkins, Bitbucket Pipelines, Remote Runners, GitLab, GitHub Actions, Ansible, Monorepo, Polyrepo</p>
+
+        <h3 class="cv-subheading">Security &amp; Compliance</h3>
+        <p>SOC2, GDPR, PCI DSS, SonarQube, SAST, DAST, Snyk, Trivy, Gitleaks, VAPT, Arachni, SPF, DKIM, DMARC</p>
+
+        <h3 class="cv-subheading">DNS &amp; Load Balancing</h3>
+        <p>Caddy, NGINX, ALB, ELB, Cloudflare, HAProxy, Keepalived, VRRP</p>
+
+        <h3 class="cv-subheading">Monitoring &amp; Observability</h3>
+        <p>ELK, Prometheus, Grafana, Beats, Logstash, Datadog, Uptime Kuma</p>
+
+        <h3 class="cv-subheading">Data Platforms</h3>
+        <p>PostgreSQL, Cassandra, Elasticsearch, MongoDB, Redis, Kafka, Kafka Connect, RabbitMQ, Solr, Apache Nifi, Airflow</p>
+
+        <h3 class="cv-subheading">Languages &amp; Frameworks</h3>
+        <p>Java, Go, C#, Python, Spring Boot, FastAPI, React, Tailwind CSS, shadcn/ui, ASP.NET MVC, AngularJS</p>
+
+        <h3 class="cv-subheading">Scaffolding &amp; Tools</h3>
+        <p>JHipster, Jekyll, Hugo, Yeoman</p>
+
+        <h3 class="cv-subheading">Version Control</h3>
+        <p>Git, Monorepo, Polyrepo, GitHub, GitLab, Bitbucket</p>
+
+        <h3 class="cv-subheading">Operating Systems</h3>
+        <p>Ubuntu, Mac, Windows</p>
+
+        <h3 class="cv-subheading">Project Management</h3>
+        <p>Kanban, Scrum, Jira, Trello, Pivotal Tracker</p>
+
+        <h3 class="cv-subheading">AI-Assisted Development</h3>
+        <p>Amazon Q, Claude, GitHub Copilot</p>
+      </div>
+
+      <div class="cv-block">
+        <h2 class="cv-heading">Education</h2>
+        <div class="cv-edu-item">
+          <strong>MCA</strong>
+          <p>JNTU Hyderabad, 2010 - 2013</p>
+          <span class="cv-muted">CGPA 7.5 / 10</span>
+        </div>
+        <div class="cv-edu-item">
+          <strong>BSc, Computer Science</strong>
+          <p>Osmania University, 2007 - 2010</p>
+          <span class="cv-muted">CGPA 6.5 / 10</span>
+        </div>
+      </div>
+
+      <div class="cv-block">
+        <h2 class="cv-heading">Volunteer</h2>
+        <ul class="cv-plain-list">
+          <li>Gramabharati</li>
+          <li>Gramavikas</li>
+          <li>Ekalavya Foundation</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="cv-main">
+
+      <!-- PERSONAL PROFILE -->
+      <section class="cv-block">
+        <h2 class="cv-heading">Personal Profile</h2>
+        <p>
+          Hands-on DevOps Solution Architect and SRE Lead with 12+ years of experience in cloud infrastructure, distributed systems, and DevSecOps. Skilled in building resilient, observable platforms and collaborating across time zones to support high-performing global engineering teams.
+        </p>
+      </section>
+
+      <!-- WORK EXPERIENCE -->
+      <section class="cv-block">
+        <h2 class="cv-heading">Work Experience</h2>
+
+        <article class="cv-role">
+          <div class="cv-role-head">
+            <h3>SRE Lead &bull; DevSecOps Architect</h3>
+            <span class="cv-date">Aug 2022 &ndash; Present</span>
+          </div>
+          <ul>
+            <li>Managed <strong>12+ data centers</strong>, each hosting multiple distributed clusters of <strong>Kafka</strong>, <strong>Cassandra</strong>, <strong>MongoDB</strong>, <strong>Solr</strong>, and <strong>ZooKeeper</strong>.</li>
+            <li>Modernized legacy single points of failure into highly available, fault-tolerant services across data centers.</li>
+            <li>Implemented container orchestration using <strong>DC/OS</strong> (Mesos/Marathon) and <strong>Kubernetes</strong>; led migration of Marathon workloads to Kubernetes using <strong>Helm</strong> charts.</li>
+            <li>Configured data center–level high availability using <strong>HAProxy</strong> with <strong>VRRP</strong> and <strong>Keepalived</strong>.</li>
+            <li>Enabled global traffic steering using <strong>Cloudflare Load Balancer</strong>; migrated traffic management from Oracle Dyn to <strong>Cloudflare</strong>.</li>
+            <li>Designed and implemented centralized logging using <strong>Elasticsearch</strong>, <strong>Logstash</strong>, <strong>Kafka</strong>, and custom agents, processing peak volumes of <strong>~21M logs</strong>; improved query performance and maintained stable operations with zero reporting issues over one year.</li>
+            <li>Implemented infrastructure and uptime monitoring using <strong>Datadog</strong> (with agents) and <strong>Uptime Kuma</strong>.</li>
+            <li>Automated infrastructure and service deployments using <strong>Ansible</strong>, supporting containerized (<strong>Docker</strong>/<strong>Podman</strong>) and host-based installations.</li>
+            <li>Reduced deployment time and operational overhead by adopting modern automation practices and standardized deployment workflows.</li>
+            <li>Introduced <strong>Bitbucket Pipelines</strong> with self-hosted <strong>Remote Runners</strong> for new applications; planning CI/CD migration from <strong>Jenkins</strong> to Bitbucket Pipelines.</li>
+            <li>Strengthened DNS monitoring and domain security by implementing controls for subdomain takeover prevention and configuring <strong>SPF</strong>, <strong>DKIM</strong>, and <strong>DMARC</strong> policies.</li>
+            <li>Executed zero-downtime <strong>LDAP</strong> migrations (BDB → HDB → MDB), ensuring data integrity and service continuity.</li>
+            <li>Worked with <strong>Azure</strong> to build new cloud-based infrastructure; migrated containerized workloads to <strong>AKS</strong>, implemented <strong>Application Gateway (AGIC v2)</strong>, and deployed <strong>Datadog</strong> and logging agents as <strong>DaemonSets</strong>.</li>
+            <li>Developed internal tools with AI-enabled capabilities like <strong>Amazon Q</strong>, <strong>Claude</strong>, and <strong>GitHub Copilot</strong>, including:
+              <ul>
+                <li><strong>Spring Boot</strong>–based full-stack status page with <strong>React</strong> (<strong>shadcn/ui</strong>, <strong>Tailwind CSS</strong>) frontend and <strong>Go</strong>-based agents for global latency and synthetic monitoring.</li>
+                <li>Custom <strong>LDAP Manager UI</strong> built with <strong>React</strong>, <strong>shadcn/ui</strong>, and <strong>Tailwind CSS</strong> for simplified directory management and operations.</li>
+              </ul>
+            </li>
+            <li>Led platform upgrades and continuous improvements to tooling and infrastructure, reducing operational toil and improving system reliability.</li>
+          </ul>
+        </article>
+
+        <article class="cv-role">
+          <div class="cv-role-head">
+            <h3>DevOps Manager</h3>
+            <span class="cv-date">Apr 2021 &ndash; Jul 2022</span>
+          </div>
+          <ul>
+            <li>Application orchestration with Docker Swarm, ECS, and Kubernetes.</li>
+            <li>Distributed cluster management of Cassandra, Elasticsearch, Kafka, and Redis as containers.</li>
+            <li>DevSecOps with AWS Audit Manager, Security Hub, Config—maintaining SOC2 compliance.</li>
+            <li>Observability driven development with Elasticsearch, Beats, Logstash, and Prometheus Stack.</li>
+            <li>Team management with Kanban and Scrum; maintaining error budgets, toil budgets, and overhead in control.</li>
+            <li>Created and maintained dev centre for internal domain access to all internal services securely.</li>
+            <li>NGINX/Caddy for load balancing and reverse proxy.</li>
+            <li>CI/CD with Git and Jenkins; deployment and infra automation with Ansible.</li>
+            <li>Scaling Elasticsearch without downtime and data loss; optional disaster recovery with minimal RTO and RPO.</li>
+            <li>Managing infrastructure automation, reliability, security, change management, and capacity planning with a team of 2.</li>
+          </ul>
+        </article>
+
+        <article class="cv-role">
+          <div class="cv-role-head">
+            <h3>Platform Engineer <span class="cv-muted">&mdash; Wisestep</span></h3>
+            <span class="cv-date">Apr 2019 &ndash; Mar 2021</span>
+          </div>
+          <ul>
+            <li>Building microservices using Spring Boot, containerizing with Docker, deploying to AWS Cloud.</li>
+            <li>Application deployment automation with CI/CD and smooth change management.</li>
+            <li>Application and infrastructure monitoring.</li>
+            <li>Distributed cluster management for NoSQL databases with consistency.</li>
+            <li>High availability, consistency, security, and reliability.</li>
+            <li>Application performance monitoring and real-time user monitoring.</li>
+            <li>AWS solutions for security practices and cost optimizations.</li>
+            <li>Vulnerability assessment with open source tools.</li>
+            <li>DevOps for release management; building features and handling feature lifecycles for Wisestep, a recruitment platform.</li>
+          </ul>
+        </article>
+
+      </section>
+    </div>
+  </div>
+
+  <!-- FULL-WIDTH: Last Role -->
+  <section class="cv-block cv-full-width">
+    <article class="cv-role">
+      <div class="cv-role-head">
+        <h3>Product Development Engineer <span class="cv-muted">&mdash; Wisestep</span></h3>
+        <span class="cv-date">Sep 2014 &ndash; Mar 2019</span>
+      </div>
+      <ul>
+        <li>Developed and supported custom-built applications; participated in product development.</li>
+        <li>Analysis of requirements for user interface, application enhancements, new functionality, and backend processes.</li>
+        <li>Code and modify applications using programming tools; document code adhering to naming conventions.</li>
+        <li>Created reports and worked on technical and analytical aspects of report creation.</li>
+        <li>Participated in unit, system, and user acceptance testing.</li>
+        <li>Deployed data science for real-time anomaly detection and diagnosis of high-impact problems using ML.</li>
+      </ul>
+
+      <div class="cv-projects">
+        <div>
+          <h4>Project #3: Wisestep ATS <span class="cv-muted">&mdash; Full Stack Engineer</span></h4>
+          <p>Crowdsourcing talent from expert global recruitment partners with split fee management. Orchestrated dev and prod environments for microservice applications using JHipster. Application security with OWASP/VAPT using Arachni. Containerization with Docker Swarm, CI/CD with Jenkins and Ansible. AWS parameter store and IAM security. Elasticsearch, Cassandra, and Kafka cluster management.</p>
+          <p class="cv-tech">HTML, CSS, AngularJS, Bootstrap, Thymeleaf, Java, Spring MVC, Elasticsearch, Cassandra, Microservices, JHipster, AWS, Docker, Docker Swarm, NGINX, VAPT</p>
+        </div>
+
+        <div>
+          <h4>Project #2: Wisestep Pulse <span class="cv-muted">&mdash; Full Stack Developer</span></h4>
+          <p>Recruitment Process Management, Timesheet, Contract, and Payments Management application. Worked with individual responsibility from frontend to database&mdash;HTML, CSS, Bootstrap, AngularJS, REST APIs with Code First Approach, MSSQL indexing for performance.</p>
+          <p class="cv-tech">ASP.NET MVC, Entity Framework, C#, SQL Server 2008, AngularJS, HTML, CSS, Bootstrap, Gulp, Solr</p>
+        </div>
+
+        <div>
+          <h4>Project #1: MIS <span class="cv-muted">&mdash; .NET Developer</span></h4>
+          <p>Application for managing Recruiters, Jobs, and Candidates Processing for closing client positions. One-man army for building features from coding, designing, and release management. Monitoring, troubleshooting, and deploying to IIS.</p>
+          <p class="cv-tech">ASP.NET Web Application, ASP.NET MVC, Entity Framework, C#, AngularJS, HTML, CSS, Bootstrap, Gulp, Solr, SQL Server 2008</p>
+        </div>
+      </div>
+    </article>
+  </section>
+  </div>
+
+</div>
+</body>
+</html>
