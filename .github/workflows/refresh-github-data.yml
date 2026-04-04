@@ -1,0 +1,46 @@
+name: Refresh External Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * 0"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-external-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Refresh GitHub snapshot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/sync_github_data.py
+
+      - name: Refresh Stack Overflow snapshot
+        run: python scripts/sync_stackoverflow_data.py
+
+      - name: Refresh Medium snapshot
+        run: python scripts/sync_medium_data.py
+
+      - name: Commit refreshed snapshots
+        run: |
+          if git diff --quiet -- _data/github.yml _data/stackoverflow.yml _data/external-articles.yml medium-rss.xml; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/github.yml _data/stackoverflow.yml _data/external-articles.yml medium-rss.xml
+          git commit -m "chore: refresh external snapshots"
+          git push

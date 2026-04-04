@@ -14,7 +14,7 @@ featured_repositories:
     owner: VibhuviOiO
     source: Organization
     url: "https://github.com/VibhuviOiO/infinite-containers"
-    description: "Various docker-compose files used on development and production infrastructure."
+    description: "Various docker-compose files I use on dev or production"
     stars: 44
     language: "Go Template"
     updated: "2026-02-23"
@@ -22,55 +22,191 @@ featured_repositories:
     owner: jinnabaalu
     source: Personal
     url: "https://github.com/jinnabaalu/GitCheatSheet"
-    description: "Git cheat sheet with practical commands, workflows, and version control references."
+    description: "Git Cheat Sheet"
     stars: 42
-    language: "Documentation"
+    language: "Unknown"
     updated: "2025-11-06"
   - name: docker-registry-ui
     owner: VibhuviOiO
     source: Organization
     url: "https://github.com/VibhuviOiO/docker-registry-ui"
-    description: "Modern web UI for Docker Registry with container image visibility and security workflows."
+    description: "No description provided."
     stars: 9
-    language: JavaScript
+    language: "JavaScript"
     updated: "2026-04-02"
   - name: caddy-operations
     owner: jinnabaalu
     source: Personal
     url: "https://github.com/jinnabaalu/caddy-operations"
-    description: "Caddy deployment patterns and operational use cases for production web infrastructure."
+    description: "All about Caddy use-cases"
     stars: 8
-    language: HTML
+    language: "HTML"
     updated: "2025-10-14"
   - name: openldap-docker
     owner: VibhuviOiO
     source: Organization
     url: "https://github.com/VibhuviOiO/openldap-docker"
-    description: "OpenLDAP tutorial and deployment stack for container-based identity infrastructure."
+    description: "OpenLDAP Tutorial"
     stars: 4
-    language: Shell
+    language: "Shell"
     updated: "2026-03-08"
   - name: jekyll-seed
     owner: jinnabaalu
     source: Personal
     url: "https://github.com/jinnabaalu/jekyll-seed"
-    description: "Jekyll seed project with static site conventions and practical starting defaults."
+    description: "Jekyll Seed Project with Static application best practices"
     stars: 3
-    language: HTML
+    language: "HTML"
     updated: "2025-08-13"
   - name: jinnabaalu.github.io
     owner: jinnabaalu
     source: Personal
     url: "https://github.com/jinnabaalu/jinnabaalu.github.io"
-    description: "Personal profile website and long-form technical writing archive."
+    description: "Jinna Balu Profile"
     stars: 3
-    language: HTML
-    updated: "2026-04-03"
+    language: "HTML"
+    updated: "2026-04-04"
   - name: verdaccio-docker-compose
     owner: jinnabaalu
     source: Personal
     url: "https://github.com/jinnabaalu/verdaccio-docker-compose"
-    description: "Local npm package registry setup using Verdaccio and Docker Compose."
+    description: "local npm package manager"
     stars: 3
-    language: "Container Config"
+    language: "Unknown"
     updated: "2025-02-13"
+  - name: elasticangular
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/elasticangular"
+    description: "Elasticsearch with angular"
+    stars: 2
+    language: "TypeScript"
+    updated: "2018-05-03"
+  - name: ELKOperations
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/ELKOperations"
+    description: "Docker configuration for Elasticsearch"
+    stars: 2
+    language: "Roff"
+    updated: "2025-08-13"
+  - name: generator-vibhuvi
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/generator-vibhuvi"
+    description: "No description provided."
+    stars: 2
+    language: "JavaScript"
+    updated: "2023-03-08"
+  - name: JinnaBaalu
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/JinnaBaalu"
+    description: "Profile"
+    stars: 2
+    language: "Unknown"
+    updated: "2025-08-13"
+  - name: PythonOperations2
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/PythonOperations2"
+    description: "FastAPI + Dockerfile + Docker Compose + Docker Stack(Docker Swarm)"
+    stars: 2
+    language: "Dockerfile"
+    updated: "2024-11-12"
+  - name: containertalks
+    owner: VibhuviOiO
+    source: Organization
+    url: "https://github.com/VibhuviOiO/containertalks"
+    description: "Container Talks is an opinionated source of truth for running containers in production. It provides end-to-end standards and operational guidance so teams don’t rely on scattered blogs or guesswork—covering specs, security, runtime behavior, failure handling, and observability on real infrastructure."
+    stars: 1
+    language: "TypeScript"
+    updated: "2026-02-07"
+  - name: DemoRepo
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/DemoRepo"
+    description: "Create a repository in github"
+    stars: 1
+    language: "Unknown"
+    updated: "2023-03-08"
+  - name: docs
+    owner: VibhuviOiO
+    source: Organization
+    url: "https://github.com/VibhuviOiO/docs"
+    description: "No description provided."
+    stars: 1
+    language: "CSS"
+    updated: "2026-02-25"
+  - name: docs-backup
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/docs-backup"
+    description: "docs"
+    stars: 1
+    language: "TypeScript"
+    updated: "2025-08-13"
+  - name: flast-restful-blueprint
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/flast-restful-blueprint"
+    description: "Dockerised Flast Application with restful API"
+    stars: 1
+    language: "Python"
+    updated: "2023-03-08"
+  - name: jinna-s-organics
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/jinna-s-organics"
+    description: "Farm Details | Raju Prakruthi Vyavasaya Kshethram | రాజు  ప్రక్రుతి వ్యవసాయ క్షేత్రం"
+    stars: 1
+    language: "HTML"
+    updated: "2025-06-02"
+  - name: k8s-nodejs
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/k8s-nodejs"
+    description: "No description provided."
+    stars: 1
+    language: "JavaScript"
+    updated: "2025-08-13"
+  - name: kafka-operations
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/kafka-operations"
+    description: "No description provided."
+    stars: 1
+    language: "Unknown"
+    updated: "2024-11-12"
+  - name: killerkoda-scenarios
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/killerkoda-scenarios"
+    description: "Katacoda Scenarios"
+    stars: 1
+    language: "Shell"
+    updated: "2023-03-08"
+  - name: ldap-manager
+    owner: VibhuviOiO
+    source: Organization
+    url: "https://github.com/VibhuviOiO/ldap-manager"
+    description: "Production-ready web interface for OpenLDAP with multi-cluster support, real-time monitoring, and custom schema detection"
+    stars: 1
+    language: "HTML"
+    updated: "2026-02-19"
+  - name: MongoOperations
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/MongoOperations"
+    description: "Docker files for Mongo"
+    stars: 1
+    language: "Shell"
+    updated: "2025-08-13"
+  - name: PythonOperations
+    owner: jinnabaalu
+    source: Personal
+    url: "https://github.com/jinnabaalu/PythonOperations"
+    description: "Python Stack Docker Configurations"
+    stars: 1
+    language: "Python"
+    updated: "2024-11-12"
