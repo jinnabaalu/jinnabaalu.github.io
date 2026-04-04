@@ -1,8 +1,21 @@
 #!/usr/bin/env python3
 """Generate PDF resume from the HTML resume file using WeasyPrint."""
 
+import os
 import sys
 from pathlib import Path
+
+
+def maybe_reexec_with_local_venv(script_dir: Path) -> None:
+    venv_python = script_dir / ".venv" / "bin" / "python3"
+    if not venv_python.exists():
+        return
+
+    current_python = Path(sys.executable).resolve()
+    if current_python == venv_python.resolve():
+        return
+
+    os.execv(str(venv_python), [str(venv_python), str(Path(__file__).resolve())])
 
 def main():
     script_dir = Path(__file__).resolve().parent
@@ -16,9 +29,14 @@ def main():
     try:
         from weasyprint import HTML
     except ImportError:
+        maybe_reexec_with_local_venv(script_dir)
         print(
             "ERROR: weasyprint is not installed.\n"
-            "Install it with: pip install weasyprint\n"
+            "Recommended setup:\n"
+            "  python3 -m venv .venv\n"
+            "  . .venv/bin/activate\n"
+            "  python3 -m pip install weasyprint\n"
+            "After that, you can run: python3 generate_pdf.py\n"
             "See README.md for full setup instructions.",
             file=sys.stderr,
         )
