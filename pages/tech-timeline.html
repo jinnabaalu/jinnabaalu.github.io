@@ -20,14 +20,22 @@ keywords: "DevOps, Docker, Elasticsearch, Cassandra, Git, Kafka, PostgreSQL, Mon
 
   <div class="card shadow-sm border-0 tech-timeline-filter-card">
     <div class="card-body">
-      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-        <div>
-          <h5 class="mb-1">Filter by tag</h5>
-          <p class="text-muted mb-0">Browse local posts and external articles by shared topics.</p>
+      <div class="tech-timeline-filter-head">
+        <div class="tech-timeline-filter-copy">
+          <h5 class="mb-1">Tag filters</h5>
+          <p class="text-muted mb-0">Expand only when you want to filter the timeline by topic.</p>
         </div>
-        <div class="tech-timeline-filter-summary" id="techTimelineFilterSummary"></div>
+        <div class="tech-timeline-filter-actions">
+          <div class="tech-timeline-filter-summary" id="techTimelineFilterSummary"></div>
+          <button type="button" class="tech-timeline-filter-toggle" id="techTimelineFilterToggle" aria-expanded="false" aria-controls="techTimelineFilterPanel">
+            Show filters
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
       </div>
-      <div class="tech-timeline-tag-list" id="techTimelineTagFilters"></div>
+      <div class="tech-timeline-filter-panel" id="techTimelineFilterPanel" hidden>
+        <div class="tech-timeline-tag-list" id="techTimelineTagFilters"></div>
+      </div>
     </div>
   </div>
 
@@ -78,7 +86,8 @@ keywords: "DevOps, Docker, Elasticsearch, Cassandra, Git, Kafka, PostgreSQL, Mon
           <tbody>
     {% endif %}
             {% capture row_tags %}{% for tag in display_tags %}{% assign clean_tag = tag | strip %}{% if clean_tag != "" %}{{ clean_tag | slugify }}|{% endif %}{% endfor %}{% endcapture %}
-            <tr class="tech-timeline-item" data-tags="{{ row_tags | split: '|' | uniq | join: '|' }}">
+            {% capture row_tag_labels %}{% for tag in display_tags %}{% assign clean_tag = tag | strip %}{% if clean_tag != "" %}{{ clean_tag }}|{% endif %}{% endfor %}{% endcapture %}
+            <tr class="tech-timeline-item" data-tags="{{ row_tags | split: '|' | uniq | join: '|' }}" data-tag-labels="{{ row_tag_labels | split: '|' | uniq | join: '|' }}">
               <td style="width:110px"><small>{{ item_date | date: "%b %d" }}</small></td>
               <td>
                 {% if item_source == "blog" %}
@@ -87,14 +96,6 @@ keywords: "DevOps, Docker, Elasticsearch, Cassandra, Git, Kafka, PostgreSQL, Mon
                 <a href="{{ item_url }}" target="_blank">{{ item_title }}</a>
                 <span class="badge bg-info">{{ item_source }}</span>
                 {% endif %}
-              </td>
-              <td>
-                {% for tag in display_tags %}
-                {% assign clean_tag = tag | strip %}
-                {% if clean_tag != "" %}
-                <span class="badge bg-secondary tech-timeline-tag" data-tag="{{ clean_tag | slugify }}">{{ clean_tag }}</span>
-                {% endif %}
-                {% endfor %}
               </td>
             </tr>
   {% endfor %}
@@ -112,21 +113,24 @@ document.addEventListener('DOMContentLoaded', function () {
   const sections = Array.from(document.querySelectorAll('.timeline-year-section'));
   const tagFilters = document.getElementById('techTimelineTagFilters');
   const filterSummary = document.getElementById('techTimelineFilterSummary');
+  const filterToggle = document.getElementById('techTimelineFilterToggle');
+  const filterPanel = document.getElementById('techTimelineFilterPanel');
 
-  if (!items.length || !tagFilters || !filterSummary) {
+  if (!items.length || !tagFilters || !filterSummary || !filterToggle || !filterPanel) {
     return;
   }
 
   const totalItems = items.length;
   const tagMap = new Map();
+  let isExpanded = false;
 
   items.forEach(function (item) {
     const seenInRow = new Set();
-    const badges = Array.from(item.querySelectorAll('.tech-timeline-tag'));
+    const slugs = item.dataset.tags ? item.dataset.tags.split('|').filter(Boolean) : [];
+    const labels = item.dataset.tagLabels ? item.dataset.tagLabels.split('|').filter(Boolean) : [];
 
-    badges.forEach(function (badge) {
-      const slug = badge.dataset.tag;
-      const label = badge.textContent.trim();
+    slugs.forEach(function (slug, index) {
+      const label = labels[index] || slug;
 
       if (!slug || !label || seenInRow.has(slug)) {
         return;
@@ -145,6 +149,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const searchParams = new URLSearchParams(window.location.search);
   const initialTag = searchParams.get('tag') || '';
   let activeTag = '';
+
+  function setPanelExpanded(expanded) {
+    isExpanded = expanded;
+    filterPanel.hidden = !expanded;
+    filterToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    filterToggle.innerHTML = (expanded ? 'Hide filters' : 'Show filters') + ' <i class="bi bi-chevron-' + (expanded ? 'up' : 'down') + '"></i>';
+  }
+
+  filterToggle.addEventListener('click', function () {
+    setPanelExpanded(!isExpanded);
+  });
 
   const filterEntries = Array.from(tagMap.entries()).sort(function (left, right) {
     if (right[1].count !== left[1].count) {
@@ -225,6 +240,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     activeTag = tag;
+    if (activeTag) {
+      setPanelExpanded(true);
+    }
     let visibleCount = 0;
 
     items.forEach(function (item) {
@@ -244,6 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
     syncUrl();
   }
 
+  setPanelExpanded(Boolean(initialTag));
   applyFilter(initialTag);
 });
 </script>
