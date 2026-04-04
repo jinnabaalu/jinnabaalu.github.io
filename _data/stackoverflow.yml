@@ -1,0 +1,137 @@
+# Stack Overflow profile snapshot.
+# Refresh manually from the Stack Exchange API when needed.
+
+profile:
+  display_name: "Jinna Baalu"
+  user_id: 4348824
+  profile_url: "https://stackoverflow.com/users/4348824/jinna-baalu"
+  website_url: "https://jinnabalu.com"
+  reputation: 7997
+  reputation_display: "7,997"
+  badges:
+    gold: 1
+    silver: 41
+    bronze: 51
+  summary: "High-signal answers focused on Docker, Elasticsearch, and production operations."
+  last_updated: "2026-04-04"
+
+top_tags:
+  - name: docker
+    answer_count: 59
+    answer_score: 496
+  - name: docker-compose
+    answer_count: 31
+    answer_score: 229
+  - name: docker-volume
+    answer_count: 6
+    answer_score: 179
+  - name: docker-image
+    answer_count: 1
+    answer_score: 101
+  - name: docker-swarm
+    answer_count: 3
+    answer_score: 96
+  - name: elasticsearch
+    answer_count: 28
+    answer_score: 88
+
+top_answers:
+  - answer_id: 49799540
+    answer_url: "https://stackoverflow.com/a/49799540"
+    question_id: 45142528
+    question_url: "https://stackoverflow.com/questions/45142528/what-is-a-dangling-image-and-what-is-an-unused-image"
+    title: "What is a dangling image and what is an unused image?"
+    score: 101
+    accepted: false
+    created: "2018-04-12"
+    tags: [docker, docker-image]
+
+  - answer_id: 46910980
+    answer_url: "https://stackoverflow.com/a/46910980"
+    question_id: 46907558
+    question_url: "https://stackoverflow.com/questions/46907558/docker-compose-relative-paths-vs-docker-volume"
+    title: "Docker Compose Relative paths vs Docker volume"
+    score: 88
+    accepted: true
+    created: "2017-10-24"
+    tags: [docker, docker-compose, docker-volume]
+
+  - answer_id: 49952217
+    answer_url: "https://stackoverflow.com/a/49952217"
+    question_id: 49950326
+    question_url: "https://stackoverflow.com/questions/49950326/how-to-create-docker-volume-device-host-path"
+    title: "How to create docker volume device/host path"
+    score: 79
+    accepted: true
+    created: "2018-04-21"
+    tags: [docker, docker-volume]
+
+  - answer_id: 49985823
+    answer_url: "https://stackoverflow.com/a/49985823"
+    question_id: 49984686
+    question_url: "https://stackoverflow.com/questions/49984686/convert-a-docker-run-command-into-a-docker-compose"
+    title: "Convert a docker run command into a docker-compose"
+    score: 71
+    accepted: true
+    created: "2018-04-24"
+    tags: [docker, docker-compose, docker-swarm]
+
+  - answer_id: 47211716
+    answer_url: "https://stackoverflow.com/a/47211716"
+    question_id: 42300463
+    question_url: "https://stackoverflow.com/questions/42300463/elasticsearch-bootstrap-checks-failing"
+    title: "Elasticsearch - Bootstrap checks failing"
+    score: 33
+    accepted: false
+    created: "2017-11-09"
+    tags: [elasticsearch]
+
+  - answer_id: 51994494
+    answer_url: "https://stackoverflow.com/a/51994494"
+    question_id: 6141710
+    question_url: "https://stackoverflow.com/questions/6141710/running-rsync-in-background"
+    title: "Running rsync in background"
+    score: 31
+    accepted: false
+    created: "2018-08-23"
+    tags: [linux, background, rsync]
+
+  - answer_id: 33051747
+    answer_url: "https://stackoverflow.com/a/33051747"
+    question_id: 28175200
+    question_url: "https://stackoverflow.com/questions/28175200/how-to-delete-node-modules-deep-nested-folder-in-windows"
+    title: "How to Delete node_modules - Deep Nested Folder in Windows"
+    score: 22
+    accepted: false
+    created: "2015-10-10"
+    tags: [node.js, windows-7, npm]
+
+  - answer_id: 66566434
+    answer_url: "https://stackoverflow.com/a/66566434"
+    question_id: 53347951
+    question_url: "https://stackoverflow.com/questions/53347951/docker-network-not-found"
+    title: "Docker Network not Found"
+    score: 22
+    accepted: false
+    created: "2021-03-10"
+    tags: [docker, docker-swarm, docker-network]
+
+  - answer_id: 69799545
+    answer_url: "https://stackoverflow.com/a/69799545"
+    question_id: 69796167
+    question_url: "https://stackoverflow.com/questions/69796167/how-to-retry-elasticsearch-shard-allocation-unassigned-shards"
+    title: "How to retry Elasticsearch shard allocation, UNASSIGNED Shards"
+    score: 21
+    accepted: true
+    created: "2021-11-01"
+    tags: [database, elasticsearch, logging, sharding]
+
+  - answer_id: 53234878
+    answer_url: "https://stackoverflow.com/a/53234878"
+    question_id: 31466428
+    question_url: "https://stackoverflow.com/questions/31466428/how-to-restart-a-single-container-with-docker-compose"
+    title: "How to restart a single container with docker-compose"
+    score: 19
+    accepted: false
+    created: "2018-11-09"
+    tags: [docker, docker-compose]

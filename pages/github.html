@@ -1,0 +1,78 @@
+---
+layout: default
+title: "GitHub"
+permalink: /github
+canonical_url: "https://jinnabalu.com/github"
+description: "Owned GitHub repositories from jinnabaalu and VibhuviOiO, ranked by stars and excluding forks"
+keywords: "GitHub, open source, repositories, stars, Jinna Balu, VibhuviOiO"
+---
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>GitHub</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item">GitHub</li>
+      </ol>
+    </nav>
+  </div>
+  <br>
+
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="gh-summary-card">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h5 class="mb-0">Owned Repositories</h5>
+          <a href="{{ site.data.github.summary.personal_url }}" target="_blank" class="featured-link">Personal GitHub <i class="bi bi-box-arrow-up-right"></i></a>
+        </div>
+        <p class="gh-summary-text">Public repositories owned across the personal account and VibhuviOiO organization, with forked repositories excluded from the count.</p>
+
+        <div class="so-metrics so-metrics-single">
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.github.summary.total_count }}</span>
+            <span class="so-metric-label">Owned Repos</span>
+          </div>
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.github.summary.total_stars }}</span>
+            <span class="so-metric-label">Total Stars</span>
+          </div>
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.github.summary.personal_count }}</span>
+            <span class="so-metric-label">Personal Repos</span>
+          </div>
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.github.summary.organization_count }}</span>
+            <span class="so-metric-label">Org Repos</span>
+          </div>
+        </div>
+
+        <div class="gh-account-links">
+          <a href="{{ site.data.github.summary.personal_url }}" target="_blank" class="gh-account-link">jinnabaalu <span>{{ site.data.github.summary.personal_stars }} stars</span></a>
+          <a href="{{ site.data.github.summary.organization_url }}" target="_blank" class="gh-account-link">VibhuviOiO <span>{{ site.data.github.summary.organization_stars }} stars</span></a>
+        </div>
+        <p class="so-footnote mb-0">Static snapshot updated {{ site.data.github.summary.last_updated }}.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="bg-white rounded-3 p-3 shadow-sm gh-repo-list">
+        {% for repo in site.data.github.featured_repositories %}
+        <div class="gh-repo-row">
+          <div class="gh-repo-head">
+            <div>
+              <a href="{{ repo.url }}" target="_blank" class="gh-repo-title">{{ repo.owner }}/{{ repo.name }}</a>
+              <p class="gh-repo-description mb-0">{{ repo.description }}</p>
+            </div>
+            <span class="gh-star-pill"><i class="bi bi-star-fill"></i> {{ repo.stars }}</span>
+          </div>
+          <div class="so-meta-row">
+            <span class="so-meta-pill">{{ repo.source }}</span>
+            <span class="so-meta-pill">{{ repo.language }}</span>
+            <span class="so-meta-pill">Updated {{ repo.updated | date: "%b %d, %Y" }}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>

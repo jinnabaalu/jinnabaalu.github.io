@@ -3,7 +3,7 @@ layout: default
 full_width: true
 canonical_url: "https://jinnabalu.com/"
 title: "Jinna Balu | Dev(Sec)Ops Solution Architect"
-image_url: assets/img/jinnabalu.jpeg
+image_url: "https://avatars.githubusercontent.com/u/11784253?v=4"
 description: "Dev(Sec)Ops Solution Architect — Infrastructure, DevSecOps, Observability, and Open Source Products"
 date: 2023-01-05T10:15:00Z
 keywords: "DevOps, DevSecOps, SRE, Elasticsearch, Docker, Kubernetes, AWS, Cassandra, Kafka, Infrastructure"
@@ -12,7 +12,7 @@ keywords: "DevOps, DevSecOps, SRE, Elasticsearch, Docker, Kubernetes, AWS, Cassa
 <!-- ========== HERO ========== -->
 <div class="hero-section">
   <div class="container text-center">
-    <img src="assets/img/jinnabalu.jpeg" alt="Jinna Balu" class="hero-photo">
+    <img src="https://avatars.githubusercontent.com/u/11784253?v=4" alt="Jinna Balu" class="hero-photo">
     <h1>Jinna Balu</h1>
     <p class="tagline">I build infrastructure that teams never have to think about.</p>
     <div class="hero-social">
@@ -36,26 +36,16 @@ keywords: "DevOps, DevSecOps, SRE, Elasticsearch, Docker, Kubernetes, AWS, Cassa
       </div>
       <div class="col-6 col-md">
         <div class="stat-item">
-          <div class="stat-number"><i class="bi bi-journal-text"></i> {{ site.posts.size | plus: site.data.external-articles.size }}</div>
-          <div class="stat-label">Articles Published</div>
-        </div>
-      </div>
-      <div class="col-6 col-md">
-        <div class="stat-item">
-          <div class="stat-number"><i class="bi bi-box-seam"></i> 6+</div>
-          <div class="stat-label">Open Source Products</div>
-        </div>
-      </div>
-      <div class="col-6 col-md">
-        <div class="stat-item">
-          <div class="stat-number"><i class="bi bi-github"></i> 50+</div>
-          <div class="stat-label">GitHub Repos</div>
+          <a href="/github" style="text-decoration:none;color:inherit;">
+            <div class="stat-number"><i class="bi bi-github"></i> {{ site.data.github.summary.total_count }} / {{ site.data.github.summary.total_stars }}</div>
+            <div class="stat-label">GitHub Repos / Stars</div>
+          </a>
         </div>
       </div>
       <div class="col-6 col-md">
         <div class="stat-item">
           <a href="https://stackoverflow.com/users/4348824/jinna-baalu" target="_blank" style="text-decoration:none;color:inherit;">
-            <div class="stat-number"><i class="bi bi-stack-overflow"></i> ~8k</div>
+            <div class="stat-number"><i class="bi bi-stack-overflow"></i> {{ site.data.stackoverflow.profile.reputation_display }}</div>
             <div class="stat-label">SO Reputation</div>
           </a>
         </div>
@@ -211,6 +201,140 @@ keywords: "DevOps, DevSecOps, SRE, Elasticsearch, Docker, Kubernetes, AWS, Cassa
   </div>
 </div>
 
+<!-- ========== GITHUB ========== -->
+<div class="container profile-section">
+  <div class="row align-items-center mb-4">
+    <div class="col">
+      <h2 class="section-title">GitHub Repositories</h2>
+      <p class="section-subtitle mb-0">Owned repositories across personal and organization accounts, ranked by stars with forks excluded.</p>
+    </div>
+    <div class="col-auto">
+      <a href="/github" class="btn btn-sm btn-cta">View Top Repos <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="gh-summary-card">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h5 class="mb-0">GitHub Snapshot</h5>
+          <a href="{{ site.data.github.summary.personal_url }}" target="_blank" class="featured-link">Profile <i class="bi bi-box-arrow-up-right"></i></a>
+        </div>
+        <p class="gh-summary-text">{{ site.data.github.summary.total_count }} owned public repositories across both accounts, with {{ site.data.github.summary.total_stars }} total stars and forked repositories removed.</p>
+
+        <div class="so-metrics so-metrics-single">
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.github.summary.personal_count }}</span>
+            <span class="so-metric-label">Personal Repos</span>
+          </div>
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.github.summary.organization_count }}</span>
+            <span class="so-metric-label">Org Repos</span>
+          </div>
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.github.summary.personal_stars }}</span>
+            <span class="so-metric-label">Personal Stars</span>
+          </div>
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.github.summary.organization_stars }}</span>
+            <span class="so-metric-label">Org Stars</span>
+          </div>
+        </div>
+
+        <div class="gh-account-links">
+          <a href="{{ site.data.github.summary.personal_url }}" target="_blank" class="gh-account-link">jinnabaalu <span>{{ site.data.github.summary.personal_count }} repos</span></a>
+          <a href="{{ site.data.github.summary.organization_url }}" target="_blank" class="gh-account-link">VibhuviOiO <span>{{ site.data.github.summary.organization_count }} repos</span></a>
+        </div>
+        <p class="so-footnote mb-0">Snapshot updated {{ site.data.github.summary.last_updated }}.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="bg-white rounded-3 p-3 shadow-sm gh-repo-list">
+        {% for repo in site.data.github.featured_repositories limit:5 %}
+        <div class="gh-repo-row">
+          <div class="gh-repo-head">
+            <a href="{{ repo.url }}" target="_blank" class="gh-repo-title">{{ repo.owner }}/{{ repo.name }}</a>
+            <span class="gh-star-pill"><i class="bi bi-star-fill"></i> {{ repo.stars }}</span>
+          </div>
+          <p class="gh-repo-description">{{ repo.description }}</p>
+          <div class="so-meta-row">
+            <span class="so-meta-pill">{{ repo.source }}</span>
+            <span class="so-meta-pill">{{ repo.language }}</span>
+            <span class="so-meta-pill">{{ repo.updated | date: "%b %d, %Y" }}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== STACK OVERFLOW ========== -->
+<div class="container profile-section">
+  <div class="row align-items-center mb-4">
+    <div class="col">
+      <h2 class="section-title">Top Stack Overflow Answers</h2>
+      <p class="section-subtitle mb-0">Highest-voted answers across Docker, Elasticsearch, and production operations.</p>
+    </div>
+    <div class="col-auto">
+      <a href="/stack-overflow" class="btn btn-sm btn-cta">View Top 10 <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="so-summary-card">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h5 class="mb-0">Stack Overflow</h5>
+          <a href="{{ site.data.stackoverflow.profile.profile_url }}" target="_blank" class="featured-link">Profile <i class="bi bi-box-arrow-up-right"></i></a>
+        </div>
+        <p class="so-summary-text">{{ site.data.stackoverflow.profile.summary }}</p>
+
+        <div class="so-metrics">
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.stackoverflow.profile.reputation_display }}</span>
+            <span class="so-metric-label">Reputation</span>
+          </div>
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.stackoverflow.profile.badges.gold }}/{{ site.data.stackoverflow.profile.badges.silver }}/{{ site.data.stackoverflow.profile.badges.bronze }}</span>
+            <span class="so-metric-label">Gold / Silver / Bronze</span>
+          </div>
+        </div>
+
+        <div class="so-tag-list">
+          {% for tag in site.data.stackoverflow.top_tags limit:5 %}
+          <span class="so-tag-pill">{{ tag.name }} · {{ tag.answer_score }}</span>
+          {% endfor %}
+        </div>
+        <p class="so-footnote mb-0">Snapshot updated {{ site.data.stackoverflow.profile.last_updated }}.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="bg-white rounded-3 p-3 shadow-sm so-answer-list">
+        {% for answer in site.data.stackoverflow.top_answers limit:5 %}
+        <div class="so-answer-row">
+          <div class="so-answer-head">
+            <a href="{{ answer.answer_url }}" target="_blank" class="so-answer-title">{{ answer.title }}</a>
+            <span class="so-score-pill">{{ answer.score }}</span>
+          </div>
+          <div class="so-meta-row">
+            {% if answer.accepted %}
+            <span class="so-meta-pill so-accepted-pill">Accepted</span>
+            {% endif %}
+            <span class="so-meta-pill">{{ answer.created | date: "%b %d, %Y" }}</span>
+            {% for tag in answer.tags %}
+            <span class="so-meta-pill">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ========== LATEST ARTICLES ========== -->
 <div class="container profile-section">
   <div class="row align-items-center mb-3">
@@ -223,6 +347,20 @@ keywords: "DevOps, DevSecOps, SRE, Elasticsearch, Docker, Kubernetes, AWS, Cassa
   </div>
 
   <div class="bg-white rounded-3 p-3 shadow-sm">
+    {% assign featured_external_title = "GoDaddy Domain with GitHub Pages" %}
+    {% for ext in site.data.external-articles %}
+      {% if ext.title == featured_external_title %}
+      <div class="article-row">
+        <span class="article-date">Popular Pick</span>
+        <a href="{{ ext.url }}" target="_blank">{{ ext.title }}</a>
+        {% if ext.claps %}
+        <span class="badge bg-warning text-dark">{{ ext.claps }} claps</span>
+        {% endif %}
+        <span class="badge bg-info">{{ ext.source }}</span>
+      </div>
+      {% endif %}
+    {% endfor %}
+
     {% assign recent_items = "" | split: "" %}
     {% for post in site.posts limit:5 %}
       {% capture item %}{{ post.date | date: "%Y-%m-%d" }}||{{ post.title }}||{{ site.baseurl }}{{ post.url }}||blog{% endcapture %}
@@ -236,6 +374,7 @@ keywords: "DevOps, DevSecOps, SRE, Elasticsearch, Docker, Kubernetes, AWS, Cassa
 
     {% for item in recent_items limit:8 %}
       {% assign parts = item | split: "||" %}
+      {% unless parts[1] == featured_external_title %}
       <div class="article-row">
         <span class="article-date">{{ parts[0] | date: "%b %d, %Y" }}</span>
         {% if parts[3] == "blog" %}
@@ -245,6 +384,7 @@ keywords: "DevOps, DevSecOps, SRE, Elasticsearch, Docker, Kubernetes, AWS, Cassa
         <span class="badge bg-info">{{ parts[3] }}</span>
         {% endif %}
       </div>
+      {% endunless %}
     {% endfor %}
   </div>
 </div>

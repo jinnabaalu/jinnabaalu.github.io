@@ -1,0 +1,88 @@
+---
+layout: default
+title: "Stack Overflow"
+permalink: /stack-overflow
+canonical_url: "https://jinnabalu.com/stack-overflow"
+description: "Top Stack Overflow answers from Jinna Baalu across Docker, Elasticsearch, and production operations"
+keywords: "Stack Overflow, Docker, Elasticsearch, DevOps, Jinna Baalu"
+---
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>Stack Overflow</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item">Stack Overflow</li>
+      </ol>
+    </nav>
+  </div>
+  <br>
+
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="so-summary-card">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h5 class="mb-0">Profile Snapshot</h5>
+          <a href="{{ site.data.stackoverflow.profile.profile_url }}" target="_blank" class="featured-link">Open Profile <i class="bi bi-box-arrow-up-right"></i></a>
+        </div>
+        <p class="so-summary-text">{{ site.data.stackoverflow.profile.summary }}</p>
+
+        <div class="so-metrics so-metrics-single">
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.stackoverflow.profile.reputation_display }}</span>
+            <span class="so-metric-label">Reputation</span>
+          </div>
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.stackoverflow.profile.badges.gold }}</span>
+            <span class="so-metric-label">Gold Badges</span>
+          </div>
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.stackoverflow.profile.badges.silver }}</span>
+            <span class="so-metric-label">Silver Badges</span>
+          </div>
+          <div class="so-metric-box">
+            <span class="so-metric-value">{{ site.data.stackoverflow.profile.badges.bronze }}</span>
+            <span class="so-metric-label">Bronze Badges</span>
+          </div>
+        </div>
+
+        <h6 class="mt-4 mb-2">Top Answer Tags</h6>
+        <div class="so-tag-list">
+          {% for tag in site.data.stackoverflow.top_tags %}
+          <span class="so-tag-pill">{{ tag.name }} · {{ tag.answer_score }}</span>
+          {% endfor %}
+        </div>
+        <p class="so-footnote mb-0">Static snapshot from the Stack Exchange API, updated {{ site.data.stackoverflow.profile.last_updated }}.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="bg-white rounded-3 p-3 shadow-sm so-answer-list">
+        {% for answer in site.data.stackoverflow.top_answers %}
+        <div class="so-answer-row">
+          <div class="so-answer-head">
+            <div>
+              <a href="{{ answer.answer_url }}" target="_blank" class="so-answer-title">{{ answer.title }}</a>
+              <div class="so-answer-links">
+                <a href="{{ answer.answer_url }}" target="_blank">View answer</a>
+                <span>·</span>
+                <a href="{{ answer.question_url }}" target="_blank">View question</a>
+              </div>
+            </div>
+            <span class="so-score-pill">{{ answer.score }}</span>
+          </div>
+          <div class="so-meta-row">
+            {% if answer.accepted %}
+            <span class="so-meta-pill so-accepted-pill">Accepted</span>
+            {% endif %}
+            <span class="so-meta-pill">{{ answer.created }}</span>
+            {% for tag in answer.tags %}
+            <span class="so-meta-pill">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
