@@ -2625,6 +2625,79 @@ a {
   font-size: 0.95rem;
 }
 
+.tech-timeline-filter-card {
+  margin-bottom: 28px;
+}
+
+.tech-timeline-filter-summary {
+  color: #6c757d;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.tech-timeline-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-timeline-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d7deea;
+  background: #fff;
+  color: #012970;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.tech-timeline-filter-chip:hover {
+  border-color: #012970;
+  transform: translateY(-1px);
+}
+
+.tech-timeline-filter-chip.is-active {
+  background: #012970;
+  border-color: #012970;
+  color: #fff;
+}
+
+.tech-timeline-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(1, 41, 112, 0.08);
+  color: inherit;
+  font-size: 0.82rem;
+}
+
+.tech-timeline-filter-chip.is-active .tech-timeline-filter-count {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.tech-timeline-tag {
+  margin: 2px 4px 2px 0;
+}
+
+@media (max-width: 767.98px) {
+  .tech-timeline-filter-chip {
+    padding: 7px 12px;
+    font-size: 0.88rem;
+  }
+
+  .tech-timeline-filter-summary {
+    width: 100%;
+  }
+}
+
 /* --- Stack Overflow --- */
 .so-summary-card {
   background: #fff;
