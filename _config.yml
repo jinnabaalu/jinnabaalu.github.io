@@ -1,6 +1,6 @@
 name: "Jinna Balu"
-description: "IT Services | DevOps as a Service | DevSecOps as a service | AWS Cost Optimisation"
-meta_description: "IT Services | DevOps as a Service | DevSecOps as a service | AWS Cost Optimisation"
+description: "Platform Architect | Platform Engineering | SRE | DevSecOps"
+meta_description: "Platform Architect focused on distributed systems, platform engineering, SRE, and secure delivery for global teams"
 logo: 'assets/img/logo.png'
 favicon: 'assets/img/icon/favicon.ico'
 paginate: 12
@@ -25,7 +25,7 @@ authors:
     email: https://www.linkedin.com/in/jinnabaalu/
     web: https://jinnabalu.com
     twitter: https://twitter.com/JinnaBalu
-    description: "Infrastructure Solution Architect | SRE | DevOps | Platform Engineer"
+    description: "Platform Architect | Platform Engineering | SRE | DevSecOps"
 
 
 plugins: 

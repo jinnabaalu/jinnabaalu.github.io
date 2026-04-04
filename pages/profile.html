@@ -2,11 +2,11 @@
 layout: default
 permalink: /profile
 canonical_url: "https://jinnabalu.com/profile"
-title: "Jinna Balu | DevOps Solution Architect | SRE Lead"
+title: "Jinna Balu | Platform Architect"
 image_url: assets/img/profile.jpg
-description: "DevOps Solution Architect and SRE Lead with 12+ years of experience across infrastructure, distributed systems, reliability engineering, DevSecOps, and production operations."
+description: "Platform Architect with 12+ years of experience building distributed systems, internal platforms, SRE practices, and secure delivery for global teams."
 date: 2026-04-04T10:15:00Z
-keywords: "DevOps, platform engineering, SRE, DevSecOps, infrastructure architecture, observability, Kubernetes, AWS"
+keywords: "Platform Architect, platform engineering, SRE, DevSecOps, infrastructure architecture, observability, Kubernetes, AWS"
 ---
 
 <main id="main" class="main">
@@ -17,7 +17,7 @@ keywords: "DevOps, platform engineering, SRE, DevSecOps, infrastructure architec
       <div class="cv-header">
         <div class="cv-intro">
           <h1 class="cv-name">Jinna Balu</h1>
-          <p class="cv-title">DevOps Solution Architect &bull; SRE Lead</p>
+          <p class="cv-title">Platform Architect &bull; SRE &bull; DevSecOps</p>
           <div class="cv-contact">
             <span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -158,8 +158,19 @@ keywords: "DevOps, platform engineering, SRE, DevSecOps, infrastructure architec
           <section class="cv-block">
             <h2 class="cv-heading">Personal Profile</h2>
             <p>
-              Hands-on DevOps Solution Architect and SRE Lead with 12+ years of experience in cloud infrastructure, distributed systems, and DevSecOps. Skilled in building resilient, observable platforms and collaborating across time zones to support high-performing global engineering teams.
+              Platform Architect with 12+ years of experience building and operating distributed systems, internal platforms, and reliability practices for global engineering teams. I lead architecture across infrastructure, CI/CD, observability, security, and data services, with hands-on ownership from design through production operations and a default focus on identifying toil and removing it.
             </p>
+          </section>
+
+          <section class="cv-block">
+            <h2 class="cv-heading">Selected Impact</h2>
+            <ul>
+              <li>Reduced AWS spend from <strong>$27K/month</strong> to <strong>$12K/month</strong> for a client environment through right-sizing, storage optimization, and infrastructure cleanup.</li>
+              <li>Architected a centralized logging platform for <strong>12+ data centers</strong> processing <strong>21M logs per hour</strong> using application appenders, Kafka, Logstash, and Elasticsearch.</li>
+              <li>Led a zero-downtime migration of a high-risk global traffic entry point from <strong>Oracle Dyn</strong> to <strong>Cloudflare Load Balancer</strong>, partnering with the team while driving the DNS and cutover strategy.</li>
+              <li>Built deep hands-on expertise in <strong>LDAP</strong>, including multi-master deployments, migrations, productized management workflows, and open-source delivery through <strong>LDAP Manager</strong> and <strong>OpenLDAP Docker</strong>.</li>
+              <li>Built <strong>Docker Registry UI</strong> as an open-source product with built-in <strong>Trivy</strong> image scanning for registry operations and security visibility.</li>
+            </ul>
           </section>
 
           <!-- WORK EXPERIENCE -->
@@ -173,49 +184,24 @@ keywords: "DevOps, platform engineering, SRE, DevSecOps, infrastructure architec
                 <span class="cv-date">Aug 2022 &ndash; Present</span>
               </div>
               <ul>
-                <!-- Scale & Infrastructure -->
-                <li>Managed <strong>12+ data centers</strong>, each hosting multiple distributed clusters of <strong>Kafka</strong>, <strong>Cassandra</strong>, <strong>MongoDB</strong>, <strong>Solr</strong>, and <strong>ZooKeeper</strong>.</li>
-
-                <li>Modernized legacy single points of failure into highly available, fault-tolerant services across data centers.</li>
-
-                <!-- Orchestration & Migration -->
-                <li>Implemented container orchestration using <strong>DC/OS</strong> (Mesos/Marathon) and <strong>Kubernetes</strong>; led migration of Marathon workloads to Kubernetes using <strong>Helm</strong> charts.</li>
-
-                <!-- Networking & Traffic -->
-                <li>Configured data center–level high availability using <strong>HAProxy</strong> with <strong>VRRP</strong> and <strong>Keepalived</strong>.</li>
-
-                <li>Enabled global traffic steering using <strong>Cloudflare Load Balancer</strong>; migrated traffic management from Oracle Dyn to <strong>Cloudflare</strong>.</li>
-
-                <!-- Observability & Monitoring -->
-                <li>Designed and implemented centralized logging using <strong>Elasticsearch</strong>, <strong>Logstash</strong>, <strong>Kafka</strong>, and custom agents, processing peak volumes of <strong>~21M logs</strong>; improved query performance and maintained stable operations with zero reporting issues over one year.</li>
-
-                <li>Implemented infrastructure and uptime monitoring using <strong>Datadog</strong> (with agents) and <strong>Uptime Kuma</strong>.</li>
-
-                <!-- Automation & Deployment -->
-                <li>Automated infrastructure and service deployments using <strong>Ansible</strong>, supporting containerized (<strong>Docker</strong>/<strong>Podman</strong>) and host-based installations.</li>
-
-                <li>Reduced deployment time and operational overhead by adopting modern automation practices and standardized deployment workflows.</li>
-
-                <li>Introduced <strong>Bitbucket Pipelines</strong> with self-hosted <strong>Remote Runners</strong> for new applications; planning CI/CD migration from <strong>Jenkins</strong> to Bitbucket Pipelines.</li>
-
-                <!-- Security & Compliance -->
-                <li>Strengthened DNS monitoring and domain security by implementing controls for subdomain takeover prevention and configuring <strong>SPF</strong>, <strong>DKIM</strong>, and <strong>DMARC</strong> policies.</li>
-
-                <li>Executed zero-downtime <strong>LDAP</strong> migrations (BDB → HDB → MDB), ensuring data integrity and service continuity.</li>
-
-                <!-- Cloud -->
-                <li>Worked with <strong>Azure</strong> to build new cloud-based infrastructure; migrated containerized workloads to <strong>AKS</strong>, implemented <strong>Application Gateway (AGIC v2)</strong>, and deployed <strong>Datadog</strong> and logging agents as <strong>DaemonSets</strong>.</li>
-
-                <!-- Internal Tooling / AI -->
-                <li>Developed internal tools with AI-enabled capabilities like <strong>Amazon Q</strong>, <strong>Claude</strong>, and <strong>GitHub Copilot</strong>, including:
+                <li>Owned platform architecture for <strong>12+ data centers</strong> running distributed services such as <strong>Kafka</strong>, <strong>Cassandra</strong>, <strong>MongoDB</strong>, <strong>Solr</strong>, and <strong>ZooKeeper</strong>.</li>
+                <li>Eliminated legacy single points of failure by redesigning critical services into highly available, fault-tolerant multi-data-center systems.</li>
+                <li>Led platform evolution from <strong>DC/OS</strong> (Mesos/Marathon) to <strong>Kubernetes</strong>, migrating workloads with <strong>Helm</strong> and improving long-term operability.</li>
+                <li>Standardized regional high availability with <strong>HAProxy</strong>, <strong>VRRP</strong>, and <strong>Keepalived</strong>, then led the zero-downtime migration of the global traffic entry point from <strong>Oracle Dyn</strong> to <strong>Cloudflare Load Balancer</strong>.</li>
+                <li>Architected a centralized logging system for <strong>12+ data centers</strong>, routing application logs through local appenders to <strong>Kafka</strong>, then into central <strong>Logstash</strong> and <strong>Elasticsearch</strong>, sustaining <strong>21M logs per hour</strong>.</li>
+                <li>Established infrastructure and uptime monitoring with <strong>Datadog</strong> and <strong>Uptime Kuma</strong> to improve operational visibility and incident response.</li>
+                <li>Automated infrastructure and service delivery with <strong>Ansible</strong> across both containerized (<strong>Docker</strong>/<strong>Podman</strong>) and host-based environments, reducing deployment friction and manual toil.</li>
+                <li>Introduced <strong>Bitbucket Pipelines</strong> with self-hosted <strong>Remote Runners</strong> as a modern CI/CD path and laid the groundwork for migration away from legacy <strong>Jenkins</strong> workflows.</li>
+                <li>Strengthened production security by adding subdomain takeover controls and enforcing <strong>SPF</strong>, <strong>DKIM</strong>, and <strong>DMARC</strong> policies.</li>
+                <li>Executed zero-downtime <strong>LDAP</strong> storage migrations (BDB to HDB to MDB), preserving data integrity and service continuity.</li>
+                <li>Designed new cloud infrastructure on <strong>Azure</strong>, migrated workloads to <strong>AKS</strong>, implemented <strong>AGIC v2</strong>, and operationalized logging and monitoring agents as <strong>DaemonSets</strong>.</li>
+                <li>Built internal platform products with <strong>Amazon Q</strong>, <strong>Claude</strong>, and <strong>GitHub Copilot</strong>, including:
                   <ul>
-                    <li><strong>Spring Boot</strong>–based full-stack status page with <strong>React</strong> (<strong>shadcn/ui</strong>, <strong>Tailwind CSS</strong>) frontend and <strong>Go</strong>-based agents for global latency and synthetic monitoring.</li>
-                    <li>Custom <strong>LDAP Manager UI</strong> built with <strong>React</strong>, <strong>shadcn/ui</strong>, and <strong>Tailwind CSS</strong> for simplified directory management and operations.</li>
+                    <li>A <strong>Spring Boot</strong> and <strong>React</strong> status platform with <strong>Go</strong>-based agents for global latency and synthetic monitoring.</li>
+                    <li>A custom <strong>LDAP Manager UI</strong> built with <strong>React</strong>, <strong>shadcn/ui</strong>, and <strong>Tailwind CSS</strong> to simplify directory operations.</li>
                   </ul>
                 </li>
-
-                <!-- Leadership -->
-                <li>Led platform upgrades and continuous improvements to tooling and infrastructure, reducing operational toil and improving system reliability.</li>
+                <li>Drove platform upgrades and infrastructure improvements that reduced operational toil and improved service reliability for globally used systems.</li>
               </ul>
             </article>
 
@@ -226,73 +212,75 @@ keywords: "DevOps, platform engineering, SRE, DevSecOps, infrastructure architec
                 <span class="cv-date">Apr 2021 &ndash; Jul 2022</span>
               </div>
               <ul>
-                <li>Application orchestration with Docker Swarm, ECS, and Kubernetes.</li>
-                <li>Distributed cluster management of Cassandra, Elasticsearch, Kafka, and Redis as containers.</li>
-                <li>DevSecOps with AWS Audit Manager, Security Hub, Config&mdash;maintaining SOC2 compliance.</li>
-                <li>Observability driven development with Elasticsearch, Beats, Logstash, and Prometheus Stack.</li>
-                <li>Team management with Kanban and Scrum; maintaining error budgets, toil budgets, and overhead in control.</li>
-                <li>Created and maintained dev centre for internal domain access to all internal services securely.</li>
-                <li>NGINX/Caddy for load balancing and reverse proxy.</li>
-                <li>CI/CD with Git and Jenkins; deployment and infra automation with Ansible.</li>
-                <li>Scaling Elasticsearch without downtime and data loss; optional disaster recovery with minimal RTO and RPO.</li>
-                <li>Managing infrastructure automation, reliability, security, change management, and capacity planning with a team of 2.</li>
+                <li>Led platform operations across <strong>Docker Swarm</strong>, <strong>ECS</strong>, and <strong>Kubernetes</strong> for application delivery and infrastructure standardization.</li>
+                <li>Operated containerized <strong>Cassandra</strong>, <strong>Elasticsearch</strong>, <strong>Kafka</strong>, and <strong>Redis</strong> clusters with a focus on reliability, consistency, and scaling.</li>
+                <li>Embedded compliance controls with <strong>AWS Audit Manager</strong>, <strong>Security Hub</strong>, and <strong>Config</strong> to support <strong>SOC2</strong> operations.</li>
+                <li>Established observability-driven engineering with <strong>Elasticsearch</strong>, <strong>Beats</strong>, <strong>Logstash</strong>, and the <strong>Prometheus</strong> stack.</li>
+                <li>Managed platform delivery using <strong>Kanban</strong> and <strong>Scrum</strong>, keeping error budgets, toil budgets, and operational overhead under control.</li>
+                <li>Built and maintained a secure developer access center for internal services and operational workflows.</li>
+                <li>Standardized ingress and traffic management using <strong>NGINX</strong> and <strong>Caddy</strong>.</li>
+                <li>Automated CI/CD and infrastructure changes with <strong>Git</strong>, <strong>Jenkins</strong>, and <strong>Ansible</strong>.</li>
+                <li>Scaled <strong>Elasticsearch</strong> without downtime or data loss while preserving disaster recovery paths with low <strong>RTO</strong> and <strong>RPO</strong>.</li>
+                <li>Owned infrastructure automation, reliability, security, capacity planning, and change management with a lean team of 2.</li>
               </ul>
-            </article>
-
-            <!-- Role 3 -->
-            <article class="cv-role">
-              <div class="cv-role-head">
-                <h3>Platform Engineer <span class="cv-muted">&mdash; Wisestep</span></h3>
-                <span class="cv-date">Apr 2019 &ndash; Mar 2021</span>
-              </div>
-              <ul>
-                <li>Building microservices using Spring Boot, containerizing with Docker, deploying to AWS Cloud.</li>
-                <li>Application deployment automation with CI/CD and smooth change management.</li>
-                <li>Application and infrastructure monitoring.</li>
-                <li>Distributed cluster management for NoSQL databases with consistency.</li>
-                <li>High availability, consistency, security, and reliability.</li>
-                <li>Application performance monitoring and real-time user monitoring.</li>
-                <li>AWS solutions for security practices and cost optimizations.</li>
-                <li>Vulnerability assessment with open source tools.</li>
-                <li>DevOps for release management; building features and handling feature lifecycles for Wisestep, a recruitment platform.</li>
-              </ul>
-            </article>
-
-            <!-- Role 4 -->
-            <article class="cv-role">
-              <div class="cv-role-head">
-                <h3>Product Development Engineer <span class="cv-muted">&mdash; Wisestep</span></h3>
-                <span class="cv-date">Sep 2014 &ndash; Mar 2019</span>
-              </div>
-              <ul>
-                <li>Developed and supported custom-built applications; participated in product development.</li>
-                <li>Analysis of requirements for user interface, application enhancements, new functionality, and backend processes.</li>
-                <li>Code and modify applications using programming tools; document code adhering to naming conventions.</li>
-                <li>Created reports and worked on technical and analytical aspects of report creation.</li>
-                <li>Participated in unit, system, and user acceptance testing.</li>
-                <li>Deployed data science for real-time anomaly detection and diagnosis of high-impact problems using ML.</li>
-              </ul>
-
-              <!-- Projects sub-section -->
-              <div class="cv-projects">
-                <h4>Project #3: Wisestep ATS <span class="cv-muted">&mdash; Full Stack Engineer</span></h4>
-                <p>Crowdsourcing talent from expert global recruitment partners with split fee management. Orchestrated dev and prod environments for microservice applications using JHipster. Application security with OWASP/VAPT using Arachni. Containerization with Docker Swarm, CI/CD with Jenkins and Ansible. AWS parameter store and IAM security. Elasticsearch, Cassandra, and Kafka cluster management.</p>
-                <p class="cv-tech">HTML, CSS, AngularJS, Bootstrap, Thymeleaf, Java, Spring MVC, Elasticsearch, Cassandra, Microservices, JHipster, AWS, Docker, Docker Swarm, NGINX, VAPT</p>
-
-                <h4>Project #2: Wisestep Pulse <span class="cv-muted">&mdash; Full Stack Developer</span></h4>
-                <p>Recruitment Process Management, Timesheet, Contract, and Payments Management application. Worked with individual responsibility from frontend to database&mdash;HTML, CSS, Bootstrap, AngularJS, REST APIs with Code First Approach, MSSQL indexing for performance.</p>
-                <p class="cv-tech">ASP.NET MVC, Entity Framework, C#, SQL Server 2008, AngularJS, HTML, CSS, Bootstrap, Gulp, Solr</p>
-
-                <h4>Project #1: MIS <span class="cv-muted">&mdash; .NET Developer</span></h4>
-                <p>Application for managing Recruiters, Jobs, and Candidates Processing for closing client positions. One-man army for building features from coding, designing, and release management. Monitoring, troubleshooting, and deploying to IIS.</p>
-                <p class="cv-tech">ASP.NET Web Application, ASP.NET MVC, Entity Framework, C#, AngularJS, HTML, CSS, Bootstrap, Gulp, Solr, SQL Server 2008</p>
-              </div>
             </article>
 
           </section>
 
         </div>
       </div>
+
+      <section class="cv-block cv-full-width">
+        <article class="cv-role">
+          <div class="cv-role-head">
+            <h3>Platform Engineer <span class="cv-muted">&mdash; Wisestep</span></h3>
+            <span class="cv-date">Apr 2019 &ndash; Mar 2021</span>
+          </div>
+          <ul>
+            <li>Built and operated <strong>Spring Boot</strong> microservices on <strong>AWS</strong>, packaging services with <strong>Docker</strong> and improving release consistency.</li>
+            <li>Automated deployments through CI/CD pipelines and structured change management practices.</li>
+            <li>Established application and infrastructure monitoring for earlier fault detection and healthier releases.</li>
+            <li>Managed distributed NoSQL and search clusters with attention to consistency, availability, and operational stability.</li>
+            <li>Improved platform resilience across security, performance, and reliability concerns.</li>
+            <li>Implemented application performance monitoring and real-user monitoring to improve visibility into customer experience.</li>
+            <li>Applied <strong>AWS</strong> security and cost-optimization practices to production environments while building a stable operational baseline from scratch.</li>
+            <li>Ran vulnerability assessments using open-source tooling and improved release readiness.</li>
+            <li>Partnered with product engineering on release management and feature lifecycle delivery for the Wisestep recruitment platform.</li>
+            <li>Acted as the primary infrastructure decision-maker at Wisestep, building the platform from the ground up without an established guide and iteratively shaping it into a stable, cost-conscious production system.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="cv-block cv-full-width">
+        <article class="cv-role">
+          <div class="cv-role-head">
+            <h3>Product Development Engineer <span class="cv-muted">&mdash; Wisestep</span></h3>
+            <span class="cv-date">Sep 2014 &ndash; Mar 2019</span>
+          </div>
+          <ul>
+            <li>Built and supported business-critical applications across product engineering, backend workflows, and customer-facing features.</li>
+            <li>Translated product requirements into UI, backend, and reporting enhancements with end-to-end ownership.</li>
+            <li>Delivered application code, structured releases, and maintainable implementations across evolving product modules.</li>
+            <li>Developed reports and analytical workflows to support operational and business decision-making.</li>
+            <li>Contributed to unit, system, and user acceptance testing to improve release quality.</li>
+            <li>Applied data science techniques for real-time anomaly detection and diagnosis of high-impact production problems.</li>
+          </ul>
+
+          <div class="cv-projects">
+            <h4>Project #3: Wisestep ATS <span class="cv-muted">&mdash; Full Stack Engineer</span></h4>
+            <p>Built and operated environments for a microservices-based recruitment platform handling partner-driven hiring workflows. Owned application security with OWASP and VAPT practices, containerization with Docker Swarm, CI/CD with Jenkins and Ansible, AWS IAM and parameter security, and day-to-day operations for Elasticsearch, Cassandra, and Kafka.</p>
+            <p class="cv-tech">HTML, CSS, AngularJS, Bootstrap, Thymeleaf, Java, Spring MVC, Elasticsearch, Cassandra, Microservices, JHipster, AWS, Docker, Docker Swarm, NGINX, VAPT</p>
+
+            <h4>Project #2: Wisestep Pulse <span class="cv-muted">&mdash; Full Stack Developer</span></h4>
+            <p>Delivered a recruitment operations platform covering timesheets, contracts, and payments, with individual ownership across frontend, APIs, database design, and SQL performance tuning.</p>
+            <p class="cv-tech">ASP.NET MVC, Entity Framework, C#, SQL Server 2008, AngularJS, HTML, CSS, Bootstrap, Gulp, Solr</p>
+
+            <h4>Project #1: MIS <span class="cv-muted">&mdash; .NET Developer</span></h4>
+            <p>Built and maintained an internal recruiting operations system with end-to-end ownership across feature delivery, release management, monitoring, troubleshooting, and IIS deployments.</p>
+            <p class="cv-tech">ASP.NET Web Application, ASP.NET MVC, Entity Framework, C#, AngularJS, HTML, CSS, Bootstrap, Gulp, Solr, SQL Server 2008</p>
+          </div>
+        </article>
+      </section>
 
     </div>
   </section>

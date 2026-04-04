@@ -26,14 +26,17 @@ sudo apt install python3 python3-pip python3-venv \
 
 ```bash
 cd assets/docs
-# Install weasyprint
-pip install weasyprint
+python3 -m venv .venv
+. .venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install weasyprint
 ```
 
 ## Generate PDF
 
 ```bash
-# With venv activated
+# With venv activated, or after one-time setup because generate_pdf.py
+# will automatically reuse assets/docs/.venv when available.
 python3 generate_pdf.py
 ```
 

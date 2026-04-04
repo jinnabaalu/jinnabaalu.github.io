@@ -3490,6 +3490,12 @@ a {
   font-style: italic;
 }
 
+.cv-full-width {
+  margin-top: 28px;
+  padding-top: 0;
+  border-top: none;
+}
+
 /* --- Responsive --- */
 @media (max-width: 991px) {
   .cv-body {
