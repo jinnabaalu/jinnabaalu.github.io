@@ -5,3 +5,4 @@ _site
 .DS_Store
 .ahrefs
 .venv
+.jobs
