@@ -1,0 +1,91 @@
+<!-- Course Navigation Sidebar — included in course lesson posts -->
+{% if page.series == "python-production" %}
+<div class="course-sidebar">
+  <div class="course-sidebar-header">
+    <a href="/courses/python-production" class="course-sidebar-title">
+      <i class="bi bi-arrow-left"></i> Python Production Engineering
+    </a>
+  </div>
+  <nav class="course-sidebar-nav">
+    {% for module in site.data.python-course.modules %}
+      <div class="course-sidebar-module">
+        <div class="course-sidebar-module-title" data-bs-toggle="collapse" data-bs-target="#sidebar-mod-{{ module.id }}">
+          <span>{{ module.id }}. {{ module.title }}</span>
+          <i class="bi bi-chevron-down"></i>
+        </div>
+        {% assign is_current_module = false %}
+        {% for lesson in module.lessons %}
+          {% if lesson.slug == page.slug %}{% assign is_current_module = true %}{% endif %}
+        {% endfor %}
+        <div id="sidebar-mod-{{ module.id }}" class="collapse{% if is_current_module %} show{% endif %}">
+          <ul class="course-sidebar-lessons">
+            {% for lesson in module.lessons %}
+              {% assign lesson_post = site.posts | where: "slug", lesson.slug | first %}
+              <li class="{% if lesson.slug == page.slug %}active{% endif %}">
+                <span class="course-sidebar-order">{{ module.id }}.{{ lesson.order }}</span>
+                {% if lesson_post %}
+                  <a href="{{ lesson_post.url }}">{{ lesson.title }}</a>
+                {% else %}
+                  <span class="text-muted">{{ lesson.title }}</span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endfor %}
+  </nav>
+
+  <!-- Prev / Next Navigation -->
+  {% assign flat_lessons = "" | split: "" %}
+  {% for module in site.data.python-course.modules %}
+    {% for lesson in module.lessons %}
+      {% capture entry %}{{ module.id }}|{{ lesson.order }}|{{ lesson.slug }}|{{ lesson.title }}{% endcapture %}
+      {% assign flat_lessons = flat_lessons | push: entry %}
+    {% endfor %}
+  {% endfor %}
+
+  {% assign prev_lesson = nil %}
+  {% assign next_lesson = nil %}
+  {% assign found_current = false %}
+  {% for entry in flat_lessons %}
+    {% assign parts = entry | split: "|" %}
+    {% if found_current and next_lesson == nil %}
+      {% assign next_slug = parts[2] %}
+      {% assign next_title = parts[3] %}
+      {% assign next_post = site.posts | where: "slug", next_slug | first %}
+      {% if next_post %}
+        {% assign next_lesson = next_post %}
+        {% assign next_lesson_title = next_title %}
+      {% endif %}
+    {% endif %}
+    {% if parts[2] == page.slug %}
+      {% assign found_current = true %}
+    {% endif %}
+    {% unless found_current %}
+      {% assign prev_slug = parts[2] %}
+      {% assign prev_title = parts[3] %}
+      {% assign prev_post = site.posts | where: "slug", prev_slug | first %}
+      {% if prev_post %}
+        {% assign prev_lesson = prev_post %}
+        {% assign prev_lesson_title = prev_title %}
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+
+  <div class="course-sidebar-prevnext">
+    {% if prev_lesson %}
+      <a href="{{ prev_lesson.url }}" class="course-nav-prev">
+        <small>← Previous</small>
+        <span>{{ prev_lesson_title }}</span>
+      </a>
+    {% endif %}
+    {% if next_lesson %}
+      <a href="{{ next_lesson.url }}" class="course-nav-next">
+        <small>Next →</small>
+        <span>{{ next_lesson_title }}</span>
+      </a>
+    {% endif %}
+  </div>
+</div>
+{% endif %}

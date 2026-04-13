@@ -205,6 +205,73 @@ keywords: "Lead SRE, Site Reliability Engineering, Platform Engineering, DevSecO
   </div>
 </div>
 
+<!-- ========== FASTFORGE CLI ========== -->
+<div class="container profile-section">
+  <div class="row align-items-center mb-4">
+    <div class="col">
+      <h2 class="section-title">FastForge CLI — Production-Grade FastAPI Generator</h2>
+      <p class="section-subtitle mb-0">A Python CLI that generates ready-to-run FastAPI projects with SOLID architecture, structured logging, Docker, and async CRUD — in under 30 seconds.</p>
+    </div>
+    <div class="col-auto">
+      <a href="https://pypi.org/project/fastforge-cli/" target="_blank" class="btn btn-sm btn-cta">PyPI <i class="bi bi-box-arrow-up-right"></i></a>
+      <a href="https://github.com/VibhuviOiO/fastforge-cli" target="_blank" class="btn btn-sm btn-cta ms-2">GitHub <i class="bi bi-box-arrow-up-right"></i></a>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-6 col-lg-3">
+      <div class="featured-card">
+        <span class="featured-icon"><i class="bi bi-diagram-3 text-primary"></i></span>
+        <h5>SOLID Architecture</h5>
+        <p>Repository pattern, Service layer, and Dependency Injection out of the box. Each layer has one job — clean separation of concerns.</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="featured-card">
+        <span class="featured-icon"><i class="bi bi-lightning-charge text-warning"></i></span>
+        <h5>Basic + Advanced Modes</h5>
+        <p>Basic mode: 4-5 prompts → production app. Advanced mode: add Database, Cache, Streaming, Secrets, Log Agents, and Quality Gates.</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="featured-card">
+        <span class="featured-icon"><i class="bi bi-box-seam text-success"></i></span>
+        <h5>Docker-First Delivery</h5>
+        <p>Dockerfile, docker-compose, debug compose with auto-reload — run immediately with <code>docker compose up --build</code>, no venv needed.</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="featured-card">
+        <span class="featured-icon"><i class="bi bi-shield-lock text-danger"></i></span>
+        <h5>Extend & Deploy</h5>
+        <p>Add models, databases, observability. Deploy to Docker Compose, Swarm, K8s, or Helm. CI/CD for GitHub, GitLab, Bitbucket, Jenkins.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="bg-white rounded-3 p-3 shadow-sm">
+        <h6 class="mb-3"><i class="bi bi-terminal"></i> Quick Start</h6>
+        <pre class="mb-0" style="background:#f8f9fa;padding:1rem;border-radius:0.5rem;font-size:0.85rem;overflow-x:auto;"><code>pip install fastforge-cli
+fastforge</code></pre>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="bg-white rounded-3 p-3 shadow-sm">
+        <h6 class="mb-3"><i class="bi bi-check-circle"></i> What You Get</h6>
+        <ul class="list-unstyled mb-0" style="font-size:0.9rem;">
+          <li><i class="bi bi-check text-success"></i> Async CRUD API with FastAPI</li>
+          <li><i class="bi bi-check text-success"></i> Structured logging (structlog + JSON)</li>
+          <li><i class="bi bi-check text-success"></i> pytest + 80%+ coverage out of the box</li>
+          <li><i class="bi bi-check text-success"></i> Security headers, CORS, non-root container</li>
+          <li><i class="bi bi-check text-success"></i> ruff linting + pre-commit hooks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ========== FEATURED WORK ========== -->
 <div class="container profile-section">
   <h2 class="section-title">Featured Work</h2>
@@ -384,7 +451,8 @@ keywords: "Lead SRE, Site Reliability Engineering, Platform Engineering, DevSecO
       <h2 class="section-title">Latest Articles</h2>
     </div>
     <div class="col-auto">
-      <a href="/tech-timeline" class="text-decoration-none">View all {{ site.posts.size | plus: site.data.external-articles.size }} articles <i class="bi bi-arrow-right"></i></a>
+      {% assign blog_posts = site.posts | where_exp: "p", "p.series == nil" %}
+      <a href="/tech-timeline" class="text-decoration-none">View all {{ blog_posts.size | plus: site.data.external-articles.size }} articles <i class="bi bi-arrow-right"></i></a>
     </div>
   </div>
 
@@ -404,9 +472,11 @@ keywords: "Lead SRE, Site Reliability Engineering, Platform Engineering, DevSecO
     {% endfor %}
 
     {% assign recent_items = "" | split: "" %}
-    {% for post in site.posts limit:5 %}
+    {% for post in site.posts limit:20 %}
+      {% unless post.series %}
       {% capture item %}{{ post.date | date: "%Y-%m-%d" }}||{{ post.title }}||{{ site.baseurl }}{{ post.url }}||blog{% endcapture %}
       {% assign recent_items = recent_items | push: item %}
+      {% endunless %}
     {% endfor %}
     {% for ext in site.data.external-articles limit:5 %}
       {% capture item %}{{ ext.date }}||{{ ext.title }}||{{ ext.url }}||{{ ext.source }}{% endcapture %}
