@@ -1,13 +1,13 @@
 summary:
-  total_count: 51
-  total_stars: 143
+  total_count: 52
+  total_stars: 145
   personal_count: 39
   personal_stars: 82
-  organization_count: 12
-  organization_stars: 61
+  organization_count: 13
+  organization_stars: 63
   personal_url: "https://github.com/jinnabaalu"
   organization_url: "https://github.com/orgs/VibhuviOiO"
-  last_updated: "2026-04-05"
+  last_updated: "2026-04-12"
 
 featured_repositories:
   - name: infinite-containers
@@ -31,9 +31,9 @@ featured_repositories:
     source: Organization
     url: "https://github.com/VibhuviOiO/docker-registry-ui"
     description: "No description provided."
-    stars: 10
+    stars: 12
     language: "JavaScript"
-    updated: "2026-04-04"
+    updated: "2026-04-10"
   - name: caddy-operations
     owner: jinnabaalu
     source: Personal
@@ -65,7 +65,7 @@ featured_repositories:
     description: "Jinna Balu Profile"
     stars: 3
     language: "HTML"
-    updated: "2026-04-04"
+    updated: "2026-04-07"
   - name: verdaccio-docker-compose
     owner: jinnabaalu
     source: Personal
