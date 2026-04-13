@@ -29,7 +29,248 @@ post_class: post-template
   {% endif %}
 }
 </script>
-<main id="main" class="main container">
+<main id="main" class="main{% unless page.series %} container{% endunless %}">
+{% if page.series %}
+<!-- ============ COURSE LESSON LAYOUT ============ -->
+{% assign author = site.authors[page.author] %}
+{% assign all_course_posts = site.posts | where_exp: "p", "p.series == page.series" | sort: "module_order" %}
+
+<div class="cl-shell">
+  <!-- LEFT: Course navigation sidebar -->
+  <aside class="cl-nav" id="clNav">
+    <div class="cl-nav-inner">
+      <div class="cl-nav-header">
+        <a href="/courses/python-production" class="cl-nav-course-link">
+          <i class="bi bi-arrow-left"></i> Python Production Engineering
+        </a>
+      </div>
+      <nav class="cl-nav-modules">
+        {% for module in site.data.python-course.modules %}
+          {% assign is_current_module = false %}
+          {% assign module_lesson_count = module.lessons | size %}
+          {% for lesson in module.lessons %}
+            {% if lesson.slug == page.slug %}{% assign is_current_module = true %}{% endif %}
+          {% endfor %}
+          <div class="cl-nav-module">
+            <button class="cl-nav-module-head" data-bs-toggle="collapse" data-bs-target="#clnav-mod-{{ module.id }}" aria-expanded="{% if is_current_module %}true{% else %}false{% endif %}">
+              <span class="cl-nav-module-label">Module {{ module.id }}: {{ module.title }}</span>
+              <i class="bi bi-chevron-down cl-nav-chevron"></i>
+            </button>
+            <div id="clnav-mod-{{ module.id }}" class="collapse{% if is_current_module %} show{% endif %}">
+              <ul class="cl-nav-lessons">
+                {% for lesson in module.lessons %}
+                  {% assign lesson_post = all_course_posts | where: "slug", lesson.slug | first %}
+                  <li>
+                    {% if lesson.slug == page.slug %}
+                      <span class="cl-nav-lesson active">
+                        <i class="bi bi-file-earmark-text"></i> {{ lesson.title }}
+                      </span>
+                    {% elsif lesson_post %}
+                      <a href="{{ lesson_post.url }}" class="cl-nav-lesson">
+                        <i class="bi bi-file-earmark-text"></i> {{ lesson.title }}
+                      </a>
+                    {% else %}
+                      <span class="cl-nav-lesson locked">
+                        <i class="bi bi-lock"></i> {{ lesson.title }}
+                      </span>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endfor %}
+      </nav>
+    </div>
+  </aside>
+
+  <!-- MAIN + RIGHT TOC -->
+  <div class="cl-main-area">
+    <div class="cl-main-flex">
+      <!-- CENTER: Article content -->
+      <article class="cl-content">
+        <header class="cl-header">
+          <h1 class="cl-title">{{ page.title }}</h1>
+          {% if page.description %}
+          <p class="cl-description">{{ page.description }}</p>
+          {% endif %}
+          <div class="cl-meta">
+            <span><i class="bi bi-clock"></i> 10m</span>
+            <span><i class="bi bi-book"></i> 10m reading</span>
+            <span><i class="bi bi-terminal"></i> Lab included</span>
+          </div>
+        </header>
+
+        <div class="cl-article">
+          {{ content }}
+        </div>
+
+        <!-- Prev / Next Navigation -->
+        {% assign flat_lessons = "" | split: "" %}
+        {% for module in site.data.python-course.modules %}
+          {% for lesson in module.lessons %}
+            {% capture entry %}{{ module.id }}|{{ lesson.order }}|{{ lesson.slug }}|{{ lesson.title }}{% endcapture %}
+            {% assign flat_lessons = flat_lessons | push: entry %}
+          {% endfor %}
+        {% endfor %}
+        {% assign prev_lesson = nil %}
+        {% assign next_lesson = nil %}
+        {% assign found_current = false %}
+        {% for entry in flat_lessons %}
+          {% assign parts = entry | split: "|" %}
+          {% if found_current and next_lesson == nil %}
+            {% assign next_slug = parts[2] %}
+            {% assign next_title = parts[3] %}
+            {% assign next_post = site.posts | where: "slug", next_slug | first %}
+            {% if next_post %}{% assign next_lesson = next_post %}{% assign next_lesson_title = next_title %}{% endif %}
+          {% endif %}
+          {% if parts[2] == page.slug %}{% assign found_current = true %}{% endif %}
+          {% unless found_current %}
+            {% assign prev_slug = parts[2] %}
+            {% assign prev_title = parts[3] %}
+            {% assign prev_post = site.posts | where: "slug", prev_slug | first %}
+            {% if prev_post %}{% assign prev_lesson = prev_post %}{% assign prev_lesson_title = prev_title %}{% endif %}
+          {% endunless %}
+        {% endfor %}
+
+        <div class="cl-prevnext">
+          {% if prev_lesson %}
+          <a href="{{ prev_lesson.url }}" class="cl-nav-card cl-nav-prev">
+            <small><i class="bi bi-arrow-left"></i> Previous Lesson</small>
+            <span>{{ prev_lesson_title }}</span>
+          </a>
+          {% else %}
+          <div></div>
+          {% endif %}
+          {% if next_lesson %}
+          <a href="{{ next_lesson.url }}" class="cl-nav-card cl-nav-next">
+            <small>Next Lesson <i class="bi bi-arrow-right"></i></small>
+            <span>{{ next_lesson_title }}</span>
+          </a>
+          {% endif %}
+        </div>
+      </article>
+
+      <!-- RIGHT: On This Page (TOC) -->
+      <nav class="cl-toc" id="clToc">
+        <div class="cl-toc-inner">
+          <h4 class="cl-toc-heading">On This Page</h4>
+          {% include toc.html html=content %}
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile sidebar toggle -->
+<button class="cl-nav-toggle" id="clNavToggle" aria-label="Toggle course navigation">
+  <i class="bi bi-list"></i>
+</button>
+<script>
+document.getElementById('clNavToggle').addEventListener('click', function() {
+  document.getElementById('clNav').classList.toggle('open');
+});
+document.querySelector('.cl-main-area').addEventListener('click', function() {
+  document.getElementById('clNav').classList.remove('open');
+});
+
+/* --- Code block styling: editor vs terminal vs plain --- */
+(function() {
+  var editorLangs = {
+    'language-python':1, 'language-py':1,
+    'language-yaml':1, 'language-yml':1,
+    'language-toml':1, 'language-json':1,
+    'language-dockerfile':1, 'language-docker':1,
+    'language-hcl':1, 'language-terraform':1,
+    'language-ini':1, 'language-conf':1, 'language-nginx':1,
+    'language-promql':1
+  };
+  var terminalLangs = {
+    'language-bash':1, 'language-sh':1, 'language-shell':1,
+    'language-console':1, 'language-text':1, 'language-plaintext':1
+  };
+  var langNames = {
+    'language-python':'Python', 'language-py':'Python',
+    'language-bash':'Terminal', 'language-sh':'Terminal', 'language-shell':'Terminal',
+    'language-yaml':'YAML', 'language-yml':'YAML',
+    'language-json':'JSON', 'language-dockerfile':'Dockerfile', 'language-docker':'Docker',
+    'language-toml':'TOML', 'language-ini':'INI', 'language-conf':'Conf',
+    'language-hcl':'HCL', 'language-terraform':'Terraform',
+    'language-console':'Terminal', 'language-text':'Output', 'language-plaintext':'Output',
+    'language-promql':'PromQL', 'language-nginx':'Nginx',
+    'language-javascript':'JavaScript', 'language-js':'JavaScript',
+    'language-typescript':'TypeScript', 'language-ts':'TypeScript',
+    'language-sql':'SQL', 'language-html':'HTML', 'language-css':'CSS',
+    'language-xml':'XML', 'language-ruby':'Ruby', 'language-go':'Go',
+    'language-java':'Java', 'language-makefile':'Makefile', 'language-groovy':'Groovy'
+  };
+
+  document.querySelectorAll('.cl-article .highlighter-rouge').forEach(function(block) {
+    var lang = '', langCls = '', isEditor = false, isTerminal = false;
+    block.classList.forEach(function(cls) {
+      if (langNames[cls]) { lang = langNames[cls]; langCls = cls; }
+    });
+    if (!lang) lang = 'Code';
+
+    isEditor = !!editorLangs[langCls];
+    isTerminal = !!terminalLangs[langCls];
+
+    // Classify
+    if (isEditor) {
+      block.classList.add('cl-editor');
+    } else if (isTerminal) {
+      block.classList.add('cl-terminal');
+    } else {
+      block.classList.add('cl-plain');
+    }
+    block.setAttribute('data-lang', lang);
+
+    // Copy button (all blocks)
+    var copyBtn = document.createElement('button');
+    copyBtn.className = 'cl-code-copy';
+    copyBtn.title = 'Copy';
+    copyBtn.innerHTML = '<i class="bi bi-clipboard"></i> Copy';
+    block.appendChild(copyBtn);
+    copyBtn.addEventListener('click', function() {
+      var code = block.querySelector('code');
+      if (!code) return;
+      navigator.clipboard.writeText(code.textContent).then(function() {
+        copyBtn.innerHTML = '<i class="bi bi-check-lg"></i> Copied';
+        copyBtn.classList.add('copied');
+        setTimeout(function() {
+          copyBtn.innerHTML = '<i class="bi bi-clipboard"></i> Copy';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+
+    // Editor-only: status bar + line numbers
+    if (isEditor) {
+      var code = block.querySelector('code');
+      var lineCount = code ? code.textContent.split('\n').length : 0;
+      if (code && code.textContent.endsWith('\n')) lineCount--;
+
+      // Status bar
+      var status = document.createElement('div');
+      status.className = 'cl-code-status';
+      status.innerHTML = '<span>' + lang + ' &middot; UTF-8</span><span>Ln ' + lineCount + '</span>';
+      block.appendChild(status);
+
+      // Line numbers
+      if (code) {
+        var lines = code.innerHTML.split('\n');
+        if (lines[lines.length - 1] === '') lines.pop();
+        code.innerHTML = lines.map(function(l) {
+          return '<span class="cl-code-line">' + l + '</span>';
+        }).join('\n');
+      }
+    }
+  });
+})();
+</script>
+
+{% else %}
+<!-- ============ REGULAR BLOG POST LAYOUT ============ -->
     <div class="row">
         <div class="col-md-8">
             <div class="pagetitle">
@@ -221,4 +462,5 @@ post_class: post-template
 
 
     </section>
+{% endif %}
 </main>

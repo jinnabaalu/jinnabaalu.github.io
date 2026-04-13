@@ -43,10 +43,12 @@ keywords: "DevOps, Docker, Elasticsearch, Cassandra, Git, Kafka, PostgreSQL, Mon
   {% assign all_items = "" | split: "" %}
 
   {% for post in site.posts %}
+    {% unless post.series %}
     {% if post.title and post.title != "" %}
       {% capture item %}{{ post.date | date: "%Y-%m-%d" }}||{{ post.title }}||{{ site.baseurl }}{{ post.url }}||{{ post.categories | join: "," }}||{{ post.tags | join: "," }}||blog{% endcapture %}
       {% assign all_items = all_items | push: item %}
     {% endif %}
+    {% endunless %}
   {% endfor %}
 
   {% for ext in site.data.external-articles %}

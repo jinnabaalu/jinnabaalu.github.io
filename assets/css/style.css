@@ -3568,4 +3568,1491 @@ a {
   }
 }
 
+/* =====================================================
+   Course Pages — Edtech Design System
+   ===================================================== */
+
+/* ---------- Courses Index — Hero ---------- */
+.courses-hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: -20px -30px 2.5rem -30px;
+}
+.courses-hero-content {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.courses-hero h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+.courses-hero p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+
+/* ---------- Courses Index — Grid & Card ---------- */
+.courses-grid {
+  margin: 0 0 3rem;
+}
+.course-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.course-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+.course-card-banner {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.course-card-banner.python {
+  background: linear-gradient(135deg, #306998, #ffd43b);
+}
+.course-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.95);
+  color: #1a1a2e;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+}
+.course-card-icon-wrap {
+  width: 64px;
+  height: 64px;
+  background: rgba(255,255,255,0.22);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+.course-card-body {
+  padding: 1.25rem 1.5rem 0.75rem;
+}
+.course-card-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+.course-card-tags span {
+  background: #f0f4ff;
+  color: #4154f1;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+.course-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+.course-card-desc {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
+}
+.course-card-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.course-card-stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  color: #777;
+}
+.course-card-stat i {
+  color: #4154f1;
+  font-size: 0.9rem;
+}
+.course-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 0.75rem;
+}
+.course-card-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4154f1;
+}
+.course-card-cta i { margin-left: 4px; }
+.course-card-author {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #666;
+}
+.course-card-author img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ---------- Courses Index — Why Section ---------- */
+.courses-why {
+  margin: 0 0 3rem;
+}
+.courses-why h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+}
+.why-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.why-card:hover {
+  border-color: #4154f1;
+  box-shadow: 0 4px 16px rgba(65,84,241,0.08);
+}
+.why-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.4rem;
+}
+.why-card p {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.55;
+  margin: 0;
+}
+.why-icon {
+  width: 44px;
+  height: 44px;
+  background: #f0f4ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #4154f1;
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- Course Detail — Hero ---------- */
+.cd-hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #fff;
+  padding: 3.5rem 5% 2.5rem;
+  margin: -20px -30px 0 -30px;
+}
+.cd-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.cd-breadcrumb {
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255,255,255,0.5);
+}
+.cd-breadcrumb a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+}
+.cd-breadcrumb a:hover { color: #fff; }
+.cd-breadcrumb span { margin: 0 6px; }
+.cd-hero-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+}
+.cd-hero-subtitle {
+  font-size: 1.08rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 680px;
+}
+.cd-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1.5rem;
+}
+.cd-hero-meta i {
+  margin-right: 4px;
+  color: rgba(255,255,255,0.5);
+}
+.cd-hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.cd-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #4154f1;
+  color: #fff;
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.cd-btn-primary:hover {
+  background: #3040d0;
+  color: #fff;
+  transform: translateY(-1px);
+}
+.cd-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.cd-btn-outline:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+.cd-hero-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.cd-hero-tech span {
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+}
+
+/* ---------- Course Detail — Main area ---------- */
+.cd-body {
+  padding-top: 2.5rem;
+}
+.cd-section {
+  margin-bottom: 3rem;
+}
+.cd-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+.cd-section-desc {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+/* Feature / "What You'll Build" cards */
+.cd-feature-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.cd-feature-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border-color: #ddd;
+}
+.cd-feature-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.4rem;
+}
+.cd-feature-card p {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.55;
+  margin: 0;
+}
+.cd-feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+.cd-feature-icon.blue  { background: #e8edff; color: #4154f1; }
+.cd-feature-icon.green { background: #e6f9f0; color: #198754; }
+.cd-feature-icon.red   { background: #fde8ec; color: #dc3545; }
+
+/* ---------- Curriculum ---------- */
+.cd-curriculum-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.cd-curriculum-header .cd-section-title,
+.cd-curriculum-header .cd-section-desc {
+  margin-bottom: 0;
+}
+.cd-stat {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #4154f1;
+  line-height: 1;
+}
+.cd-stat small {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #777;
+  margin-top: 2px;
+}
+.cd-modules { display: flex; flex-direction: column; gap: 0; }
+.cd-module {
+  border: 1px solid #eee;
+  border-bottom: none;
+  background: #fff;
+}
+.cd-module:first-child { border-radius: 12px 12px 0 0; }
+.cd-module:last-child  { border-bottom: 1px solid #eee; border-radius: 0 0 12px 12px; }
+.cd-module:only-child  { border-radius: 12px; border-bottom: 1px solid #eee; }
+.cd-module-header {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: background 0.15s;
+  user-select: none;
+}
+.cd-module-header:hover { background: #fafbff; }
+.cd-module-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1;
+}
+.cd-module-number {
+  min-width: 28px;
+  height: 28px;
+  background: #4154f1;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.cd-module-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+.cd-module-usecase {
+  font-size: 0.8rem;
+  color: #777;
+  margin: 2px 0 0;
+  font-style: italic;
+}
+.cd-module-usecase i {
+  font-size: 0.7rem;
+  color: #aaa;
+  margin-right: 3px;
+}
+.cd-module-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.cd-module-count {
+  font-size: 0.75rem;
+  color: #999;
+  white-space: nowrap;
+}
+.cd-module-chevron {
+  font-size: 0.75rem;
+  color: #aaa;
+  transition: transform 0.25s;
+}
+.cd-module-header[aria-expanded="true"] .cd-module-chevron {
+  transform: rotate(180deg);
+}
+.cd-lessons {
+  border-top: 1px solid #f0f0f0;
+}
+.cd-lesson {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.6rem 1.25rem 0.6rem 1.25rem;
+  border-bottom: 1px solid #f8f8f8;
+  transition: background 0.12s;
+}
+.cd-lesson:last-child { border-bottom: none; }
+.cd-lesson:hover { background: #fafbff; }
+.cd-lesson-available { }
+.cd-lesson-number {
+  min-width: 2rem;
+  font-size: 0.78rem;
+  color: #bbb;
+  font-weight: 600;
+  padding-top: 1px;
+}
+.cd-lesson-content {
+  flex: 1;
+}
+a.cd-lesson-title {
+  color: #4154f1;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+a.cd-lesson-title:hover { text-decoration: underline; }
+span.cd-lesson-title.locked {
+  color: #999;
+  font-size: 0.9rem;
+}
+span.cd-lesson-title.locked i {
+  font-size: 0.7rem;
+  margin-left: 4px;
+}
+.cd-lesson-desc {
+  display: block;
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 1px;
+  line-height: 1.4;
+}
+.cd-lesson-status {
+  color: #22c55e;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* ---------- Prerequisites ---------- */
+.cd-prereq-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+}
+.cd-prereq-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cd-prereq-card.required h4 i { color: #198754; }
+.cd-prereq-card.helpful h4 i { color: #ffc107; }
+.cd-prereq-card ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+.cd-prereq-card li {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.65;
+}
+
+/* ---------- Instructor ---------- */
+.cd-instructor-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.cd-instructor-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.cd-instructor-info h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 2px;
+}
+.cd-instructor-role {
+  font-size: 0.82rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+.cd-instructor-info p {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.55;
+  margin-bottom: 0.5rem;
+}
+.cd-instructor-links {
+  display: flex;
+  gap: 0.75rem;
+}
+.cd-instructor-links a {
+  color: #4154f1;
+  font-size: 1.1rem;
+  transition: color 0.15s;
+}
+.cd-instructor-links a:hover { color: #1a1a2e; }
+
+/* ---------- CTA ---------- */
+.cd-cta {
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.cd-cta h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+.cd-cta p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================
+   Course Lesson Page — 3-column layout (vibhuvioio style)
+   ========================================================== */
+
+/* --- Shell: full-viewport flex container --- */
+.cl-shell {
+  display: flex;
+  min-height: calc(100vh - 60px);
+  margin: -20px -30px;
+  width: calc(100% + 60px);
+}
+
+/* --- LEFT SIDEBAR: Course Navigation --- */
+.cl-nav {
+  width: 280px;
+  flex-shrink: 0;
+  background: #f8f9fb;
+  border-right: 1px solid #e5e7eb;
+  overflow-y: auto;
+  height: calc(100vh - 60px);
+  position: sticky;
+  top: 60px;
+}
+.cl-nav-inner {
+  padding: 1.25rem 0;
+}
+.cl-nav-header {
+  padding: 0 1.25rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 0.5rem;
+}
+.cl-nav-course-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #4154f1;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.35;
+}
+.cl-nav-course-link:hover { color: #3040d0; }
+.cl-nav-modules {
+  display: flex;
+  flex-direction: column;
+}
+.cl-nav-module {
+  border-bottom: 1px solid #f0f0f0;
+}
+.cl-nav-module:last-child { border-bottom: none; }
+.cl-nav-module-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.65rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+}
+.cl-nav-module-head:hover {
+  color: #374151;
+  background: #eff0f3;
+}
+.cl-nav-module-label { flex: 1; }
+.cl-nav-chevron {
+  font-size: 0.6rem;
+  color: #9ca3af;
+  transition: transform 0.2s;
+}
+.cl-nav-module-head[aria-expanded="true"] .cl-nav-chevron {
+  transform: rotate(180deg);
+}
+.cl-nav-lessons {
+  list-style: none;
+  padding: 0 0.65rem 0.5rem;
+  margin: 0;
+}
+.cl-nav-lessons li {
+  margin-bottom: 1px;
+}
+.cl-nav-lesson {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: #4b5563;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: background 0.15s, color 0.15s;
+}
+.cl-nav-lesson:hover {
+  background: #e8eaed;
+  color: #111827;
+}
+.cl-nav-lesson i { font-size: 0.75rem; flex-shrink: 0; }
+.cl-nav-lesson.active {
+  background: #4154f1;
+  color: #fff;
+  font-weight: 600;
+}
+.cl-nav-lesson.active:hover {
+  background: #3040d0;
+}
+.cl-nav-lesson.locked {
+  color: #d1d5db;
+  cursor: default;
+}
+
+/* --- MAIN + RIGHT TOC area --- */
+.cl-main-area {
+  flex: 1;
+  min-width: 0;
+  background: #fff;
+}
+.cl-main-flex {
+  display: flex;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2.5rem 3rem;
+}
+
+/* --- CENTER: Article content --- */
+.cl-content {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+}
+.cl-header {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+.cl-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+.cl-description {
+  font-size: 1.05rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 0.75rem;
+  max-width: 640px;
+}
+.cl-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  color: #9ca3af;
+}
+.cl-meta i {
+  margin-right: 3px;
+}
+
+/* --- Article body typography --- */
+.cl-article {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #374151;
+}
+.cl-article h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+.cl-article h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 1.75rem 0 0.5rem;
+}
+.cl-article h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #374151;
+  margin: 1.25rem 0 0.4rem;
+}
+.cl-article p {
+  margin-bottom: 1.25rem;
+}
+.cl-article a {
+  color: #4154f1;
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+.cl-article a:hover {
+  text-decoration: underline;
+}
+
+/* Code — Base shared styles for all code blocks */
+.cl-article .highlighter-rouge {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1rem 0 1.5rem;
+}
+
+.cl-article .highlighter-rouge .highlight {
+  background: transparent;
+}
+
+.cl-article .highlighter-rouge pre.highlight {
+  background: #1e1e1e;
+  color: #e4e6eb;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  overflow: visible;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.cl-article .highlighter-rouge pre.highlight code {
+  display: block;
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.85rem;
+}
+
+/* ---- EDITOR style: project files (python, yaml, toml, dockerfile, json, hcl) ---- */
+.cl-article .highlighter-rouge.cl-editor {
+  border: 1px solid #383838;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+/* Title bar with language label */
+.cl-article .highlighter-rouge.cl-editor::before {
+  content: attr(data-lang);
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 1rem 0 4.5rem;
+  background: #323233;
+  border-bottom: 1px solid #484848;
+  font-size: 0.72rem;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  color: #8b8b8b;
+  letter-spacing: 0.02em;
+}
+/* macOS traffic light dots */
+.cl-article .highlighter-rouge.cl-editor::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff5f57;
+  box-shadow: 18px 0 0 #febc2e, 36px 0 0 #28c840;
+}
+/* Editor: line numbers + padding */
+.cl-article .highlighter-rouge.cl-editor pre.highlight code {
+  padding: 0.85rem 1rem 0.85rem 3.5rem;
+  counter-reset: cl-line;
+}
+.cl-code-line {
+  display: inline;
+}
+.cl-code-line::before {
+  counter-increment: cl-line;
+  content: counter(cl-line);
+  display: inline-block;
+  width: 2.5rem;
+  margin-left: -3.5rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: #555;
+  font-size: 0.8rem;
+  user-select: none;
+  -webkit-user-select: none;
+}
+/* Editor status bar */
+.cl-code-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 16px;
+  background: #4154f1;
+  font-size: 0.65rem;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.02em;
+}
+
+/* ---- TERMINAL style: bash / shell / console ---- */
+.cl-article .highlighter-rouge.cl-terminal {
+  border: 1px solid #2a2a2a;
+}
+.cl-article .highlighter-rouge.cl-terminal::before {
+  content: attr(data-lang);
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 1rem;
+  background: #2b2b2b;
+  border-bottom: 1px solid #3a3a3a;
+  font-size: 0.7rem;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  color: #7a7a7a;
+  letter-spacing: 0.02em;
+}
+.cl-article .highlighter-rouge.cl-terminal pre.highlight {
+  background: #0d1117;
+}
+.cl-article .highlighter-rouge.cl-terminal pre.highlight code {
+  color: #c9d1d9;
+}
+
+/* ---- PLAIN style: other languages ---- */
+.cl-article .highlighter-rouge.cl-plain {
+  border: 1px solid #333;
+}
+
+/* ---- Copy button (all styles) ---- */
+.cl-code-copy {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 12px;
+  background: transparent;
+  border: none;
+  color: #8b8b8b;
+  font-size: 0.72rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.15s;
+  z-index: 2;
+}
+.cl-code-copy:hover { color: #d4d4d4; }
+.cl-code-copy.copied { color: #28c840; }
+.cl-code-copy i { font-size: 0.85rem; }
+/* Terminal + plain: copy btn in code area (no title bar) */
+.cl-article .highlighter-rouge.cl-terminal .cl-code-copy { height: 32px; }
+.cl-article .highlighter-rouge.cl-plain .cl-code-copy {
+  height: auto;
+  top: 6px;
+  right: 6px;
+  padding: 4px 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+}
+
+/* Rouge syntax token colors — VS Code Dark+ theme */
+.cl-article .highlight .c,
+.cl-article .highlight .cm,
+.cl-article .highlight .c1,
+.cl-article .highlight .cs { color: #6a9955; font-style: italic; }
+.cl-article .highlight .k,
+.cl-article .highlight .kd,
+.cl-article .highlight .kn,
+.cl-article .highlight .kp,
+.cl-article .highlight .kr,
+.cl-article .highlight .kt { color: #569cd6; }
+.cl-article .highlight .s,
+.cl-article .highlight .s1,
+.cl-article .highlight .s2,
+.cl-article .highlight .sb,
+.cl-article .highlight .sc,
+.cl-article .highlight .sd,
+.cl-article .highlight .se,
+.cl-article .highlight .sh,
+.cl-article .highlight .sx { color: #ce9178; }
+.cl-article .highlight .si { color: #9cdcfe; }
+.cl-article .highlight .mi,
+.cl-article .highlight .mf,
+.cl-article .highlight .mh,
+.cl-article .highlight .mo,
+.cl-article .highlight .il { color: #b5cea8; }
+.cl-article .highlight .na,
+.cl-article .highlight .nb,
+.cl-article .highlight .bp { color: #9cdcfe; }
+.cl-article .highlight .nc,
+.cl-article .highlight .nn { color: #4ec9b0; }
+.cl-article .highlight .nf,
+.cl-article .highlight .fm { color: #dcdcaa; }
+.cl-article .highlight .nd { color: #dcdcaa; }
+.cl-article .highlight .nv,
+.cl-article .highlight .vc,
+.cl-article .highlight .vi,
+.cl-article .highlight .vg { color: #9cdcfe; }
+.cl-article .highlight .o,
+.cl-article .highlight .ow { color: #d4d4d4; }
+.cl-article .highlight .p { color: #d4d4d4; }
+.cl-article .highlight .nt { color: #569cd6; }
+.cl-article .highlight .nl { color: #9cdcfe; }
+.cl-article .highlight .err { color: #f44747; }
+
+.cl-article code {
+  font-size: 0.875em;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+.cl-article p code,
+.cl-article li code,
+.cl-article td code {
+  background: #f1f3f5;
+  color: #1f2937;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 0.875em;
+  border: 1px solid #e5e7eb;
+}
+
+/* Blockquote */
+.cl-article blockquote {
+  border-left: 4px solid #4154f1;
+  background: #f8f9ff;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  border-radius: 0 8px 8px 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+.cl-article blockquote p { margin: 0; }
+.cl-article blockquote strong {
+  color: #4154f1;
+}
+
+/* Images */
+.cl-article img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* Lists */
+.cl-article ul, .cl-article ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.cl-article li {
+  margin-bottom: 0.35rem;
+}
+
+/* Tables */
+.cl-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.cl-article th {
+  background: #f9fafb;
+  color: #111827;
+  font-weight: 600;
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+.cl-article td {
+  padding: 0.55rem 0.85rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+.cl-article tr:last-child td { border-bottom: none; }
+
+/* --- Prev/Next nav cards --- */
+.cl-prevnext {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+.cl-nav-card {
+  display: block;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.cl-nav-card:hover {
+  border-color: #4154f1;
+  box-shadow: 0 2px 12px rgba(65,84,241,0.08);
+}
+.cl-nav-card small {
+  display: block;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.cl-nav-card span {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #4154f1;
+  line-height: 1.35;
+}
+.cl-nav-next { text-align: right; }
+
+/* --- RIGHT SIDEBAR: On This Page (TOC) --- */
+.cl-toc {
+  width: 220px;
+  flex-shrink: 0;
+}
+.cl-toc-inner {
+  position: sticky;
+  top: 84px;
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+.cl-toc-heading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  margin: 0 0 0.5rem;
+}
+.cl-toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cl-toc li {
+  margin-bottom: 2px;
+}
+.cl-toc a {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  padding: 2px 0;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.12s;
+}
+.cl-toc a:hover {
+  color: #111827;
+}
+.cl-toc ul ul {
+  padding-left: 0.85rem;
+}
+
+/* --- Mobile sidebar toggle --- */
+.cl-nav-toggle {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1050;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #4154f1;
+  color: #fff;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 16px rgba(65,84,241,0.3);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================
+   Project Editor — VS Code-style multi-file viewer
+   ========================================================== */
+.pe-editor {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #383838;
+  margin: 1.5rem 0 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+/* Title bar */
+.pe-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 38px;
+  padding: 0 12px;
+  background: #323233;
+  border-bottom: 1px solid #484848;
+}
+.pe-titlebar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pe-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.pe-dot-red { background: #ff5f57; }
+.pe-dot-yellow { background: #febc2e; }
+.pe-dot-green { background: #28c840; }
+.pe-titlebar-name {
+  font-size: 0.78rem;
+  color: #8b8b8b;
+  margin-left: 4px;
+}
+.pe-github-link {
+  color: #8b8b8b;
+  font-size: 0.95rem;
+  transition: color 0.15s;
+}
+.pe-github-link:hover { color: #d4d4d4; }
+
+/* IDE body: sidebar + content */
+.pe-body {
+  display: flex;
+  min-height: 320px;
+  max-height: 520px;
+}
+
+/* Sidebar */
+.pe-sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  background: #252526;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  overflow-y: auto;
+}
+.pe-sidebar-label {
+  padding: 8px 12px 4px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6b6b6b;
+}
+.pe-file-tree { padding-bottom: 8px; }
+.pe-loading-tree {
+  padding: 12px;
+  color: #6b6b6b;
+  font-size: 0.75rem;
+}
+.pe-spin {
+  animation: pe-spin 1s linear infinite;
+}
+@keyframes pe-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Tree items */
+.pe-tree-item {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #ccc;
+  font-size: 0.78rem;
+  font-family: inherit;
+  padding: 3px 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s;
+}
+.pe-tree-item:hover { background: rgba(255,255,255,0.06); }
+.pe-tree-item span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pe-tree-file.active {
+  background: rgba(65,84,241,0.2);
+  color: #a78bfa;
+}
+.pe-tree-chevron {
+  font-size: 0.55rem;
+  color: #6b6b6b;
+  flex-shrink: 0;
+  margin-right: 2px;
+}
+.pe-tree-children { /* expanded by default */ }
+
+/* Content area */
+.pe-content {
+  flex: 1;
+  min-width: 0;
+  background: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tabs */
+.pe-tabs {
+  display: flex;
+  align-items: center;
+  background: #252526;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.pe-tabs::-webkit-scrollbar { display: none; }
+.pe-tab {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #8b8b8b;
+  font-size: 0.78rem;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.12s, background 0.12s;
+}
+.pe-tab:hover { color: #d4d4d4; background: rgba(255,255,255,0.04); }
+.pe-tab.active {
+  background: #1e1e1e;
+  color: #e4e6eb;
+  border-bottom-color: #4154f1;
+}
+.pe-tab-copy {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: transparent;
+  border: none;
+  color: #6b6b6b;
+  font-size: 0.72rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+.pe-tab-copy:hover { color: #d4d4d4; }
+.pe-tab-copy.copied { color: #28c840; }
+
+/* Code area */
+.pe-code-area {
+  flex: 1;
+  overflow: auto;
+}
+.pe-loading {
+  padding: 2rem;
+  color: #6b6b6b;
+  font-size: 0.82rem;
+}
+.pe-code-wrap {
+  display: flex;
+  min-height: 100%;
+}
+.pe-line-nums {
+  flex-shrink: 0;
+  padding: 12px 0;
+  text-align: right;
+  user-select: none;
+  -webkit-user-select: none;
+  border-right: 1px solid #2a2a2a;
+  min-width: 3rem;
+}
+.pe-ln {
+  padding: 0 10px 0 12px;
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: #555;
+}
+.pe-code-pre {
+  flex: 1;
+  margin: 0;
+  padding: 12px 16px;
+  background: transparent;
+  overflow-x: auto;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #e4e6eb;
+}
+.pe-code-pre code {
+  font-family: inherit;
+  font-size: inherit;
+}
+.pe-code-line {
+  min-height: 1.65em;
+}
+
+/* Status bar */
+.pe-statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 14px;
+  background: #4154f1;
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pe-body { flex-direction: column; max-height: 600px; }
+  .pe-sidebar { width: 100%; max-height: 160px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1199px) {
+  .courses-hero {
+    margin: -20px -20px 2rem -20px;
+  }
+  .cd-hero {
+    margin: -20px -20px 0 -20px;
+  }
+  /* Hide TOC on smaller desktops */
+  .cl-toc { display: none; }
+  .cl-main-flex { padding: 2rem; }
+  .cl-shell { margin: -20px; width: calc(100% + 40px); }
+}
+@media (max-width: 991px) {
+  /* Sidebar becomes overlay on tablet */
+  .cl-nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 1040;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: none;
+  }
+  .cl-nav.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+  }
+  .cl-nav-toggle { display: flex; }
+  .cl-main-flex { padding: 1.5rem; }
+}
+@media (max-width: 768px) {
+  .courses-hero {
+    padding: 2.5rem 1.25rem;
+    margin: -20px -20px 2rem -20px;
+  }
+  .courses-hero h1 { font-size: 1.6rem; }
+  .cd-hero {
+    padding: 2rem 1.25rem 1.75rem;
+    margin: -20px -20px 0 -20px;
+  }
+  .cd-hero-title { font-size: 1.6rem; }
+  .cd-hero-meta { flex-direction: column; gap: 0.5rem; }
+  .cd-hero-tech { gap: 4px; }
+  .cd-hero-actions { flex-direction: column; }
+  .cd-btn-primary, .cd-btn-outline { justify-content: center; }
+  .cd-instructor-card { flex-direction: column; text-align: center; }
+  .cd-instructor-links { justify-content: center; }
+  .cl-title { font-size: 1.4rem; }
+  .cl-prevnext { grid-template-columns: 1fr; }
+  .cl-main-flex { padding: 1.25rem; }
+}
+
 

@@ -1,0 +1,207 @@
+---
+layout: default
+title: "Python Production Engineering — End to End"
+permalink: /courses/python-production
+canonical_url: "https://jinnabalu.com/courses/python-production"
+description: "Use-case driven course: Build, deploy, and maintain a production-grade Python FastAPI application with full observability, security, and multi-platform deployment"
+keywords: "Python, FastAPI, production, observability, structured logging, OpenTelemetry, Prometheus, Elasticsearch, Vault, Docker, Kubernetes, DevSecOps"
+full_width: true
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "provider": {
+    "@type": "Person",
+    "name": "Jinna Balu",
+    "url": "https://jinnabalu.com/about"
+  },
+  "educationalLevel": "Intermediate to Advanced",
+  "programmingLanguage": "Python",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT40H"
+  }
+}
+</script>
+
+<!-- Course Hero (full-width dark) -->
+<main id="main" class="main">
+
+<section class="cd-hero">
+  <div class="cd-hero-inner">
+    <nav class="cd-breadcrumb">
+      <a href="/">Home</a> <span>/</span> <a href="/courses">Courses</a> <span>/</span> <span>Python Production</span>
+    </nav>
+    <h1 class="cd-hero-title">Python Production Engineering</h1>
+    <p class="cd-hero-subtitle">Build a CRUD API, scaffold it properly, add logging, containerize, test, secure, observe, and deploy — one layer at a time.</p>
+    <div class="cd-hero-meta">
+      <span><i class="bi bi-layers"></i> 11 Modules</span>
+      <span><i class="bi bi-play-circle"></i> 45 Lessons</span>
+      <span><i class="bi bi-signal"></i> Intermediate</span>
+      <span><i class="bi bi-unlock"></i> Free & Open Source</span>
+    </div>
+    <div class="cd-hero-actions">
+      {% assign all_course_posts = site.posts | where_exp: "p", "p.series == 'python-production'" | sort: "module_order" %}
+      {% assign first_lesson = all_course_posts | first %}
+      {% if first_lesson %}
+      <a href="{{ first_lesson.url }}" class="cd-btn-primary"><i class="bi bi-play-fill"></i> Start Course</a>
+      {% endif %}
+      <a href="{{ site.data.python-course.github_repo }}" target="_blank" class="cd-btn-outline"><i class="bi bi-github"></i> View on GitHub</a>
+    </div>
+    <div class="cd-hero-tech">
+      <span>Python</span><span>FastAPI</span><span>structlog</span><span>OpenTelemetry</span><span>Prometheus</span><span>Vector</span><span>Kafka</span><span>Elasticsearch</span><span>Vault</span><span>Docker</span><span>Kubernetes</span><span>Trivy</span>
+    </div>
+  </div>
+</section>
+
+<div class="cd-body">
+
+  <!-- What You'll Build -->
+  <section class="cd-section">
+    <h2 class="cd-section-title">What You'll Build</h2>
+    <p class="cd-section-desc">Every module adds a layer to a real production system. By the end, you have a complete, deployable application.</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="cd-feature-card">
+          <div class="cd-feature-icon blue"><i class="bi bi-code-slash"></i></div>
+          <h4>Production API</h4>
+          <p>CRUD API with FastAPI, Pydantic validation, async database operations, structured logging, and containerized from day one</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="cd-feature-card">
+          <div class="cd-feature-icon green"><i class="bi bi-eye"></i></div>
+          <h4>Full Observability</h4>
+          <p>Structured JSON logging, distributed tracing with Jaeger, Prometheus metrics, and a complete log pipeline with Vector, Kafka, and Elasticsearch</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="cd-feature-card">
+          <div class="cd-feature-icon red"><i class="bi bi-shield-check"></i></div>
+          <h4>Secure & Deployable</h4>
+          <p>DevSecOps with Trivy, Bandit, Gitleaks. Secret management with Vault. Deploy to Marathon, Swarm, or Kubernetes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum -->
+  <section class="cd-section cd-curriculum">
+    <div class="cd-curriculum-header">
+      <div>
+        <h2 class="cd-section-title">Course Curriculum</h2>
+        <p class="cd-section-desc">11 modules · 45 lessons · Each starts with a real problem you'll solve</p>
+      </div>
+      <div class="cd-curriculum-stats">
+        <span class="cd-stat">{{ all_course_posts | size }} <small>lessons available</small></span>
+      </div>
+    </div>
+
+    <div class="cd-modules">
+    {% for module in site.data.python-course.modules %}
+      <div class="cd-module">
+        <div class="cd-module-header" data-bs-toggle="collapse" data-bs-target="#cdmod-{{ module.id }}" aria-expanded="{% if module.id == 1 %}true{% else %}false{% endif %}">
+          <div class="cd-module-left">
+            <span class="cd-module-number">{{ module.id }}</span>
+            <div>
+              <h5 class="cd-module-title">{{ module.title }}</h5>
+              <p class="cd-module-usecase"><i class="bi bi-chat-left-quote"></i> {{ module.usecase }}</p>
+            </div>
+          </div>
+          <div class="cd-module-right">
+            <span class="cd-module-count">{{ module.lessons | size }} lessons</span>
+            <i class="bi bi-chevron-down cd-module-chevron"></i>
+          </div>
+        </div>
+        <div id="cdmod-{{ module.id }}" class="collapse{% if module.id == 1 %} show{% endif %}">
+          <div class="cd-lessons">
+            {% for lesson in module.lessons %}
+              {% assign lesson_post = all_course_posts | where: "slug", lesson.slug | first %}
+              <div class="cd-lesson {% if lesson_post %}cd-lesson-available{% endif %}">
+                <span class="cd-lesson-number">{{ module.id }}.{{ lesson.order }}</span>
+                <div class="cd-lesson-content">
+                  {% if lesson_post %}
+                    <a href="{{ lesson_post.url }}" class="cd-lesson-title">{{ lesson.title }}</a>
+                  {% else %}
+                    <span class="cd-lesson-title locked">{{ lesson.title }} <i class="bi bi-lock"></i></span>
+                  {% endif %}
+                  <span class="cd-lesson-desc">{{ lesson.description }}</span>
+                </div>
+                {% if lesson_post %}
+                <span class="cd-lesson-status"><i class="bi bi-check-circle-fill"></i></span>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </section>
+
+  <!-- Prerequisites & Instructor side-by-side on large screens -->
+  <div class="row g-4">
+    <div class="col-lg-7">
+      <section class="cd-section">
+        <h2 class="cd-section-title">Prerequisites</h2>
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <div class="cd-prereq-card required">
+              <h4><i class="bi bi-check-square"></i> Required</h4>
+              <ul>
+                <li>Basic Python knowledge (functions, classes, modules)</li>
+                <li>Command line comfort (terminal, shell basics)</li>
+                <li>Docker installed (<code>docker</code> and <code>docker compose</code>)</li>
+                <li>Git basics (clone, commit, push)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="cd-prereq-card helpful">
+              <h4><i class="bi bi-lightbulb"></i> Helpful</h4>
+              <ul>
+                <li>REST API concepts (HTTP methods, status codes)</li>
+                <li>Basic understanding of JSON</li>
+                <li>Any prior experience with logging or monitoring</li>
+                <li>Kubernetes or orchestrator exposure</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="col-lg-5">
+      <section class="cd-section cd-instructor">
+        <h2 class="cd-section-title">Your Instructor</h2>
+        <div class="cd-instructor-card">
+          <img src="/assets/img/jinnabalu.jpeg" alt="Jinna Balu" class="cd-instructor-avatar">
+          <div class="cd-instructor-info">
+            <h4>Jinna Balu</h4>
+            <p class="cd-instructor-role">Lead SRE · Platform Engineering · Open Source</p>
+            <p>Building production systems, observability pipelines, and DevSecOps workflows. Every lesson comes from real production experience.</p>
+            <div class="cd-instructor-links">
+              <a href="https://github.com/jinnabaalu" target="_blank"><i class="bi bi-github"></i></a>
+              <a href="https://www.linkedin.com/in/jinnabaalu/" target="_blank"><i class="bi bi-linkedin"></i></a>
+              <a href="/about"><i class="bi bi-person-circle"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cd-cta">
+    <h2>Ready to Build Production Systems?</h2>
+    <p>Start with Module 1 and build your way to a fully observable, secure, deployable Python application.</p>
+    {% if first_lesson %}
+    <a href="{{ first_lesson.url }}" class="cd-btn-primary"><i class="bi bi-play-fill"></i> Start Course — It's Free</a>
+    {% endif %}
+  </section>
+
+</div>
+</main>

@@ -1,0 +1,62 @@
+{% comment %}
+  Project Editor — VS Code-style multi-file viewer fetching from GitHub.
+  
+  Usage:
+    {% include project-editor.html
+       repo="jinnabaalu/python-production-blueprint"
+       branch="main"
+       name="python-production-blueprint"
+       files="Dockerfile,pyproject.toml,app/main.py,app/config.py"
+    %}
+  
+  Parameters:
+    repo   — GitHub owner/repo (required)
+    branch — branch name (default: main)
+    name   — display name for the project (default: repo name)
+    files  — comma-separated file paths relative to repo root (required)
+{% endcomment %}
+
+{% assign editor_id = include.name | slugify | prepend: "pe-" %}
+<div class="pe-editor"
+     id="{{ editor_id }}"
+     data-repo="{{ include.repo }}"
+     data-branch="{{ include.branch | default: 'main' }}"
+     data-name="{{ include.name | default: include.repo }}"
+     data-files="{{ include.files }}">
+  <!-- Title bar -->
+  <div class="pe-titlebar">
+    <div class="pe-titlebar-left">
+      <span class="pe-dot pe-dot-red"></span>
+      <span class="pe-dot pe-dot-yellow"></span>
+      <span class="pe-dot pe-dot-green"></span>
+      <span class="pe-titlebar-name">{{ include.name | default: include.repo }}</span>
+    </div>
+    <a class="pe-github-link" href="https://github.com/{{ include.repo }}" target="_blank" rel="noopener noreferrer" title="View on GitHub">
+      <i class="bi bi-github"></i>
+    </a>
+  </div>
+  <!-- IDE body -->
+  <div class="pe-body">
+    <!-- Sidebar: file tree -->
+    <div class="pe-sidebar">
+      <div class="pe-sidebar-label">Explorer</div>
+      <div class="pe-file-tree">
+        <div class="pe-loading-tree"><i class="bi bi-arrow-repeat pe-spin"></i> Loading…</div>
+      </div>
+    </div>
+    <!-- Content area -->
+    <div class="pe-content">
+      <!-- Tab bar -->
+      <div class="pe-tabs"></div>
+      <!-- Code area -->
+      <div class="pe-code-area">
+        <div class="pe-loading">Loading files from GitHub…</div>
+      </div>
+      <!-- Status bar -->
+      <div class="pe-statusbar">
+        <span class="pe-statusbar-lang"></span>
+        <span class="pe-statusbar-info"></span>
+      </div>
+    </div>
+  </div>
+</div>

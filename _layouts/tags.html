@@ -11,11 +11,13 @@ permalink: "/tags.html"
 </div>
 {% assign pages_list = tag[1] %}
 {% for post in pages_list %}
+{% unless post.series %}
 {% if post.title != null %}
 {% if group == null or group == post.group %}
 {% include postbox.html %}
 {% endif %}
 {% endif %}
+{% endunless %}
 {% endfor %}
 {% assign pages_list = nil %}
 {% assign group = nil %}

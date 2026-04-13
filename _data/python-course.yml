@@ -1,0 +1,241 @@
+title: "Python Production Engineering — End to End"
+description: "Build, secure, observe, and deploy a production-grade Python FastAPI application — one layer at a time"
+github_repo: "https://github.com/jinnabaalu/python-production-blueprint"
+permalink: /courses/python-production
+image: assets/img/courses/python-production.png
+
+modules:
+  - id: 1
+    title: "Build a CRUD API"
+    usecase: "I need a working Python API — from zero to CRUD"
+    lessons:
+      - order: 1
+        title: "Why Python for Production Services"
+        slug: python-production-why-python
+        description: "Python beyond scripts — async services, type safety, and the ecosystem for production"
+      - order: 2
+        title: "FastAPI — Async-First HTTP Framework"
+        slug: python-production-fastapi-basics
+        description: "Build your first async API with automatic OpenAPI docs"
+      - order: 3
+        title: "Pydantic — Request & Response Validation"
+        slug: python-production-pydantic-validation
+        description: "Type-safe data models that validate at runtime"
+      - order: 4
+        title: "RESTful Route Design with FastAPI Router"
+        slug: python-production-api-routes
+        description: "Organize routes with APIRouter, path parameters, and dependency injection"
+      - order: 5
+        title: "Error Handling & Response Models"
+        slug: python-production-error-handling
+        description: "Consistent error responses, exception handlers, and HTTP status codes"
+
+  - id: 2
+    title: "Application Scaffolding"
+    usecase: "My code works but it's a mess — no structure, no config management"
+    lessons:
+      - order: 1
+        title: "Project Structure with pyproject.toml"
+        slug: python-production-project-structure
+        description: "Modern Python packaging — no more setup.py or requirements.txt"
+      - order: 2
+        title: "Environment-Based Config with pydantic-settings"
+        slug: python-production-config-management
+        description: "Type-safe configuration from environment variables with validation"
+      - order: 3
+        title: "Async Database Operations"
+        slug: python-production-async-database
+        description: "SQLAlchemy async sessions, MongoDB Motor, connection pooling"
+      - order: 4
+        title: "API Versioning Strategies"
+        slug: python-production-api-versioning
+        description: "URL-based, header-based versioning and backward compatibility"
+
+  - id: 3
+    title: "Structured Logging"
+    usecase: "My logs are print statements — useless in production"
+    lessons:
+      - order: 1
+        title: "Why Structured Logging Matters"
+        slug: python-production-structured-logging-why
+        description: "grep vs query — why JSON logs change everything in production"
+      - order: 2
+        title: "structlog — JSON Logging with Context"
+        slug: python-production-structlog-setup
+        description: "Configure structlog with processors, renderers, and context binding"
+      - order: 3
+        title: "Request-Scoped Logging with Correlation IDs"
+        slug: python-production-correlation-ids
+        description: "Trace a request across log lines with middleware-injected correlation IDs"
+      - order: 4
+        title: "Dual Output — Stdout and File Logging"
+        slug: python-production-dual-logging
+        description: "Stdout for containers, RotatingFileHandler for Marathon and host-mount scenarios"
+
+  - id: 4
+    title: "Containerization"
+    usecase: "It works on my machine — I need it to work everywhere"
+    lessons:
+      - order: 1
+        title: "Docker — Containerize from Day One"
+        slug: python-production-docker-setup
+        description: "Multi-stage Dockerfile, docker-compose dev workflow, no virtualenv needed"
+      - order: 2
+        title: "Docker Compose — Development and Staging"
+        slug: python-production-docker-compose-deploy
+        description: "Compose profiles for dev, staging — the simplest deployment"
+
+  - id: 5
+    title: "Testing & CI/CD"
+    usecase: "No tests, manual builds — deployments keep breaking production"
+    lessons:
+      - order: 1
+        title: "pytest — Fixtures, Conftest, and Async Testing"
+        slug: python-production-pytest-setup
+        description: "Set up pytest with fixtures, conftest.py, and async test support"
+      - order: 2
+        title: "Unit Tests for Business Logic"
+        slug: python-production-unit-tests
+        description: "Test validators, transformers, and service layer in isolation"
+      - order: 3
+        title: "Integration Tests for API Endpoints"
+        slug: python-production-integration-tests
+        description: "Test full request-response cycles with httpx AsyncClient"
+      - order: 4
+        title: "Test Coverage and Quality Gates"
+        slug: python-production-test-coverage
+        description: "Enforce coverage thresholds in CI — fail the build below 80%"
+      - order: 5
+        title: "Pre-Commit Hooks — Shift Left"
+        slug: python-production-pre-commit-hooks
+        description: "Gitleaks, detect-secrets, Bandit, Ruff — catch issues before they're committed"
+      - order: 6
+        title: "GitHub Actions CI Pipeline"
+        slug: python-production-github-actions-ci
+        description: "Test, lint, SAST on every push — automated quality gates"
+
+  - id: 6
+    title: "DevSecOps"
+    usecase: "Security is an afterthought — we scan only before releases"
+    lessons:
+      - order: 1
+        title: "Container Security — Trivy and Hadolint"
+        slug: python-production-container-security
+        description: "Scan Docker images for CVEs, lint Dockerfiles for best practices"
+      - order: 2
+        title: "Dependency Audit — SBOM and Dependency Track"
+        slug: python-production-dependency-audit
+        description: "CycloneDX SBOM generation, pip-audit, and Dependency Track dashboard"
+      - order: 3
+        title: "Scheduled Security Scans"
+        slug: python-production-scheduled-scans
+        description: "Daily vulnerability scans, license compliance, and alerting"
+
+  - id: 7
+    title: "Distributed Tracing & Metrics"
+    usecase: "A request is slow but I don't know which service is the bottleneck"
+    lessons:
+      - order: 1
+        title: "OpenTelemetry — Traces, Spans, and Context"
+        slug: python-production-opentelemetry-intro
+        description: "Understand traces, spans, and how context propagates across services"
+      - order: 2
+        title: "Auto-Instrumentation for FastAPI"
+        slug: python-production-otel-auto-instrument
+        description: "Zero-code tracing for HTTP, database, and external calls"
+      - order: 3
+        title: "Jaeger — Visualizing Distributed Traces"
+        slug: python-production-jaeger-tracing
+        description: "Deploy Jaeger, send traces, and diagnose latency bottlenecks"
+      - order: 4
+        title: "Prometheus Metrics — RED Method"
+        slug: python-production-prometheus-metrics
+        description: "Rate, Errors, Duration — instrument your API with Prometheus client"
+
+  - id: 8
+    title: "Log Pipeline"
+    usecase: "Logs exist but nobody can search them — they're on individual servers"
+    lessons:
+      - order: 1
+        title: "Vector Agent — Lightweight Log Collection"
+        slug: python-production-vector-agent
+        description: "Collect logs from files with Vector — no heavyweight agents"
+      - order: 2
+        title: "Kafka — Durable Log Transport"
+        slug: python-production-kafka-log-transport
+        description: "Buffer logs in Kafka for reliability and fan-out to multiple sinks"
+      - order: 3
+        title: "Vector Aggregator — Transform and Route"
+        slug: python-production-vector-aggregator
+        description: "Parse, enrich, and route logs from Kafka to storage backends"
+      - order: 4
+        title: "Elasticsearch + Kibana — Search and Visualize"
+        slug: python-production-elasticsearch-kibana
+        description: "Index logs in Elasticsearch, build Kibana dashboards"
+      - order: 5
+        title: "End-to-End Pipeline"
+        slug: python-production-log-pipeline-e2e
+        description: "Wire it all together: App → File → Vector → Kafka → ES → Kibana"
+
+  - id: 9
+    title: "Secret Management"
+    usecase: "Secrets scattered in env files and hardcoded strings — one leak away from disaster"
+    lessons:
+      - order: 1
+        title: "HashiCorp Vault — Centralized Secret Management"
+        slug: python-production-vault-setup
+        description: "Set up Vault, store secrets, and integrate with your Python app"
+      - order: 2
+        title: "Vault Auth Methods — Token vs AppRole"
+        slug: python-production-vault-auth
+        description: "Token auth for dev, AppRole for production — when and why"
+      - order: 3
+        title: "Secret Workflow — Local to Production"
+        slug: python-production-secret-workflow
+        description: ".env for local, Vault for staging/prod — a practical workflow"
+
+  - id: 10
+    title: "Multi-Platform Deployment"
+    usecase: "We need to deploy the same app on Marathon, Swarm, and Kubernetes"
+    lessons:
+      - order: 1
+        title: "Marathon (Mesos) Deployment"
+        slug: python-production-marathon-deploy
+        description: "Marathon app definition, health checks, host-mounted log paths"
+      - order: 2
+        title: "Docker Swarm Stack Deploy"
+        slug: python-production-swarm-deploy
+        description: "Docker stack, global services, Swarm secrets, rolling updates"
+      - order: 3
+        title: "Kubernetes Deployment"
+        slug: python-production-kubernetes-deploy
+        description: "Deployment, ConfigMap, Secret, HPA, Ingress — full K8s manifests"
+      - order: 4
+        title: "Vector Deployment Patterns"
+        slug: python-production-vector-patterns
+        description: "Sidecar vs DaemonSet vs host-agent — choose the right log collection pattern"
+
+  - id: 11
+    title: "Production Maintenance"
+    usecase: "App is deployed but we have no runbook when things break"
+    lessons:
+      - order: 1
+        title: "Health Checks — Liveness, Readiness, Startup"
+        slug: python-production-health-checks
+        description: "Implement health endpoints that orchestrators actually use"
+      - order: 2
+        title: "Graceful Shutdown and Connection Draining"
+        slug: python-production-graceful-shutdown
+        description: "Handle SIGTERM, drain connections, and avoid dropped requests"
+      - order: 3
+        title: "Log Rotation and Disk Management"
+        slug: python-production-log-rotation
+        description: "RotatingFileHandler config, disk alerts, and cleanup strategies"
+      - order: 4
+        title: "Dependency Updates and Vulnerability Patching"
+        slug: python-production-dependency-updates
+        description: "Automated update workflow — Dependabot, pip-audit, and safe upgrades"
+      - order: 5
+        title: "Production Runbook"
+        slug: python-production-runbook
+        description: "Common failure scenarios, diagnosis steps, and resolution playbook"
