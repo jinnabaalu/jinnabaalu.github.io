@@ -1,0 +1,315 @@
+---
+layout: default
+title: "Git Cheat Sheet — A Practical Course for Every Engineer"
+permalink: /Git-Cheet-Sheet
+canonical_url: "https://jinnabalu.com/Git-Cheet-Sheet"
+description: "A free, practical Git course for developers, DevOps engineers, and tech leads. Learn git init, branching, merge, reset, SSH, and daily-use commands step by step."
+keywords: "Git, Git Cheat Sheet, Git Course, Git Tutorial, Git for Beginners, Git Branching, Git Merge, Git Reset, Git SSH, DevOps Git, Version Control"
+sitemap:
+  lastmod: 2026-04-20
+  priority: 0.85
+  changefreq: monthly
+---
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>Git Cheat Sheet</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item">Git Course</li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Intro -->
+  <div class="row mt-3">
+    <div class="col-lg-8">
+      <p style="font-size:1.1rem;">
+        Whether you are a developer, system administrator, DevOps engineer, or a tech lead &mdash; <strong>Git is a must-have skill</strong>.
+        This free, self-paced course walks you through everything you need from your very first <code>git init</code> to advanced branch management and SSH workflows.
+      </p>
+      <p>
+        Each module links to a dedicated article with commands, examples, and real-world use cases.
+        Follow them in order for a structured learning path, or jump to any topic you need.
+      </p>
+    </div>
+    <div class="col-lg-4">
+      <div class="card shadow-sm border-0" style="background:#f0f4ff;">
+        <div class="card-body">
+          <h5 class="card-title" style="color:#012970;"><i class="bi bi-info-circle"></i> Course Info</h5>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><i class="bi bi-clock text-primary"></i> <strong>Duration:</strong> Self-paced</li>
+            <li class="mb-2"><i class="bi bi-bar-chart text-primary"></i> <strong>Level:</strong> Beginner &rarr; Intermediate</li>
+            <li class="mb-2"><i class="bi bi-people text-primary"></i> <strong>Audience:</strong> Developers, DevOps, Leads</li>
+            <li class="mb-2"><i class="bi bi-journal-code text-primary"></i> <strong>Modules:</strong> 12</li>
+            <li class="mb-2"><i class="bi bi-github text-primary"></i> <a href="https://github.com/jinnabaalu/GitCheatSheet" target="_blank" rel="noopener">Source Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-4">
+
+  <!-- Module 1: Foundations -->
+  <div class="row">
+    <div class="col-12">
+      <h2 style="color:#012970;font-weight:700;"><i class="bi bi-1-circle-fill text-primary"></i> Foundations</h2>
+      <p class="text-muted">Understand what Git is, why it matters, and how to set it up.</p>
+    </div>
+  </div>
+  <div class="row g-4 mb-4">
+    <!-- 1.1 -->
+    <div class="col-lg-6">
+      <div class="card h-100 shadow-sm border-start border-primary border-4">
+        <div class="card-body">
+          <span class="badge bg-success mb-2">Start Here</span>
+          <h5 class="card-title"><a href="/git-intro" style="color:#012970;">Module 1 &mdash; Introduction to Git</a></h5>
+          <p class="card-text">Why Git exists, who should use it, and the questions every engineer asks when starting with version control.</p>
+          <ul class="text-muted small mb-0">
+            <li>Git vs GitHub / GitLab / Bitbucket</li>
+            <li>Contributors &mdash; not just developers</li>
+            <li>Mono-repo vs Poly-repo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 1.2 -->
+    <div class="col-lg-6">
+      <div class="card h-100 shadow-sm border-start border-primary border-4">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/git-init" style="color:#012970;">Module 2 &mdash; Git Init</a></h5>
+          <p class="card-text">Initialize a local repository and connect it to a remote server like GitHub, GitLab, or Bitbucket.</p>
+          <ul class="text-muted small mb-0">
+            <li><code>git init</code> &mdash; start a new repository</li>
+            <li>Connect local repo to remote</li>
+            <li>First push to origin</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 2: Daily Workflow -->
+  <div class="row">
+    <div class="col-12">
+      <h2 style="color:#012970;font-weight:700;"><i class="bi bi-2-circle-fill text-primary"></i> Daily Workflow</h2>
+      <p class="text-muted">The commands you will use every single day.</p>
+    </div>
+  </div>
+  <div class="row g-4 mb-4">
+    <!-- 2.1 -->
+    <div class="col-lg-4">
+      <div class="card h-100 shadow-sm border-start border-warning border-4">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/git-commit-file" style="color:#012970;">Module 3 &mdash; Commit Files</a></h5>
+          <p class="card-text">Stage, commit, and push your changes. The bread and butter of every Git user.</p>
+          <ul class="text-muted small mb-0">
+            <li><code>git status</code>, <code>git add</code></li>
+            <li><code>git commit -m</code></li>
+            <li><code>git push</code></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 2.2 -->
+    <div class="col-lg-4">
+      <div class="card h-100 shadow-sm border-start border-warning border-4">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/commonly-used-commands" style="color:#012970;">Module 4 &mdash; Common Commands</a></h5>
+          <p class="card-text">Frequently used commands: viewing history, diffs, stashing, and tagging.</p>
+          <ul class="text-muted small mb-0">
+            <li><code>git log</code>, <code>git diff</code></li>
+            <li><code>git stash</code></li>
+            <li><code>git tag</code></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 2.3 -->
+    <div class="col-lg-4">
+      <div class="card h-100 shadow-sm border-start border-warning border-4">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/git-developer-commands" style="color:#012970;">Module 5 &mdash; Git Basics for Developers</a></h5>
+          <p class="card-text">A quick-reference card of configure, clone, pull, push, and branch commands every developer needs.</p>
+          <ul class="text-muted small mb-0">
+            <li><code>git config</code> &mdash; global &amp; repo</li>
+            <li><code>git clone</code>, <code>git pull</code></li>
+            <li>Checkout &amp; switch branches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 3: Branching & Merging -->
+  <div class="row">
+    <div class="col-12">
+      <h2 style="color:#012970;font-weight:700;"><i class="bi bi-3-circle-fill text-primary"></i> Branching &amp; Merging</h2>
+      <p class="text-muted">Work with multiple features and contributors without chaos.</p>
+    </div>
+  </div>
+  <div class="row g-4 mb-4">
+    <!-- 3.1 -->
+    <div class="col-lg-4">
+      <div class="card h-100 shadow-sm border-start border-success border-4">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/create-branch" style="color:#012970;">Module 6 &mdash; Create Branch</a></h5>
+          <p class="card-text">Create feature, develop, and hotfix branches following naming conventions.</p>
+          <ul class="text-muted small mb-0">
+            <li><code>git checkout -b</code></li>
+            <li>Branch naming conventions</li>
+            <li>Push new branch to remote</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 3.2 -->
+    <div class="col-lg-4">
+      <div class="card h-100 shadow-sm border-start border-success border-4">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/branch-mangement" style="color:#012970;">Module 7 &mdash; Branch Management</a></h5>
+          <p class="card-text">List, rename, delete, and organize branches for single and multi-branch workflows.</p>
+          <ul class="text-muted small mb-0">
+            <li>Single vs multi-branch strategy</li>
+            <li>Delete local &amp; remote branches</li>
+            <li>Prune stale branches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 3.3 -->
+    <div class="col-lg-4">
+      <div class="card h-100 shadow-sm border-start border-success border-4">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/git-merge" style="color:#012970;">Module 8 &mdash; Git Merge</a></h5>
+          <p class="card-text">Merge feature branches, resolve conflicts, and keep a clean commit history.</p>
+          <ul class="text-muted small mb-0">
+            <li><code>git merge</code> workflow</li>
+            <li>Conflict resolution</li>
+            <li>Fast-forward vs recursive merge</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 4: Undo & Fix -->
+  <div class="row">
+    <div class="col-12">
+      <h2 style="color:#012970;font-weight:700;"><i class="bi bi-4-circle-fill text-primary"></i> Undo &amp; Fix Mistakes</h2>
+      <p class="text-muted">Everyone makes mistakes. Git makes it safe to recover.</p>
+    </div>
+  </div>
+  <div class="row g-4 mb-4">
+    <div class="col-lg-6">
+      <div class="card h-100 shadow-sm border-start border-danger border-4">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/reset-commits" style="color:#012970;">Module 9 &mdash; Reset Commits</a></h5>
+          <p class="card-text">Remove the last commit, revert to a specific commit, or clean up your history before a pull request.</p>
+          <ul class="text-muted small mb-0">
+            <li><code>git reset --soft</code> / <code>--hard</code></li>
+            <li>Remove last N commits</li>
+            <li>Force push after reset</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 5: SSH & Remote -->
+  <div class="row">
+    <div class="col-12">
+      <h2 style="color:#012970;font-weight:700;"><i class="bi bi-5-circle-fill text-primary"></i> SSH &amp; Remote Configuration</h2>
+      <p class="text-muted">Secure your workflow with SSH keys and manage remote URLs.</p>
+    </div>
+  </div>
+  <div class="row g-4 mb-4">
+    <!-- 5.1 -->
+    <div class="col-lg-6">
+      <div class="card h-100 shadow-sm border-start border-info border-4">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/git-push-with-ssh" style="color:#012970;">Module 10 &mdash; Push with SSH</a></h5>
+          <p class="card-text">Generate an SSH key, add it to GitHub, and push without entering your password every time.</p>
+          <ul class="text-muted small mb-0">
+            <li><code>ssh-keygen</code></li>
+            <li>Add key to GitHub / GitLab</li>
+            <li>Test SSH connection</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 5.2 -->
+    <div class="col-lg-6">
+      <div class="card h-100 shadow-sm border-start border-info border-4">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/switch-remote-url-http-ssh" style="color:#012970;">Module 11 &mdash; Switch Remote URL (HTTPS &harr; SSH)</a></h5>
+          <p class="card-text">Switch an existing repository between HTTPS and SSH remote URLs.</p>
+          <ul class="text-muted small mb-0">
+            <li><code>git remote set-url</code></li>
+            <li>Verify with <code>git remote -v</code></li>
+            <li>When to use HTTPS vs SSH</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Module 6: For Leads -->
+  <div class="row">
+    <div class="col-12">
+      <h2 style="color:#012970;font-weight:700;"><i class="bi bi-6-circle-fill text-primary"></i> For Tech Leads &amp; Managers</h2>
+      <p class="text-muted">Commands and workflows for people who manage repositories and teams.</p>
+    </div>
+  </div>
+  <div class="row g-4 mb-5">
+    <div class="col-lg-6">
+      <div class="card h-100 shadow-sm border-start border-dark border-4">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/git-for-manager-lead" style="color:#012970;">Module 12 &mdash; Git for Project Leads</a></h5>
+          <p class="card-text">Count branches, audit contributors, review PRs, and manage releases from the command line.</p>
+          <ul class="text-muted small mb-0">
+            <li>Branch audit &amp; cleanup</li>
+            <li>Contributor statistics</li>
+            <li>Release tagging strategy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Learning Path Summary -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <h2 style="color:#012970;font-weight:700;">Suggested Learning Path</h2>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>#</th>
+              <th>Module</th>
+              <th>Who Should Read</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td><a href="/git-intro">Introduction to Git</a></td><td>Everyone</td></tr>
+            <tr><td>2</td><td><a href="/git-init">Git Init</a></td><td>Everyone</td></tr>
+            <tr><td>3</td><td><a href="/git-commit-file">Commit Files</a></td><td>Everyone</td></tr>
+            <tr><td>4</td><td><a href="/commonly-used-commands">Common Commands</a></td><td>Everyone</td></tr>
+            <tr><td>5</td><td><a href="/git-developer-commands">Git Basics for Developers</a></td><td>Developers</td></tr>
+            <tr><td>6</td><td><a href="/create-branch">Create Branch</a></td><td>Everyone</td></tr>
+            <tr><td>7</td><td><a href="/branch-mangement">Branch Management</a></td><td>Everyone</td></tr>
+            <tr><td>8</td><td><a href="/git-merge">Git Merge</a></td><td>Everyone</td></tr>
+            <tr><td>9</td><td><a href="/reset-commits">Reset Commits</a></td><td>Developers, DevOps</td></tr>
+            <tr><td>10</td><td><a href="/git-push-with-ssh">Push with SSH</a></td><td>Everyone</td></tr>
+            <tr><td>11</td><td><a href="/switch-remote-url-http-ssh">Switch Remote URL</a></td><td>Everyone</td></tr>
+            <tr><td>12</td><td><a href="/git-for-manager-lead">Git for Project Leads</a></td><td>Leads, Managers</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</main>

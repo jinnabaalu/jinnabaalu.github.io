@@ -1,8 +1,8 @@
 User-agent: *
 Crawl-delay: 5
-Disallow: /assets/docs/
 Disallow: /assets/vendor/
 Disallow: /assets/img/IMAGES
+Disallow: /assets/docs/JinnaBalu-Resume.pdf
 Disallow: /page2/
 Disallow: /page3/
 Disallow: /page4/
