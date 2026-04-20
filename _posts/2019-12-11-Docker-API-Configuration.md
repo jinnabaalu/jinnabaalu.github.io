@@ -1,4 +1,5 @@
 ---
+layout: post
 title:  "Docker API Configuration"
 metadate: "hide"
 categories: [ DockerAPI, Docker ]

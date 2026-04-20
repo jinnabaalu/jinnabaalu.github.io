@@ -1,35 +1,14 @@
 ---
 layout: default
-title: "Blog — Jinna Balu"
+title: "Articles — Jinna Balu"
 permalink: /blog
-canonical_url: "https://jinnabalu.com/blog"
-description: "Blog posts on DevOps, Docker, Kubernetes, Elasticsearch, AWS, Infrastructure, and DevSecOps by Jinna Balu"
-keywords: "DevOps blog, Docker, Kubernetes, Elasticsearch, AWS, Infrastructure"
+canonical_url: "https://jinnabalu.com/tech-timeline"
+description: "All articles on DevOps, Docker, Kubernetes, Elasticsearch, AWS, Infrastructure, and DevSecOps by Jinna Balu"
+keywords: "DevOps articles, Docker, Kubernetes, Elasticsearch, AWS, Infrastructure"
+noindex: true
+sitemap: false
+redirect_to: /tech-timeline
 ---
-{% if page.url == "/blog" %}
-<main id="main" class="main">
-    <div class="pagetitle">
-        <h1>Blog</h1>
-        <nav>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item">All Blogs</li>
-            </ol>
-        </nav>
-    </div>
-    <br>
-    <section class="section">
-
-        <div class="row">
-
-            {% for post in site.posts %}
-
-            {% include postbox.html %}
-
-            {% endfor %}
-
-        </div>
-
-    </section>
-</main>
-{% endif %}
+<script>window.location.replace('/tech-timeline');</script>
+<meta http-equiv="refresh" content="0;url=/tech-timeline">
+<p>Redirecting to <a href="/tech-timeline">Articles</a>...</p>

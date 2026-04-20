@@ -38,6 +38,57 @@ layout: compress
     }
   }
   </script>
+  {% if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SiteNavigationElement",
+        "position": 1,
+        "name": "About",
+        "description": "About Jinna Balu — Lead SRE, DevSecOps Architect, open source contributor",
+        "url": "https://jinnabalu.com/about"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 2,
+        "name": "FastForge CLI — Production-Grade FastAPI Generator",
+        "description": "Python CLI that generates production-ready FastAPI projects with SOLID architecture, Docker, and async CRUD",
+        "url": "https://jinnabalu.com/fastforge-cli"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 3,
+        "name": "VibhuviOiO — Open Source Products",
+        "description": "Open-source platform engineering products and infrastructure tooling by Jinna Balu",
+        "url": "https://jinnabalu.com/vibhuvioio"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 4,
+        "name": "Docker Registry UI",
+        "description": "Modern web UI for Docker Registry with built-in Trivy vulnerability scanning",
+        "url": "https://jinnabalu.com/docker-registry-ui"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 5,
+        "name": "LDAP Manager",
+        "description": "Web-based LDAP directory management tool for users, groups, and organizational units",
+        "url": "https://jinnabalu.com/ldap-manager"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 6,
+        "name": "Stack Overflow",
+        "description": "Top Stack Overflow answers from Jinna Balu across Docker, Elasticsearch, and production operations",
+        "url": "https://jinnabalu.com/stack-overflow"
+      }
+    ]
+  }
+  </script>
+  {% endif %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

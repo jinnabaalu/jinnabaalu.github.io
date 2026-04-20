@@ -51,6 +51,26 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - NEXT_BIG_THING.md
+  - README.md
+  - docker-compose.yaml
+  - CNAME
+  - .jobs
+
+defaults:
+  - scope:
+      path: "assets"
+    values:
+      sitemap: false
+  - scope:
+      path: "forms"
+    values:
+      sitemap: false
+  - scope:
+      path: "scripts"
+    values:
+      sitemap: false
+
 # Google Tag Manager Integration
 google-tag-manager-id: GTM-MTFQ8TF
 google-analytics-id: G-E0ZW5NRN6K

@@ -155,7 +155,7 @@ http {
     ..........
     server {
       listen 80;
-      server_name platform-ops.tech;
+      server_name vibhuvioio.com;
       return 301 https://$host$request_uri;
 
       access_log off;
@@ -164,10 +164,10 @@ http {
 
     server {
         listen 443 ssl;
-        server_name platform-ops.tech;
+        server_name vibhuvioio.com;
         root /usr/share/nginx/html;
-        ssl_certificate    /etc/nginx/ssl/platform-ops.crt;
-        ssl_certificate_key    /etc/nginx/ssl/ platform-ops.key;
+        ssl_certificate    /etc/nginx/ssl/vibhuvioio.crt;
+        ssl_certificate_key    /etc/nginx/ssl/vibhuvioio.key;
         ......
         ......
         location / {

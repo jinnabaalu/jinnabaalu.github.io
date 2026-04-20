@@ -1,4 +1,5 @@
 ---
+layout: post
 title:  "Basic Kafka Container commands"
 metadate: "hide"
 categories: [ Storage, Streaming ]

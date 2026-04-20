@@ -1,4 +1,5 @@
 ---
+layout: post
 categories: [ Cassandra, NoSQL, Database ]
 tags: [ Cassandra ]
 ---

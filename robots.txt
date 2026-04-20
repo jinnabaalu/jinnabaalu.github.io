@@ -1,3 +1,12 @@
 User-agent: *
 Crawl-delay: 5
+Disallow: /assets/docs/
+Disallow: /assets/vendor/
+Disallow: /assets/img/IMAGES
+Disallow: /page2/
+Disallow: /page3/
+Disallow: /page4/
+Disallow: /page5/
+Disallow: /page6/
+Disallow: /page7/
 Sitemap: https://jinnabalu.com/sitemap.xml
