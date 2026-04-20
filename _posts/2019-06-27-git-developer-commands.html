@@ -1,23 +1,163 @@
 ---
-layout: default
+layout: post
 title: "Git - Basics for a Developer"
 description: "Git - Basics for a Developer"
+author: jinnabalu
 categories: [ git ]
 image: assets/img/git-developer-commands.png
 featured: false
 hidden: true
 ---
-<p>{{site.data.git-commands.developer-intro}}</p>
-<br>
 
-{% for block in site.data.git-commands.developer %}
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title"><b>{{ block.title }}</b></h5>
-    {% if block.description %}
-    <p>{{block.description}}</p>
-    {% endif %}
-    <div class="code">{{ block.command }}</div>
-  </div>
-</div>
-{% endfor %}
+Git basics is a good idea before you start using it. As a programmer, up to what extent you need is the question. Let's get into it.
+
+## Configure Git
+
+`git config` helps you set your email and name for your commit. We can't change the committer names after the commit. Every contributor will have their identification on every commit.
+
+We can configure git at two levels — at the repository level and global.
+
+```bash
+# Global Config
+git config --global user.name "Your Name"
+git config --global user.email yourmail@domain.tld
+
+# Repository Config - useful when you work with multiple business emails
+git config user.name "Your Name"
+git config user.email yourmail@domain.com
+```
+
+## Initialize
+
+Initialize new local repository.
+
+```bash
+git init
+```
+
+## Clone the Repository
+
+```bash
+git clone [URL_FROM_GIT_SERVER]
+
+# Examples:
+git clone git@github.com:JinnaBalu/jinnabalu.github.io.git
+git clone https://github.com/JinnaBalu/jinnabalu.github.io.git
+```
+
+## Get Latest
+
+```bash
+git pull
+# OR
+git pull origin [BRANCH_NAME]
+```
+
+## Git Status
+
+Check the status of files added, modified, or deleted.
+
+```bash
+git status
+```
+
+## Git Diff
+
+Check the lines of code added, modified, or deleted.
+
+```bash
+git diff
+```
+
+## Commit
+
+```bash
+# Commit local changes
+git add --all
+git commit -am "message"
+
+# Show commits history
+git log
+
+# Show history of the file
+git log -p [file]
+
+# Who changed what and when
+git blame [file]
+```
+
+## Git Remote
+
+Check the origin repository URL. Update or set remote URL of the local repository.
+
+```bash
+# Listing remote
+git remote -v
+
+# Switch remote URL between https - ssh
+git remote set-url origin https://[url]
+git remote set-url origin git@git://[url]
+```
+
+## Branch Management
+
+```bash
+# List all branches
+git branch -av
+
+# Switch between branches
+git checkout [BRANCH_NAME]
+
+# Create a new branch
+git checkout -b [BRANCH_NAME]
+
+# Delete branch
+git branch -d [BRANCH_NAME]
+
+# Forceful delete
+git branch -D [BRANCH_NAME]
+
+# Delete remote branch
+git branch -dr [BRANCH_NAME]
+```
+
+## Merge Changes Between Branches
+
+```bash
+# 1. Merging changes from feature_branch to develop
+
+# 1.1 Get latest from develop and merge to feature_branch
+git checkout develop
+git pull
+git checkout feature_branch
+git merge --no-ff origin develop
+
+# Note: To be safe from conflict with develop (GOOD PRACTICE),
+# resolve in feature_branch first
+
+# Merge feature_branch to develop
+git checkout develop
+git merge --no-ff origin feature_branch
+```
+
+## Git Reset / Undo
+
+Discard changes, reset back, or rebase changes.
+
+```bash
+# Discard all local changes
+git reset --hard HEAD
+
+# Discard all local changes of a file
+git checkout HEAD [FILE_PATH]
+
+# Soft Reset
+git reset [commit_hash] --soft
+
+# Mixed Reset
+git reset [commit_hash] --mixed
+git reset [commit_hash]
+
+# Hard Reset
+git reset [commit_hash] --hard
+```
