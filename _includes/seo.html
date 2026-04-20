@@ -4,7 +4,7 @@
 {% assign page_img = page.image_url | default: page.image %}
 <meta name="generator" content="none">
 <meta name="author" content="{{ site.title }}">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+{% if page.noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">{% endif %}
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width, height=device-height">
 <meta content="en" name="language">
 <meta http-equiv="content-language" content="en">

@@ -5,6 +5,7 @@ categories: [ K8s, Orchestration ]
 image: ""
 featured: false
 hidden: true
+sitemap: false
 githublink: ""
 githubreponame: ""
 ---

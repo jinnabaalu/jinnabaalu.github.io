@@ -1,4 +1,5 @@
 ---
+layout: post
 title:  "Trigger a Build in Jenkins using Bitbucket Hooks"
 metadate: "hide"
 categories: [ jenkins, bitbucket ]
@@ -22,11 +23,11 @@ To answer the above, Jenkins provides a plugin, `Bitbucket plugin is designed to
 
 ### 2. Add Webhook to your Bitbucket repository (Repository Settings -> Webhooks -> Add Webhook)
 
-![Bibucket Webhook](https://platform-ops.tech/assets/img/bitbucket_webhook.png)
+![Bibucket Webhook](https://vibhuvioio.com/assets/img/bitbucket_webhook.png)
 
 Title: Test Webhook
 
-URL: `http://cicd.platform-ops.tech/bitbucket-hook/` or `http://YOUR_JENKINS_SERVER:PORT/bitbucket-hook/`
+URL: `http://cicd.vibhuvioio.com/bitbucket-hook/` or `http://YOUR_JENKINS_SERVER:PORT/bitbucket-hook/`
 
 SSL / TLS: [x] Skip certificate verification as we are using `http` in the URL
 
