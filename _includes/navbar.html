@@ -6,7 +6,13 @@
             <span>Jinna Balu</span>
         </a>
     </div>
-    <nav class="header-nav ms-auto">
+
+    <!-- Mobile toggle button -->
+    <button class="header-nav-toggle d-lg-none ms-auto me-2" type="button" aria-label="Toggle navigation" onclick="document.getElementById('headerNavMenu').classList.toggle('show')">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <nav id="headerNavMenu" class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
             <li class="nav-item pe-2">
                 <a class="nav-link{% if page.url == '/tech-timeline' %} active{% endif %}" href="/tech-timeline">Articles</a>
@@ -23,7 +29,8 @@
             <li class="nav-item pe-2">
                 <a class="nav-link{% if page.url == '/profile' %} active{% endif %}" href="/profile">Resume</a>
             </li>
-            <li class="nav-item dropdown pe-2">
+            <!-- Desktop: avatar with dropdown -->
+            <li class="nav-item dropdown pe-2 d-none d-lg-block">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                     <img src="/assets/img/jinnabalu.jpeg" alt="Profile" class="rounded-circle">
                 </a>
@@ -55,6 +62,23 @@
                         </a>
                     </li>
                 </ul>
+            </li>
+            <!-- Mobile: inline social links -->
+            <li class="nav-item d-lg-none mobile-social-divider"></li>
+            <li class="nav-item pe-2 d-lg-none">
+                <a class="nav-link" target="_blank" href="https://github.com/jinnabaalu"><i class="bi bi-github"></i> GitHub</a>
+            </li>
+            <li class="nav-item pe-2 d-lg-none">
+                <a class="nav-link" target="_blank" href="https://jinnabaalu.medium.com/"><i class="bi bi-medium"></i> Medium</a>
+            </li>
+            <li class="nav-item pe-2 d-lg-none">
+                <a class="nav-link" target="_blank" href="https://www.linkedin.com/in/jinnabaalu/"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            </li>
+            <li class="nav-item pe-2 d-lg-none">
+                <a class="nav-link" target="_blank" href="https://stackoverflow.com/users/4348824/jinna-baalu"><i class="bi bi-stack-overflow"></i> StackOverflow</a>
+            </li>
+            <li class="nav-item pe-2 d-lg-none">
+                <a class="nav-link" href="/social-responsibility"><i class="bi bi-flower1"></i> Social Responsibility</a>
             </li>
         </ul>
     </nav>
