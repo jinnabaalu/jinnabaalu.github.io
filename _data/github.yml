@@ -1,13 +1,13 @@
 summary:
   total_count: 52
-  total_stars: 146
+  total_stars: 145
   personal_count: 39
   personal_stars: 82
   organization_count: 13
-  organization_stars: 64
+  organization_stars: 63
   personal_url: "https://github.com/jinnabaalu"
   organization_url: "https://github.com/orgs/VibhuviOiO"
-  last_updated: "2026-04-19"
+  last_updated: "2026-04-26"
 
 featured_repositories:
   - name: infinite-containers
@@ -42,14 +42,6 @@ featured_repositories:
     stars: 8
     language: "HTML"
     updated: "2025-10-14"
-  - name: openldap-docker
-    owner: VibhuviOiO
-    source: Organization
-    url: "https://github.com/VibhuviOiO/openldap-docker"
-    description: "OpenLDAP Tutorial"
-    stars: 4
-    language: "Shell"
-    updated: "2026-03-08"
   - name: jekyll-seed
     owner: jinnabaalu
     source: Personal
@@ -65,7 +57,15 @@ featured_repositories:
     description: "Jinna Balu Profile"
     stars: 3
     language: "HTML"
-    updated: "2026-04-13"
+    updated: "2026-04-25"
+  - name: openldap-docker
+    owner: VibhuviOiO
+    source: Organization
+    url: "https://github.com/VibhuviOiO/openldap-docker"
+    description: "OpenLDAP Tutorial"
+    stars: 3
+    language: "Shell"
+    updated: "2026-04-23"
   - name: verdaccio-docker-compose
     owner: jinnabaalu
     source: Personal
