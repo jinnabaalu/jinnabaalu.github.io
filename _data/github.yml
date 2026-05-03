@@ -1,13 +1,13 @@
 summary:
   total_count: 52
-  total_stars: 145
+  total_stars: 146
   personal_count: 39
   personal_stars: 82
   organization_count: 13
-  organization_stars: 63
+  organization_stars: 64
   personal_url: "https://github.com/jinnabaalu"
   organization_url: "https://github.com/orgs/VibhuviOiO"
-  last_updated: "2026-04-26"
+  last_updated: "2026-05-03"
 
 featured_repositories:
   - name: infinite-containers
@@ -15,9 +15,9 @@ featured_repositories:
     source: Organization
     url: "https://github.com/VibhuviOiO/infinite-containers"
     description: "Various docker-compose files I use on dev or production"
-    stars: 44
+    stars: 45
     language: "Go Template"
-    updated: "2026-02-23"
+    updated: "2026-04-27"
   - name: GitCheatSheet
     owner: jinnabaalu
     source: Personal
@@ -57,7 +57,7 @@ featured_repositories:
     description: "Jinna Balu Profile"
     stars: 3
     language: "HTML"
-    updated: "2026-04-25"
+    updated: "2026-04-26"
   - name: openldap-docker
     owner: VibhuviOiO
     source: Organization
