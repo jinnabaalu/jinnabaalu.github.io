@@ -7,7 +7,7 @@ summary:
   organization_stars: 64
   personal_url: "https://github.com/jinnabaalu"
   organization_url: "https://github.com/orgs/VibhuviOiO"
-  last_updated: "2026-04-19"
+  last_updated: "2026-05-10"
 
 featured_repositories:
   - name: infinite-containers
@@ -15,9 +15,9 @@ featured_repositories:
     source: Organization
     url: "https://github.com/VibhuviOiO/infinite-containers"
     description: "Various docker-compose files I use on dev or production"
-    stars: 44
+    stars: 45
     language: "Go Template"
-    updated: "2026-02-23"
+    updated: "2026-04-27"
   - name: GitCheatSheet
     owner: jinnabaalu
     source: Personal
@@ -42,14 +42,6 @@ featured_repositories:
     stars: 8
     language: "HTML"
     updated: "2025-10-14"
-  - name: openldap-docker
-    owner: VibhuviOiO
-    source: Organization
-    url: "https://github.com/VibhuviOiO/openldap-docker"
-    description: "OpenLDAP Tutorial"
-    stars: 4
-    language: "Shell"
-    updated: "2026-03-08"
   - name: jekyll-seed
     owner: jinnabaalu
     source: Personal
@@ -65,7 +57,15 @@ featured_repositories:
     description: "Jinna Balu Profile"
     stars: 3
     language: "HTML"
-    updated: "2026-04-13"
+    updated: "2026-05-03"
+  - name: openldap-docker
+    owner: VibhuviOiO
+    source: Organization
+    url: "https://github.com/VibhuviOiO/openldap-docker"
+    description: "OpenLDAP Tutorial"
+    stars: 3
+    language: "Shell"
+    updated: "2026-04-23"
   - name: verdaccio-docker-compose
     owner: jinnabaalu
     source: Personal
