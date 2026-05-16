@@ -7,3 +7,4 @@ _site
 .venv
 .jobs
 NEXT_BIG_THING.md
+.claude/

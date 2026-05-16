@@ -94,10 +94,10 @@ docker cp jinnabaluops:/app/logs/app.log ./app.log
 docker inspect jinnabaluops
 
 # Just the IP address
-docker inspect -f '{{"{{.NetworkSettings.IPAddress}}"}}' jinnabaluops
+docker inspect -f '{% raw %}{{.NetworkSettings.IPAddress}}{% endraw %}' jinnabaluops
 
 # Mounted volumes
-docker inspect -f '{{"{{json .Mounts}}"}}' jinnabaluops | python3 -m json.tool
+docker inspect -f '{% raw %}{{json .Mounts}}{% endraw %}' jinnabaluops | python3 -m json.tool
 ```
 
 ## Troubleshooting Tips
