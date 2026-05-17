@@ -6,14 +6,14 @@ profile:
   user_id: 4348824
   profile_url: "https://stackoverflow.com/users/4348824/jinna-baalu"
   website_url: "https://jinnabalu.com"
-  reputation: 7993
-  reputation_display: "7,993"
+  reputation: 8003
+  reputation_display: "8,003"
   badges:
     gold: 1
     silver: 41
     bronze: 51
   summary: "High-signal answers focused on Docker, Elasticsearch, and production operations."
-  last_updated: "2026-05-10"
+  last_updated: "2026-05-17"
 
 top_tags:
   - name: docker
@@ -21,7 +21,7 @@ top_tags:
     answer_score: 496
   - name: docker-compose
     answer_count: 31
-    answer_score: 229
+    answer_score: 230
   - name: docker-volume
     answer_count: 6
     answer_score: 179
@@ -131,7 +131,7 @@ top_answers:
     question_id: 31466428
     question_url: "https://stackoverflow.com/questions/31466428/how-to-restart-a-single-container-with-docker-compose"
     title: "How to restart a single container with docker-compose"
-    score: 19
+    score: 20
     accepted: false
     created: "2018-11-10"
     tags: [docker, docker-compose]
