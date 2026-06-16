@@ -92,21 +92,6 @@ post_class: post-template
                     </small>
                 </p>
 
-                <!-- Post Categories -->
-                <div class="after-post-cats">
-                    <ul class="tags mb-4">
-                        {% assign sortedCategories = page.categories | sort %}
-                        {% for category in sortedCategories %}
-                        <li>
-                            <a class="smoothscroll"
-                                href="{{site.baseurl}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <!-- End Categories -->
-
-
 
                 <!-- Prev/Next -->
                 <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
