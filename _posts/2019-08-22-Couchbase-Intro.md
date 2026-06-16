@@ -26,7 +26,4 @@ In Multi node cluster every Couchbase node consists of a data service, index ser
 
 Couchbase is normally a CP type system meaning it provides [Consistency](https://en.wikipedia.org/wiki/Consistency_(database_systems)) and [partition tolerance](https://en.wikipedia.org/wiki/Network_partitioning), or it can be set up as an AP system with multiple clusters,  of Eric Brewer’s [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 
-Now the question, how do we run Couchbase as a container, Following are the Articles related to the containerisation of couchbase.
-
-1. [Run Single Node Couchbase Container]({{ site.baseurl }}/Single-Node-Couchbase-Container)
 
