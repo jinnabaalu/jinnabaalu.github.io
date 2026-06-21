@@ -9,10 +9,23 @@
             <link>https://medium.com/@jinnabaalu?source=rss-5c894fbb59cd------2</link>
         </image>
         <generator>Medium</generator>
-        <lastBuildDate>Sun, 14 Jun 2026 03:02:25 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 21 Jun 2026 03:02:25 GMT</lastBuildDate>
         <atom:link href="https://medium.com/@jinnabaalu/feed" rel="self" type="application/rss+xml"/>
         <webMaster><![CDATA[yourfriends@medium.com]]></webMaster>
         <atom:link href="http://medium.superfeedr.com" rel="hub"/>
+        <item>
+            <title><![CDATA[Keepalived, HAProxy, and the Firewall That Ate My VRRP Packets]]></title>
+            <description><![CDATA[<div class="medium-feed-item"><p class="medium-feed-image"><a href="https://jinnabaalu.medium.com/keepalived-haproxy-and-the-firewall-that-ate-my-vrrp-packets-38ff10f68051?source=rss-5c894fbb59cd------2"><img src="https://cdn-images-1.medium.com/max/1408/1*EHewJPQI4dVVlbc6BbEYbA.png" width="1408"></a></p><p class="medium-feed-snippet">High-Availability Gone Split-Brain: A Production Debugging Story</p><p class="medium-feed-link"><a href="https://jinnabaalu.medium.com/keepalived-haproxy-and-the-firewall-that-ate-my-vrrp-packets-38ff10f68051?source=rss-5c894fbb59cd------2">Continue reading on Medium »</a></p></div>]]></description>
+            <link>https://jinnabaalu.medium.com/keepalived-haproxy-and-the-firewall-that-ate-my-vrrp-packets-38ff10f68051?source=rss-5c894fbb59cd------2</link>
+            <guid isPermaLink="false">https://medium.com/p/38ff10f68051</guid>
+            <category><![CDATA[haproxy]]></category>
+            <category><![CDATA[split-brain]]></category>
+            <category><![CDATA[high-availability]]></category>
+            <category><![CDATA[vrrp]]></category>
+            <dc:creator><![CDATA[Jinna Baalu]]></dc:creator>
+            <pubDate>Wed, 17 Jun 2026 19:23:31 GMT</pubDate>
+            <atom:updated>2026-06-17T19:23:31.504Z</atom:updated>
+        </item>
         <item>
             <title><![CDATA[Built a Modern Web UI for Docker Registry with Trivy in-build — Now Open Source!]]></title>
             <link>https://jinnabaalu.medium.com/built-a-modern-web-ui-for-docker-registry-with-trivy-in-build-now-open-source-5a4777e371b2?source=rss-5c894fbb59cd------2</link>
@@ -128,19 +141,6 @@
             <pubDate>Tue, 13 Aug 2024 04:41:03 GMT</pubDate>
             <atom:updated>2024-08-14T16:23:59.296Z</atom:updated>
             <content:encoded><![CDATA[<p>Running kafka commands from anywhere with docker</p><p><strong>Prerequisites</strong></p><p>Docker</p><p>You will use the docker run command to run the client, and once the job is executed, the container will automatically be removed for each command we execute. It is not compute intensive, lightweight client with docker.</p><figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*lxigbPFwC5gYpHTTbiEAiA.png" /><figcaption>Manage Kafka with Docker</figcaption></figure><p>Here, I will provide sample Docker commands. You can update the values according to your requirements.</p><p>Create Topic</p><pre>docker run --net=kafka --rm confluentinc/cp-kafka:7.7.0 \<br>  kafka-topics \<br>  --create --topic test_topic \<br>  --partitions 1 \<br>  --replication-factor 1 \<br>  --if-not-exists \<br>  --bootstrap-server 12.12.12.12:9092</pre><p>List Topics</p><pre>docker run --net=kafka --rm confluentinc/cp-kafka:7.7.0 \<br>  kafka-topics \<br>  --list \<br>  --bootstrap-server 12.12.12.12:9092</pre><p>Describe Topics</p><pre>docker run --net=kafka --rm confluentinc/cp-kafka:7.7.0 \<br>  kafka-topics \<br>  --describe \<br>  --topic test_topic \<br>  --bootstrap-server 12.12.12.12:9092</pre><p>Produce Messages</p><pre>docker run --net=kafka --rm confluentinc/cp-kafka:7.7.0 \<br>  kafka-console-producer \<br>  --broker-list 12.12.12.12:9092 \<br>  --topic test_topic</pre><p>Consume Messages</p><pre>docker run --net=kafka --rm confluentinc/cp-kafka:7.7.0 \<br>  kafka-console-consumer \<br>  --bootstrap-server 12.12.12.12:9092 \<br>  --topic test_topic \<br>  --from-beginning</pre><p>Consumer Groups</p><pre>docker run --net=kafka --rm confluentinc/cp-kafka:7.7.0 \<br>  kafka-consumer-groups \<br>  --bootstrap-server 12.12.12.12:9092 \<br>  --describe \<br>  --group test_consumer_group</pre><p>Verify Kafka Topic Replication</p><pre>docker run --net=kafka --rm confluentinc/cp-kafka:7.7.0 \<br>  kafka-replica-verification \<br>  --bootstrap-server 12.12.12.12:9092 \<br>  --topic test_topic</pre><p>Get Log Directory Information</p><pre>docker run --net=kafka --rm confluentinc/cp-kafka:7.7.0 \<br>  kafka-log-dirs \<br>  --bootstrap-server broker:9092 \<br>  --describe \<br>  --broker-id 0</pre><p>By now, you should understand that you can utilize Kafka clients directly from Docker by using the docker run command. Simply append the desired Kafka client commands after docker run --net=kafka --rm confluentinc/cp-kafka:7.7.0 to execute various Kafka operations.</p><p>This version clarifies that Kafka client commands can be appended to the docker run command and ensures the instructions are straightforward and concise.</p><img src="https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=d9f9e8fbf79b" width="1" height="1" alt=""><hr><p><a href="https://blog.devgenius.io/skip-the-kafka-installation-use-docker-to-run-kafka-commands-instantly-d9f9e8fbf79b">Skip the kafka Installation: Use Docker to Run Kafka Commands Instantly</a> was originally published in <a href="https://blog.devgenius.io">Dev Genius</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Running Verdaccio a Self Hosted Private NPM with Docker]]></title>
-            <link>https://jinnabaalu.medium.com/running-verdaccio-a-self-hosted-private-npm-with-docker-8506953ac4a5?source=rss-5c894fbb59cd------2</link>
-            <guid isPermaLink="false">https://medium.com/p/8506953ac4a5</guid>
-            <category><![CDATA[verdaccio]]></category>
-            <category><![CDATA[npm]]></category>
-            <category><![CDATA[docker]]></category>
-            <category><![CDATA[private-npm-packages]]></category>
-            <dc:creator><![CDATA[Jinna Baalu]]></dc:creator>
-            <pubDate>Wed, 13 Dec 2023 21:18:40 GMT</pubDate>
-            <atom:updated>2024-07-21T06:30:22.485Z</atom:updated>
-            <content:encoded><![CDATA[<p>Verdaccio is a lightweight private npm registry that can be run locally.</p><h3>Clone the repo</h3><p>I created a repo with the docker-compose file for running the application in the docker container.</p><p><strong>Repo</strong>: <a href="https://github.com/ContainerTalks/verdaccio-docker-compose">verdaccio-docker-compose</a></p><h3>Run the application:</h3><p>Open a terminal, navigate to the directory containing the docker-compose.yml file, and run the following command:</p><pre>cd verdaccio-docker-compose/<br>docker-compose up  -d</pre><p>Verdaccio will be accessible at <a href="http://localhost:4873/">http://localhost:4873</a></p><figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*NVpMStb66mod2BY4HNMFFg.jpeg" /></figure><h3>How to use the npm package manager</h3><p>Get into the container</p><pre>docker exec  -it  verdaccio  sh</pre><p>To publish your first package just:</p><ol><li>Create user</li></ol><pre>$ docker exec  -it  verdaccio  sh # This command will take you into the container<br><br>$ npm adduser  --registry  http://localhost:4873/<br>npm notice Log in on http://localhost:4873/<br>Username: balu<br>Email: (this IS public) jinna.baalu@gmail.com<br><br>Logged in on http://localhost:4873/.</pre><ol><li>Go to the project to publish</li></ol><pre>mkdir nodejs-app<br>cd my-nodejs-app<br>echo &quot;console.log(&#39;Hello, World!&#39;);&quot; &gt; app.js<br>npm init -y<br>node app.js</pre><pre>npm login  --registry  <a href="http://localhost:4873/">http://localhost:4873/</a><br>npm publish  --registry  <a href="http://localhost:4873/">http://localhost:4873/</a></pre><p>Go To <a href="http://localhost:4873/">http://localhost:4873</a> and refresh you will see your package available</p><h3>Stop the application:</h3><p>To stop the running containers, use the following command:</p><pre>docker-compose down</pre><img src="https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=8506953ac4a5" width="1" height="1" alt="">]]></content:encoded>
         </item>
     </channel>
 </rss>
