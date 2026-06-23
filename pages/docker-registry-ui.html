@@ -57,7 +57,17 @@ sitemap:
   <div class="row mt-5">
     <div class="col-12">
       <h2 style="color:#012970;font-weight:700;">Get the Image</h2>
-      <p class="text-muted mb-4">Pre-built container image is published to GitHub Container Registry (GHCR).</p>
+      {% assign dru_stats = site.data.ghcr-stats.docker_registry_ui %}
+      <p class="text-muted mb-1">Pre-built container image is published to GitHub Container Registry (GHCR).</p>
+      <p class="text-muted small mb-4">
+        <i class="bi bi-bar-chart-line"></i>
+        {% if dru_stats.total_downloads %}
+          {{ dru_stats.total_downloads_display | default: dru_stats.total_downloads }} pulls
+          <span class="text-muted">· updated {{ dru_stats.last_updated | date: "%b %d, %Y" }}</span>
+        {% else %}
+          Pull stats updating…
+        {% endif %}
+      </p>
     </div>
   </div>
   <div class="row g-4">
