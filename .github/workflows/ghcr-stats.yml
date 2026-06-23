@@ -1,0 +1,80 @@
+name: Update GHCR Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # Daily at 00:00 UTC
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Scrape Docker Registry UI download count
+        env:
+          GHCR_STATS_TOKEN: ${{ secrets.GHCR_STATS_TOKEN }}
+        run: |
+          set -euo pipefail
+          mkdir -p _data
+
+          python3 - <<'PY'
+import os
+import re
+import json
+import urllib.request
+from datetime import datetime, timezone
+
+url = "https://github.com/VibhuviOiO/docker-registry-ui/pkgs/container/docker-registry-ui"
+token = os.environ["GHCR_STATS_TOKEN"]
+
+req = urllib.request.Request(
+    url,
+    headers={
+        "Authorization": f"Bearer {token}",
+        "User-Agent": "Mozilla/5.0 (Jekyll stats updater)",
+    },
+)
+
+with urllib.request.urlopen(req, timeout=30) as resp:
+    html = resp.read().decode("utf-8", errors="ignore")
+
+# GitHub renders the count as:
+# <span ...>Total downloads</span>
+# <h3 title="15505">15.5K</h3>
+match = re.search(
+    r'Total downloads\s*</span>\s*<h3[^>]*title="(\d+)"[^>]*>([^<]+)</h3>',
+    html,
+    re.IGNORECASE,
+)
+
+if not match:
+    raise RuntimeError("Could not find 'Total downloads' on the GitHub Packages page")
+
+total = int(match.group(1))
+display = match.group(2).strip()
+
+data = {
+    "docker_registry_ui": {
+        "total_downloads": total,
+        "total_downloads_display": display,
+        "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    }
+}
+
+with open("_data/ghcr-stats.json", "w") as f:
+    json.dump(data, f, indent=2)
+
+print(f"Total downloads: {total} ({display})")
+PY
+
+      - name: Commit updated stats
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: update GHCR stats [skip ci]'
+          file_pattern: '_data/ghcr-stats.json'

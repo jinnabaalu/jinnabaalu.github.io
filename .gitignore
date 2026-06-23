@@ -8,3 +8,4 @@ _site
 .jobs
 NEXT_BIG_THING.md
 .claude/
+test_data/

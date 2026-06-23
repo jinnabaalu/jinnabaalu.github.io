@@ -63,32 +63,18 @@ sitemap:
   <h2 class="section-title">Selected Impact</h2>
   <p class="section-subtitle">High-signal outcomes across client environments, platform architecture, and open-source product delivery.</p>
   <div class="row g-4">
-    <div class="col-md-6 col-lg-3">
-      <div class="featured-card">
-        <span class="featured-icon"><i class="bi bi-cash-coin text-success"></i></span>
-        <h5>AWS Cost Reduction</h5>
-        <p>Reduced AWS spend from <strong>$27K/month</strong> to <strong>$12K/month</strong> at a prior company through right-sizing, storage optimization, and infrastructure cleanup.</p>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
+    <div class="col-md-6 col-lg-6">
       <div class="featured-card">
         <span class="featured-icon"><i class="bi bi-diagram-3 text-primary"></i></span>
         <h5>Centralized Logging</h5>
         <p>Architected a centralized logging platform handling <strong>21M logs per hour</strong> across <strong>12+ data centers</strong> with Kafka, Logstash, and Elasticsearch.</p>
       </div>
     </div>
-    <div class="col-md-6 col-lg-3">
+    <div class="col-md-6 col-lg-6">
       <div class="featured-card">
         <span class="featured-icon"><i class="bi bi-globe2 text-info"></i></span>
         <h5>Global Traffic Migration</h5>
         <p>Led a zero-downtime migration of a global traffic entry point from <strong>Oracle Dyn</strong> to <strong>Cloudflare Load Balancer</strong> for safer global steering.</p>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="featured-card">
-        <span class="featured-icon"><i class="bi bi-tools text-warning"></i></span>
-        <h5>Platform Products</h5>
-        <p>Built delivery-focused infrastructure products including <strong>LDAP Manager</strong>, <strong>OpenLDAP Docker</strong>, and <strong>Docker Registry UI</strong> with built-in <strong>Trivy</strong> scanning.</p>
       </div>
     </div>
   </div>
@@ -165,50 +151,6 @@ sitemap:
   </div>
 </div>
 
-<!-- ========== VIBHUVI OIO ========== -->
-<div class="container profile-section">
-  <div class="row align-items-center mb-4">
-    <div class="col">
-      <h2 class="section-title">VibhuviOiO — Open Source Products</h2>
-      <p class="section-subtitle mb-0">Open-source platform engineering initiative I founded to ship production-ready infrastructure products</p>
-    </div>
-    <div class="col-auto">
-      <a href="/vibhuvioio" class="btn btn-sm btn-cta">Learn More <i class="bi bi-arrow-right"></i></a>
-    </div>
-  </div>
-
-  <div class="row g-4">
-    <div class="col-md-6 col-lg-3">
-      <div class="service-card">
-        <span class="service-icon"><i class="bi bi-gear-wide-connected"></i></span>
-        <h5>Platform Engg</h5>
-        <p>CI/CD patterns, infrastructure automation, and production-grade platform practices shaped by long-term ownership.</p>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="service-card">
-        <span class="service-icon"><i class="bi bi-shield-check"></i></span>
-        <h5>DevSecOps Leadership</h5>
-        <p>Security-first delivery, vulnerability reduction, and compliance-minded engineering for production systems.</p>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="service-card">
-        <span class="service-icon"><i class="bi bi-currency-dollar"></i></span>
-        <h5>AWS Cost Optimization</h5>
-        <p>EBS optimization, right-sizing, and practical cost-efficiency patterns built from operating real workloads.</p>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="service-card">
-        <span class="service-icon"><i class="bi bi-box-seam"></i></span>
-        <h5>Open Source Products</h5>
-        <p>Production-ready tools such as Docker Registry UI, LDAP Manager, OpenLDAP Docker, and related infrastructure projects.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ========== FEATURED WORK ========== -->
 <div class="container profile-section">
   <h2 class="section-title">Featured Work</h2>
@@ -219,6 +161,15 @@ sitemap:
         <span class="featured-icon"><i class="bi bi-box-seam text-primary"></i></span>
         <h5>Docker Registry UI</h5>
         <p>Modern web UI for Docker Registry with built-in Trivy vulnerability scanning. Open source with active community adoption.</p>
+        {% assign dru_stats = site.data.ghcr-stats.docker_registry_ui %}
+        <p class="small text-muted mb-2">
+          <i class="bi bi-bar-chart-line"></i>
+          {% if dru_stats.total_downloads %}
+            {{ dru_stats.total_downloads_display | default: dru_stats.total_downloads }} pulls on GitHub Packages
+          {% else %}
+            Pull stats updating…
+          {% endif %}
+        </p>
         <div class="d-flex flex-wrap gap-3 align-items-center">
           <a href="https://vibhuvioio.com/docker-registry-ui/" target="_blank" class="featured-link">Website <i class="bi bi-arrow-right"></i></a>
           <a href="https://github.com/VibhuviOiO/docker-registry-ui" target="_blank" class="featured-link">GitHub <i class="bi bi-box-arrow-up-right"></i></a>
@@ -434,23 +385,6 @@ sitemap:
         {% endif %}
       </div>
       {% endunless %}
-    {% endfor %}
-  </div>
-</div>
-
-<!-- ========== TECH STACK ICONS ========== -->
-<div class="container profile-section">
-  <h2 class="section-title">Tech Stack</h2>
-  <p class="section-subtitle">Tools and technologies I work with daily</p>
-  <div class="stacks">
-    {% for link in site.data.techstack.links %}
-    <a title="{{ link.alt }}" href="{{ link.href }}" target="_blank" rel="noreferrer" class="clip img-circle">
-      {% if link.img_src %}
-      <img src="{{ link.img_src }}" alt="{{ link.alt }}">
-      {% else %}
-      {{ link.text }}
-      {% endif %}
-    </a>
     {% endfor %}
   </div>
 </div>
