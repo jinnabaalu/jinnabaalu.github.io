@@ -6,14 +6,14 @@ profile:
   user_id: 4348824
   profile_url: "https://stackoverflow.com/users/4348824/jinna-baalu"
   website_url: "https://jinnabalu.com"
-  reputation: 8003
-  reputation_display: "8,003"
+  reputation: 8013
+  reputation_display: "8,013"
   badges:
     gold: 1
     silver: 41
     bronze: 51
   summary: "High-signal answers focused on Docker, Elasticsearch, and production operations."
-  last_updated: "2026-06-14"
+  last_updated: "2026-06-21"
 
 top_tags:
   - name: docker
