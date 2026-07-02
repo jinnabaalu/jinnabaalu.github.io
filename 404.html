@@ -2,7 +2,7 @@
 layout: default
 permalink: /404
 title: "Page Not Found — Jinna Balu"
-description: "The page you are looking for does not exist."
+description: "The page you are looking for does not exist. Try the Tech Timeline or browse related articles."
 sitemap: false
 ---
 <main id="main">
@@ -12,10 +12,78 @@ sitemap: false
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
             <h1 class="title-single">Page Not Found</h1>
+            <p class="subtitle-a">
+              We couldn't find <code id="broken-path"></code>.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
- 
+
+  <section class="container mb-5">
+    <div class="row">
+      <div class="col-lg-8">
+        <div id="suggestion-box" class="alert alert-info d-none" role="status">
+          <strong>Did you mean?</strong>
+          <a id="suggested-link" href="#"></a>
+        </div>
+
+        <p>You may have followed an old or mistyped link. Here are a few ways to find what you need:</p>
+        <ul>
+          <li><a href="/tech-timeline">Browse all articles on the Tech Timeline</a></li>
+          <li><a href="/">Go to the homepage</a></li>
+          <li><a href="/git-cheat-sheet">Visit the Git Cheat Sheet</a></li>
+          <li><a href="https://jinnabaalu.medium.com/" target="_blank">Read articles on Medium</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var path = window.location.pathname;
+  document.getElementById('broken-path').textContent = path;
+
+  fetch('/search.json')
+    .then(function (response) { return response.json(); })
+    .then(function (posts) {
+      var input = path.toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (input.length < 3) return;
+
+      var best = null;
+      var bestScore = 0;
+
+      posts.forEach(function (post) {
+        var title = (post.title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        var urlSlug = (post.url || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        var score = 0;
+
+        if (title === input || urlSlug === input) {
+          score = 1000;
+        } else if (title.indexOf(input) !== -1 || input.indexOf(title) !== -1) {
+          score = Math.max(title.length, input.length);
+        } else if (urlSlug.indexOf(input) !== -1 || input.indexOf(urlSlug) !== -1) {
+          score = Math.max(urlSlug.length, input.length) * 0.8;
+        }
+
+        if (score > bestScore) {
+          bestScore = score;
+          best = post;
+        }
+      });
+
+      if (best && bestScore >= 5) {
+        var box = document.getElementById('suggestion-box');
+        var link = document.getElementById('suggested-link');
+        link.href = best.url;
+        link.textContent = best.title;
+        box.classList.remove('d-none');
+      }
+    })
+    .catch(function () {
+      // Fail silently: the static links still help the user.
+    });
+});
+</script>
