@@ -267,3 +267,9 @@
   url: "https://jinnabaalu.medium.com/keepalived-haproxy-and-the-firewall-that-ate-my-vrrp-packets-38ff10f68051"
   source: Medium
   categories: [Haproxy, Split Brain, High Availability, Vrrp]
+
+- date: 2026-06-25
+  title: "How to Replacing iTerm2’s Password Manager in VS Code"
+  url: "https://jinnabaalu.medium.com/replacing-iterm2s-password-manager-in-vs-code-c9bec533a807"
+  source: Medium
+  categories: [Iterm2, Password Management, macOS]
