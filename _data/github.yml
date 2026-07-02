@@ -1,13 +1,13 @@
 summary:
-  total_count: 53
-  total_stars: 147
-  personal_count: 39
+  total_count: 52
+  total_stars: 148
+  personal_count: 38
   personal_stars: 82
   organization_count: 14
-  organization_stars: 65
+  organization_stars: 66
   personal_url: "https://github.com/jinnabaalu"
   organization_url: "https://github.com/orgs/VibhuviOiO"
-  last_updated: "2026-06-21"
+  last_updated: "2026-06-28"
 
 featured_repositories:
   - name: infinite-containers
@@ -25,15 +25,15 @@ featured_repositories:
     description: "Git Cheat Sheet"
     stars: 42
     language: "Unknown"
-    updated: "2025-11-06"
+    updated: "2026-06-22"
   - name: docker-registry-ui
     owner: VibhuviOiO
     source: Organization
     url: "https://github.com/VibhuviOiO/docker-registry-ui"
     description: "Enterprise-ready Docker Registry UI with built-in Trivy scanning, multi-registry management, bulk retention policies, repository analytics, and secure image lifecycle operations."
-    stars: 13
+    stars: 14
     language: "JavaScript"
-    updated: "2026-06-16"
+    updated: "2026-06-25"
   - name: caddy-operations
     owner: jinnabaalu
     source: Personal
@@ -57,7 +57,7 @@ featured_repositories:
     description: "Jinna Balu Profile"
     stars: 3
     language: "HTML"
-    updated: "2026-06-14"
+    updated: "2026-06-25"
   - name: openldap-docker
     owner: VibhuviOiO
     source: Organization
