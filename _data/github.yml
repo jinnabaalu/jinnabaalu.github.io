@@ -1,13 +1,13 @@
 summary:
-  total_count: 52
-  total_stars: 148
+  total_count: 51
+  total_stars: 152
   personal_count: 38
-  personal_stars: 82
-  organization_count: 14
-  organization_stars: 66
+  personal_stars: 84
+  organization_count: 13
+  organization_stars: 68
   personal_url: "https://github.com/jinnabaalu"
   organization_url: "https://github.com/orgs/VibhuviOiO"
-  last_updated: "2026-07-05"
+  last_updated: "2026-07-12"
 
 featured_repositories:
   - name: infinite-containers
@@ -23,25 +23,33 @@ featured_repositories:
     source: Personal
     url: "https://github.com/jinnabaalu/GitCheatSheet"
     description: "Git Cheat Sheet"
-    stars: 42
+    stars: 43
     language: "Unknown"
-    updated: "2026-06-22"
+    updated: "2026-07-08"
   - name: docker-registry-ui
     owner: VibhuviOiO
     source: Organization
     url: "https://github.com/VibhuviOiO/docker-registry-ui"
     description: "Enterprise-ready Docker Registry UI with built-in Trivy scanning, multi-registry management, bulk retention policies, repository analytics, and secure image lifecycle operations."
-    stars: 14
+    stars: 15
     language: "JavaScript"
-    updated: "2026-06-25"
+    updated: "2026-07-06"
   - name: caddy-operations
     owner: jinnabaalu
     source: Personal
     url: "https://github.com/jinnabaalu/caddy-operations"
     description: "All about Caddy use-cases"
-    stars: 8
+    stars: 9
     language: "HTML"
-    updated: "2025-10-14"
+    updated: "2026-07-07"
+  - name: openldap-docker
+    owner: VibhuviOiO
+    source: Organization
+    url: "https://github.com/VibhuviOiO/openldap-docker"
+    description: "Production-ready OpenLDAP container with TLS, replication, overlays, and security hardening. Docker image: docker.io/vibhuvioio/openldap"
+    stars: 4
+    language: "Shell"
+    updated: "2026-07-09"
   - name: jekyll-seed
     owner: jinnabaalu
     source: Personal
@@ -58,14 +66,6 @@ featured_repositories:
     stars: 3
     language: "HTML"
     updated: "2026-07-05"
-  - name: openldap-docker
-    owner: VibhuviOiO
-    source: Organization
-    url: "https://github.com/VibhuviOiO/openldap-docker"
-    description: "Production-ready OpenLDAP container with TLS, replication, overlays, and security hardening. Docker image: docker.io/vibhuvioio/openldap"
-    stars: 3
-    language: "Shell"
-    updated: "2026-06-19"
   - name: verdaccio-docker-compose
     owner: jinnabaalu
     source: Personal
