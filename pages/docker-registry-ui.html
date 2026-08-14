@@ -45,10 +45,68 @@ sitemap:
           <li class="mb-2"><i class="bi bi-check-circle text-success"></i> Built-in Trivy vulnerability scanning</li>
           <li class="mb-2"><i class="bi bi-check-circle text-success"></i> Image tag management</li>
           <li class="mb-2"><i class="bi bi-check-circle text-success"></i> Docker Compose deployment</li>
+          <li class="mb-2"><i class="bi bi-check-circle text-success"></i> Pre-built image on GitHub Packages</li>
           <li class="mb-2"><i class="bi bi-check-circle text-success"></i> Open Source (MIT License)</li>
         </ul>
         <span class="badge bg-success">Most Popular Product</span>
       </div>
+    </div>
+  </div>
+
+  <!-- Get the Image -->
+  <div class="row mt-5">
+    <div class="col-12">
+      <h2 style="color:#012970;font-weight:700;">Get the Image</h2>
+      {% assign dru_stats = site.data.ghcr-stats.docker_registry_ui %}
+      <p class="text-muted mb-1">Pre-built container image is published to GitHub Container Registry (GHCR).</p>
+      <p class="text-muted small mb-4">
+        <i class="bi bi-bar-chart-line"></i>
+        {% if dru_stats.total_downloads %}
+          {{ dru_stats.total_downloads_display | default: dru_stats.total_downloads }} pulls
+          <span class="text-muted">· updated {{ dru_stats.last_updated | date: "%b %d, %Y" }}</span>
+        {% else %}
+          Pull stats updating…
+        {% endif %}
+      </p>
+    </div>
+  </div>
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <div class="bg-white rounded-3 p-4 shadow-sm border h-100">
+        <h5 class="mb-3"><i class="bi bi-download text-primary"></i> Pull from GitHub Packages</h5>
+        <pre class="mb-3" style="background:#f8f9fa;padding:1rem;border-radius:0.5rem;font-size:0.85rem;overflow-x:auto;"><code># Pull the latest image
+docker pull ghcr.io/vibhuvioio/docker-registry-ui:latest
+
+# Run it (adjust env vars for your registry)
+docker run -d \
+  -p 8080:8080 \
+  -e REGISTRY_URL=https://registry.example.com \
+  --name docker-registry-ui \
+  ghcr.io/vibhuvioio/docker-registry-ui:latest</code></pre>
+        <p class="small text-muted mb-0">If the package is private, run <code>docker login ghcr.io</code> with a personal access token first.</p>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="bg-white rounded-3 p-4 shadow-sm border h-100">
+        <h5 class="mb-3"><i class="bi bi-file-earmark-code text-success"></i> Docker Compose</h5>
+        <pre class="mb-0" style="background:#f8f9fa;padding:1rem;border-radius:0.5rem;font-size:0.85rem;overflow-x:auto;"><code>services:
+  registry-ui:
+    image: ghcr.io/vibhuvioio/docker-registry-ui:latest
+    ports:
+      - "8080:8080"
+    environment:
+      REGISTRY_URL: "https://registry.example.com"
+      REGISTRY_TITLE: "My Registry"
+      ENABLE_DELETE_IMAGES: "true"
+      ENABLE_TRIVY: "true"
+    restart: unless-stopped</code></pre>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <a href="https://github.com/VibhuviOiO/docker-registry-ui/pkgs/container/docker-registry-ui" target="_blank" class="btn btn-cta me-2"><i class="bi bi-box"></i> View on GitHub Packages</a>
+      <a href="https://github.com/VibhuviOiO/docker-registry-ui/pkgs/container/docker-registry-ui/versions" target="_blank" class="btn btn-cta-outline"><i class="bi bi-tags"></i> All Tags</a>
     </div>
   </div>
 

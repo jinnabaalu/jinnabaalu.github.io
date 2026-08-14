@@ -261,3 +261,15 @@
   url: "https://jinnabaalu.medium.com/built-a-modern-web-ui-for-docker-registry-with-trivy-in-build-now-open-source-5a4777e371b2"
   source: Medium
   categories: [Docker, Open Source]
+
+- date: 2026-06-17
+  title: "Keepalived, HAProxy, and the Firewall That Ate My VRRP Packets"
+  url: "https://jinnabaalu.medium.com/keepalived-haproxy-and-the-firewall-that-ate-my-vrrp-packets-38ff10f68051"
+  source: Medium
+  categories: [Haproxy, Split Brain, High Availability, Vrrp]
+
+- date: 2026-06-25
+  title: "How to Replacing iTerm2’s Password Manager in VS Code"
+  url: "https://jinnabaalu.medium.com/replacing-iterm2s-password-manager-in-vs-code-c9bec533a807"
+  source: Medium
+  categories: [Iterm2, Password Management, macOS]

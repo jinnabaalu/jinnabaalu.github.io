@@ -34,6 +34,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-archives
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 sass:
   style: compressed

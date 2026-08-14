@@ -6,13 +6,13 @@ categories: [ Database, PostgreSQL, SQL ]
 description: "Import or export postgress db, how to run the psql commands, Create a database with postgres container"
 tags: [ PostgreSQL ]
 image: "assets/img/postgresql.svg"
-related_posts: 
+related_posts:
       - title: "Initialise Postgresql Container with docker-compose"
         url: "https://vibhuvioio.com/Run-Postgres-Container/"
       - title: "Initialise Postgresql Container with init SQL script"
-        url: "https://vibhuvioio.com/Initialize-Postgresql-with-sql-script/"
+        url: "/Initialize-Postgresql-with-sql-script"
       - title: "Basic command to run with Postgress Container"
-        url: "https://vibhuvioio.com/Basic-Commands-in-postgress-container/"
+        url: "/Basic-Commands-in-postgress-container"
 ---
 
 
