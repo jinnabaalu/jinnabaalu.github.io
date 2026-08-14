@@ -1,207 +1,634 @@
 ---
 layout: default
-title: "Python Production Engineering — End to End"
+title: "Python Production Blueprint"
 permalink: /courses/python-production
 canonical_url: "https://jinnabalu.com/courses/python-production"
-description: "Use-case driven course: Build, deploy, and maintain a production-grade Python FastAPI application with full observability, security, and multi-platform deployment"
-keywords: "Python, FastAPI, production, observability, structured logging, OpenTelemetry, Prometheus, Elasticsearch, Vault, Docker, Kubernetes, DevSecOps"
+description: "One-page blueprint for production-grade Python applications: tools, technologies, and best practices across development, DevOps, DevSecOps, logging, tracing, and observability."
+keywords: "Python, FastAPI, production, observability, structured logging, OpenTelemetry, Prometheus, DevSecOps, Docker, Kubernetes, Vault"
 full_width: true
 ---
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Course",
-  "name": "{{ page.title }}",
-  "description": "{{ page.description }}",
-  "provider": {
-    "@type": "Person",
-    "name": "Jinna Balu",
-    "url": "https://jinnabalu.com/about"
-  },
-  "educationalLevel": "Intermediate to Advanced",
-  "programmingLanguage": "Python",
-  "hasCourseInstance": {
-    "@type": "CourseInstance",
-    "courseMode": "online",
-    "courseWorkload": "PT40H"
-  }
+
+<style>
+/* ---------- Blueprint page styles ---------- */
+.bp-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #fff;
+  padding: 4rem 1rem 3rem;
+  text-align: center;
 }
-</script>
+.bp-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.bp-hero p.lead {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+.bp-hero .bp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  margin-bottom: 1.5rem;
+}
+.bp-hero .bp-tags span {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  padding: .35rem .8rem;
+  border-radius: 999px;
+  font-size: .85rem;
+}
+.bp-hero .bp-actions a {
+  margin: .25rem;
+}
 
-<!-- Course Hero (full-width dark) -->
-<main id="main" class="main">
+.bp-section {
+  padding: 3rem 1rem;
+}
+.bp-section.alt {
+  background: #f8fafc;
+}
+.bp-section h2 {
+  text-align: center;
+  margin-bottom: .5rem;
+  font-weight: 700;
+}
+.bp-section .bp-subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 2rem;
+}
 
-<section class="cd-hero">
-  <div class="cd-hero-inner">
-    <nav class="cd-breadcrumb">
-      <a href="/">Home</a> <span>/</span> <a href="/courses">Courses</a> <span>/</span> <span>Python Production</span>
-    </nav>
-    <h1 class="cd-hero-title">Python Production Engineering</h1>
-    <p class="cd-hero-subtitle">Build a CRUD API, scaffold it properly, add logging, containerize, test, secure, observe, and deploy — one layer at a time.</p>
-    <div class="cd-hero-meta">
-      <span><i class="bi bi-layers"></i> 11 Modules</span>
-      <span><i class="bi bi-play-circle"></i> 45 Lessons</span>
-      <span><i class="bi bi-signal"></i> Intermediate</span>
-      <span><i class="bi bi-unlock"></i> Free & Open Source</span>
+/* ---------- Interactive stack diagram ---------- */
+.bp-diagram-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.bp-stack {
+  flex: 1 1 55%;
+  min-width: 300px;
+}
+.bp-layer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: .75rem;
+  box-shadow: 0 2px 6px rgba(15,23,42,.06);
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  opacity: 0;
+  animation: bp-fade-in-up .6s ease forwards;
+}
+.bp-layer:hover, .bp-layer.active {
+  transform: translateX(6px);
+  box-shadow: 0 8px 20px rgba(15,23,42,.12);
+  border-color: #3b82f6;
+}
+.bp-layer:nth-child(1) { animation-delay: .1s; }
+.bp-layer:nth-child(3) { animation-delay: .2s; }
+.bp-layer:nth-child(5) { animation-delay: .3s; }
+.bp-layer:nth-child(7) { animation-delay: .4s; }
+.bp-layer:nth-child(9) { animation-delay: .5s; }
+.bp-layer:nth-child(11) { animation-delay: .6s; }
+
+.bp-layer-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+.bp-layer-icon.app { background: #3b82f6; }
+.bp-layer-icon.devops { background: #10b981; }
+.bp-layer-icon.devsecops { background: #ef4444; }
+.bp-layer-icon.logging { background: #f59e0b; }
+.bp-layer-icon.apm { background: #8b5cf6; }
+.bp-layer-icon.obs { background: #06b6d4; }
+
+.bp-layer-content h4 {
+  margin: 0 0 .25rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.bp-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+.bp-tools span {
+  background: #f1f5f9;
+  color: #334155;
+  font-size: .72rem;
+  padding: .2rem .5rem;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.bp-arrow {
+  display: flex;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 1.4rem;
+  margin: -.25rem 0 .25rem;
+  animation: bp-bounce 2s infinite;
+}
+
+@keyframes bp-fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bp-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* ---------- Details panel ---------- */
+.bp-details {
+  flex: 1 1 35%;
+  min-width: 300px;
+  position: sticky;
+  top: 1rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(15,23,42,.08);
+}
+.bp-details h3 {
+  margin-top: 0;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.bp-details h3 i {
+  font-size: 1.3rem;
+}
+.bp-details p {
+  color: #475569;
+  line-height: 1.6;
+}
+.bp-details h5 {
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: #64748b;
+  margin: 1.2rem 0 .5rem;
+}
+.bp-details ul {
+  padding-left: 1.2rem;
+  margin: 0;
+  color: #334155;
+}
+.bp-details li {
+  margin-bottom: .35rem;
+  line-height: 1.5;
+}
+.bp-detail-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+.bp-detail-tools span {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  font-size: .78rem;
+}
+
+/* ---------- Area cards ---------- */
+.bp-area-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.bp-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(15,23,42,.05);
+}
+.bp-card h4 {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .75rem;
+  font-weight: 700;
+}
+.bp-card h4 i {
+  font-size: 1.4rem;
+}
+.bp-card ul {
+  padding-left: 1.2rem;
+  margin: 0 0 1rem;
+  color: #334155;
+}
+.bp-card li {
+  margin-bottom: .4rem;
+  line-height: 1.5;
+}
+.bp-card .bp-card-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+.bp-card .bp-card-tools span {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  padding: .2rem .55rem;
+  border-radius: 4px;
+  font-size: .75rem;
+}
+
+@media (max-width: 991px) {
+  .bp-details { position: static; margin-top: 1.5rem; }
+}
+</style>
+
+<!-- Hero -->
+<section class="bp-hero">
+  <div class="container">
+    <h1>Python Production Blueprint</h1>
+    <p class="lead">A single-page guide to building, securing, observing, and deploying production-grade Python services.</p>
+    <div class="bp-tags">
+      <span>Application Development</span>
+      <span>DevOps</span>
+      <span>DevSecOps</span>
+      <span>Logging</span>
+      <span>APM &amp; Tracing</span>
+      <span>Observability</span>
     </div>
-    <div class="cd-hero-actions">
-      {% assign all_course_posts = site.posts | where_exp: "p", "p.series == 'python-production'" | sort: "module_order" %}
-      {% assign first_lesson = all_course_posts | first %}
-      {% if first_lesson %}
-      <a href="{{ first_lesson.url }}" class="cd-btn-primary"><i class="bi bi-play-fill"></i> Start Course</a>
-      {% endif %}
-      <a href="{{ site.data.python-course.github_repo }}" target="_blank" class="cd-btn-outline"><i class="bi bi-github"></i> View on GitHub</a>
-    </div>
-    <div class="cd-hero-tech">
-      <span>Python</span><span>FastAPI</span><span>structlog</span><span>OpenTelemetry</span><span>Prometheus</span><span>Vector</span><span>Kafka</span><span>Elasticsearch</span><span>Vault</span><span>Docker</span><span>Kubernetes</span><span>Trivy</span>
+    <div class="bp-actions">
+      <a href="{{ site.data.python-course.github_repo }}" target="_blank" class="btn btn-light btn-lg"><i class="bi bi-github"></i> View Reference Repo</a>
+      <a href="#architecture" class="btn btn-outline-light btn-lg"><i class="bi bi-diagram-3"></i> Explore Architecture</a>
     </div>
   </div>
 </section>
 
-<div class="cd-body">
+<!-- Interactive Architecture -->
+<section id="architecture" class="bp-section">
+  <div class="container">
+    <h2>Architecture at a Glance</h2>
+    <p class="bp-subtitle">Hover or tap each layer to see the tools and best practices that power it.</p>
 
-  <!-- What You'll Build -->
-  <section class="cd-section">
-    <h2 class="cd-section-title">What You'll Build</h2>
-    <p class="cd-section-desc">Every module adds a layer to a real production system. By the end, you have a complete, deployable application.</p>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="cd-feature-card">
-          <div class="cd-feature-icon blue"><i class="bi bi-code-slash"></i></div>
-          <h4>Production API</h4>
-          <p>CRUD API with FastAPI, Pydantic validation, async database operations, structured logging, and containerized from day one</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="cd-feature-card">
-          <div class="cd-feature-icon green"><i class="bi bi-eye"></i></div>
-          <h4>Full Observability</h4>
-          <p>Structured JSON logging, distributed tracing with Jaeger, Prometheus metrics, and a complete log pipeline with Vector, Kafka, and Elasticsearch</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="cd-feature-card">
-          <div class="cd-feature-icon red"><i class="bi bi-shield-check"></i></div>
-          <h4>Secure & Deployable</h4>
-          <p>DevSecOps with Trivy, Bandit, Gitleaks. Secret management with Vault. Deploy to Marathon, Swarm, or Kubernetes</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Curriculum -->
-  <section class="cd-section cd-curriculum">
-    <div class="cd-curriculum-header">
-      <div>
-        <h2 class="cd-section-title">Course Curriculum</h2>
-        <p class="cd-section-desc">11 modules · 45 lessons · Each starts with a real problem you'll solve</p>
-      </div>
-      <div class="cd-curriculum-stats">
-        <span class="cd-stat">{{ all_course_posts | size }} <small>lessons available</small></span>
-      </div>
-    </div>
-
-    <div class="cd-modules">
-    {% for module in site.data.python-course.modules %}
-      <div class="cd-module">
-        <div class="cd-module-header" data-bs-toggle="collapse" data-bs-target="#cdmod-{{ module.id }}" aria-expanded="{% if module.id == 1 %}true{% else %}false{% endif %}">
-          <div class="cd-module-left">
-            <span class="cd-module-number">{{ module.id }}</span>
-            <div>
-              <h5 class="cd-module-title">{{ module.title }}</h5>
-              <p class="cd-module-usecase"><i class="bi bi-chat-left-quote"></i> {{ module.usecase }}</p>
-            </div>
-          </div>
-          <div class="cd-module-right">
-            <span class="cd-module-count">{{ module.lessons | size }} lessons</span>
-            <i class="bi bi-chevron-down cd-module-chevron"></i>
-          </div>
-        </div>
-        <div id="cdmod-{{ module.id }}" class="collapse{% if module.id == 1 %} show{% endif %}">
-          <div class="cd-lessons">
-            {% for lesson in module.lessons %}
-              {% assign lesson_post = all_course_posts | where: "slug", lesson.slug | first %}
-              <div class="cd-lesson {% if lesson_post %}cd-lesson-available{% endif %}">
-                <span class="cd-lesson-number">{{ module.id }}.{{ lesson.order }}</span>
-                <div class="cd-lesson-content">
-                  {% if lesson_post %}
-                    <a href="{{ lesson_post.url }}" class="cd-lesson-title">{{ lesson.title }}</a>
-                  {% else %}
-                    <span class="cd-lesson-title locked">{{ lesson.title }} <i class="bi bi-lock"></i></span>
-                  {% endif %}
-                  <span class="cd-lesson-desc">{{ lesson.description }}</span>
-                </div>
-                {% if lesson_post %}
-                <span class="cd-lesson-status"><i class="bi bi-check-circle-fill"></i></span>
-                {% endif %}
-              </div>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-    </div>
-  </section>
-
-  <!-- Prerequisites & Instructor side-by-side on large screens -->
-  <div class="row g-4">
-    <div class="col-lg-7">
-      <section class="cd-section">
-        <h2 class="cd-section-title">Prerequisites</h2>
-        <div class="row g-3">
-          <div class="col-sm-6">
-            <div class="cd-prereq-card required">
-              <h4><i class="bi bi-check-square"></i> Required</h4>
-              <ul>
-                <li>Basic Python knowledge (functions, classes, modules)</li>
-                <li>Command line comfort (terminal, shell basics)</li>
-                <li>Docker installed (<code>docker</code> and <code>docker compose</code>)</li>
-                <li>Git basics (clone, commit, push)</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="cd-prereq-card helpful">
-              <h4><i class="bi bi-lightbulb"></i> Helpful</h4>
-              <ul>
-                <li>REST API concepts (HTTP methods, status codes)</li>
-                <li>Basic understanding of JSON</li>
-                <li>Any prior experience with logging or monitoring</li>
-                <li>Kubernetes or orchestrator exposure</li>
-              </ul>
+    <div class="bp-diagram-wrap">
+      <div class="bp-stack">
+        <div class="bp-layer active" data-area="app">
+          <div class="bp-layer-icon app"><i class="bi bi-code-slash"></i></div>
+          <div class="bp-layer-content">
+            <h4>Application Development</h4>
+            <div class="bp-tools">
+              <span>Python 3.11+</span><span>FastAPI</span><span>Pydantic</span><span>Uvicorn</span><span>pyproject.toml</span><span>pytest</span><span>ruff</span>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-    <div class="col-lg-5">
-      <section class="cd-section cd-instructor">
-        <h2 class="cd-section-title">Your Instructor</h2>
-        <div class="cd-instructor-card">
-          <img src="/assets/img/jinnabalu.jpeg" alt="Jinna Balu" class="cd-instructor-avatar">
-          <div class="cd-instructor-info">
-            <h4>Jinna Balu</h4>
-            <p class="cd-instructor-role">Lead SRE · Platform Engineering · Open Source</p>
-            <p>Building production systems, observability pipelines, and DevSecOps workflows. Every lesson comes from real production experience.</p>
-            <div class="cd-instructor-links">
-              <a href="https://github.com/jinnabaalu" target="_blank"><i class="bi bi-github"></i></a>
-              <a href="https://www.linkedin.com/in/jinnabaalu/" target="_blank"><i class="bi bi-linkedin"></i></a>
-              <a href="/about"><i class="bi bi-person-circle"></i></a>
+        <div class="bp-arrow"><i class="bi bi-arrow-down"></i></div>
+
+        <div class="bp-layer" data-area="devops">
+          <div class="bp-layer-icon devops"><i class="bi bi-box-seam"></i></div>
+          <div class="bp-layer-content">
+            <h4>DevOps &amp; Packaging</h4>
+            <div class="bp-tools">
+              <span>Docker</span><span>Docker Compose</span><span>GitHub Actions</span><span>Multi-stage builds</span><span>Health checks</span>
             </div>
           </div>
         </div>
-      </section>
+        <div class="bp-arrow"><i class="bi bi-arrow-down"></i></div>
+
+        <div class="bp-layer" data-area="devsecops">
+          <div class="bp-layer-icon devsecops"><i class="bi bi-shield-check"></i></div>
+          <div class="bp-layer-content">
+            <h4>DevSecOps &amp; Compliance</h4>
+            <div class="bp-tools">
+              <span>Trivy</span><span>Bandit</span><span>pip-audit</span><span>Gitleaks</span><span>pre-commit</span><span>Dependabot</span>
+            </div>
+          </div>
+        </div>
+        <div class="bp-arrow"><i class="bi bi-arrow-down"></i></div>
+
+        <div class="bp-layer" data-area="logging">
+          <div class="bp-layer-icon logging"><i class="bi bi-file-text"></i></div>
+          <div class="bp-layer-content">
+            <h4>Structured Logging</h4>
+            <div class="bp-tools">
+              <span>structlog</span><span>python-json-logger</span><span>correlation IDs</span><span>stdout + file</span>
+            </div>
+          </div>
+        </div>
+        <div class="bp-arrow"><i class="bi bi-arrow-down"></i></div>
+
+        <div class="bp-layer" data-area="apm">
+          <div class="bp-layer-icon apm"><i class="bi bi-activity"></i></div>
+          <div class="bp-layer-content">
+            <h4>APM, Tracing &amp; Metrics</h4>
+            <div class="bp-tools">
+              <span>OpenTelemetry</span><span>Prometheus</span><span>Jaeger</span><span>RED metrics</span><span>SLOs</span>
+            </div>
+          </div>
+        </div>
+        <div class="bp-arrow"><i class="bi bi-arrow-down"></i></div>
+
+        <div class="bp-layer" data-area="observability">
+          <div class="bp-layer-icon obs"><i class="bi bi-eye"></i></div>
+          <div class="bp-layer-content">
+            <h4>Observability Platform</h4>
+            <div class="bp-tools">
+              <span>Vector</span><span>Kafka</span><span>Elasticsearch</span><span>Kibana</span><span>Grafana</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bp-details" id="bp-details">
+        <h3><i class="bi bi-code-slash" style="color:#3b82f6"></i> Application Development</h3>
+        <p>Build the service with modern, type-safe Python patterns that are easy to test and reason about.</p>
+        <h5>Key Tools</h5>
+        <div class="bp-detail-tools">
+          <span>Python 3.11+</span><span>FastAPI</span><span>Pydantic</span><span>Uvicorn</span><span>pyproject.toml</span><span>pytest</span><span>ruff</span><span>httpx</span>
+        </div>
+        <h5>Best Practices</h5>
+        <ul>
+          <li>Use an application factory and lifespan events.</li>
+          <li>Validate at the edge with Pydantic models.</li>
+          <li>Organize routes with <code>APIRouter</code> and version URLs with <code>/api/v1/</code>.</li>
+          <li>Write async tests with <code>pytest-asyncio</code> and <code>httpx</code>.</li>
+          <li>Lint and format with <code>ruff</code>; keep a single <code>pyproject.toml</code>.</li>
+        </ul>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- CTA -->
-  <section class="cd-cta">
-    <h2>Ready to Build Production Systems?</h2>
-    <p>Start with Module 1 and build your way to a fully observable, secure, deployable Python application.</p>
-    {% if first_lesson %}
-    <a href="{{ first_lesson.url }}" class="cd-btn-primary"><i class="bi bi-play-fill"></i> Start Course — It's Free</a>
-    {% endif %}
-  </section>
+<!-- Static deep-dive cards -->
+<section class="bp-section alt">
+  <div class="container">
+    <h2>Tools &amp; Best Practices by Area</h2>
+    <p class="bp-subtitle">A reference of what to use and why, grouped by responsibility.</p>
 
-</div>
-</main>
+    <div class="bp-area-cards">
+      <div class="bp-card">
+        <h4><i class="bi bi-code-slash" style="color:#3b82f6"></i> Application Development</h4>
+        <ul>
+          <li>Async-first APIs with FastAPI and Pydantic.</li>
+          <li>Type-safe config with <code>pydantic-settings</code>.</li>
+          <li>Application factory + lifespan for startup/shutdown.</li>
+          <li>Versioned routers, consistent error models.</li>
+          <li>Unit + integration tests with pytest and httpx.</li>
+        </ul>
+        <div class="bp-card-tools">
+          <span>FastAPI</span><span>Pydantic</span><span>Uvicorn</span><span>pyproject.toml</span><span>pytest</span><span>ruff</span><span>pydantic-settings</span>
+        </div>
+      </div>
+
+      <div class="bp-card">
+        <h4><i class="bi bi-box-seam" style="color:#10b981"></i> DevOps &amp; Packaging</h4>
+        <ul>
+          <li>Single source of truth in <code>pyproject.toml</code>.</li>
+          <li>Multi-stage Docker images; non-root user.</li>
+          <li>Docker Compose for local/dev parity.</li>
+          <li>CI pipeline: lint → test → SAST → build → scan.</li>
+          <li>Health, readiness, and metrics endpoints from day one.</li>
+        </ul>
+        <div class="bp-card-tools">
+          <span>Docker</span><span>Docker Compose</span><span>GitHub Actions</span><span>BuildKit</span><span>Health checks</span>
+        </div>
+      </div>
+
+      <div class="bp-card">
+        <h4><i class="bi bi-shield-check" style="color:#ef4444"></i> DevSecOps &amp; Compliance</h4>
+        <ul>
+          <li>Shift-left with pre-commit hooks.</li>
+          <li>SAST with Bandit; secret scanning with Gitleaks.</li>
+          <li>Dependency auditing with pip-audit and Dependabot.</li>
+          <li>Container CVE scanning with Trivy.</li>
+          <li>Generate and track SBOMs for compliance.</li>
+        </ul>
+        <div class="bp-card-tools">
+          <span>Trivy</span><span>Bandit</span><span>pip-audit</span><span>Gitleaks</span><span>pre-commit</span><span>Dependabot</span>
+        </div>
+      </div>
+
+      <div class="bp-card">
+        <h4><i class="bi bi-file-text" style="color:#f59e0b"></i> Structured Logging</h4>
+        <ul>
+          <li>Emit JSON logs, not plain text.</li>
+          <li>Bind request-scoped correlation IDs.</li>
+          <li>Use stdout in containers; rotate files on hosts.</li>
+          <li>Log events, not sentences: <code>item_created</code> not <code>"Item created"</code>.</li>
+          <li>Include context fields: <code>request_id</code>, <code>user_id</code>, <code>duration_ms</code>.</li>
+        </ul>
+        <div class="bp-card-tools">
+          <span>structlog</span><span>python-json-logger</span><span>contextvars</span><span>middleware</span>
+        </div>
+      </div>
+
+      <div class="bp-card">
+        <h4><i class="bi bi-activity" style="color:#8b5cf6"></i> APM, Tracing &amp; Metrics</h4>
+        <ul>
+          <li>Auto-instrument FastAPI with OpenTelemetry.</li>
+          <li>Collect RED metrics: Rate, Errors, Duration.</li>
+          <li>Send traces to Jaeger for latency analysis.</li>
+          <li>Define SLOs and alert on error budget burn.</li>
+          <li>Keep cardinality under control in metrics.</li>
+        </ul>
+        <div class="bp-card-tools">
+          <span>OpenTelemetry</span><span>Prometheus</span><span>Jaeger</span><span>RED method</span><span>SLOs</span>
+        </div>
+      </div>
+
+      <div class="bp-card">
+        <h4><i class="bi bi-eye" style="color:#06b6d4"></i> Observability Platform</h4>
+        <ul>
+          <li>Collect logs with lightweight Vector agents.</li>
+          <li>Buffer and fan-out with Kafka.</li>
+          <li>Parse, enrich, and route with Vector aggregators.</li>
+          <li>Store and search logs in Elasticsearch.</li>
+          <li>Visualize with Kibana dashboards and Grafana.</li>
+        </ul>
+        <div class="bp-card-tools">
+          <span>Vector</span><span>Kafka</span><span>Elasticsearch</span><span>Kibana</span><span>Grafana</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Best practices summary -->
+<section class="bp-section">
+  <div class="container" style="max-width: 900px;">
+    <h2>One-Page Best-Practice Checklist</h2>
+    <p class="bp-subtitle">The distilled rules that tie the blueprint together.</p>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="bp-card h-100">
+          <h4><i class="bi bi-check2-circle" style="color:#10b981"></i> Do</h4>
+          <ul>
+            <li>Use an app factory and async lifespan events.</li>
+            <li>Validate all inputs with Pydantic.</li>
+            <li>Emit structured JSON logs with correlation IDs.</li>
+            <li>Instrument with OpenTelemetry and expose Prometheus metrics.</li>
+            <li>Containerize with multi-stage Docker builds.</li>
+            <li>Run security scans in CI and on schedule.</li>
+            <li>Store production secrets in Vault, not <code>.env</code>.</li>
+            <li>Define health/readiness endpoints.</li>
+            <li>Handle SIGTERM gracefully.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="bp-card h-100">
+          <h4><i class="bi bi-x-circle" style="color:#ef4444"></i> Avoid</h4>
+          <ul>
+            <li>Global app instances at module level.</li>
+            <li>Plain-text logs and <code>print()</code> debugging.</li>
+            <li>Hardcoded secrets or env files in production.</li>
+            <li>Blocking I/O inside async handlers.</li>
+            <li>Exposing Swagger docs in production.</li>
+            <li>Skipping linting, tests, or SAST in CI.</li>
+            <li>Unbounded log growth on disk.</li>
+            <li>Deploying without health checks.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bp-section alt" style="text-align:center;">
+  <div class="container">
+    <h2>Want the Code?</h2>
+    <p class="bp-subtitle">The reference repository implements this blueprint end-to-end.</p>
+    <a href="{{ site.data.python-course.github_repo }}" target="_blank" class="btn btn-dark btn-lg"><i class="bi bi-github"></i> python-production-blueprint</a>
+  </div>
+</section>
+
+<script>
+const bpData = {
+  app: {
+    title: 'Application Development',
+    icon: 'bi-code-slash',
+    color: '#3b82f6',
+    purpose: 'Build the service with modern, type-safe Python patterns that are easy to test and reason about.',
+    tools: ['Python 3.11+', 'FastAPI', 'Pydantic', 'Uvicorn', 'pyproject.toml', 'pytest', 'ruff', 'httpx'],
+    practices: [
+      'Use an application factory and lifespan events.',
+      'Validate at the edge with Pydantic models.',
+      'Organize routes with APIRouter and version URLs with /api/v1/.',
+      'Write async tests with pytest-asyncio and httpx.',
+      'Lint and format with ruff; keep a single pyproject.toml.'
+    ]
+  },
+  devops: {
+    title: 'DevOps & Packaging',
+    icon: 'bi-box-seam',
+    color: '#10b981',
+    purpose: 'Package, build, and deliver the application consistently from local dev to production.',
+    tools: ['Docker', 'Docker Compose', 'GitHub Actions', 'BuildKit', 'Health checks'],
+    practices: [
+      'Single source of truth in pyproject.toml.',
+      'Multi-stage Docker images with a non-root user.',
+      'Use Docker Compose for local/dev parity.',
+      'CI pipeline: lint → test → SAST → build → scan.',
+      'Expose /health, /ready, and /metrics from day one.'
+    ]
+  },
+  devsecops: {
+    title: 'DevSecOps & Compliance',
+    icon: 'bi-shield-check',
+    color: '#ef4444',
+    purpose: 'Catch vulnerabilities and misconfigurations before they reach production.',
+    tools: ['Trivy', 'Bandit', 'pip-audit', 'Gitleaks', 'pre-commit', 'Dependabot'],
+    practices: [
+      'Shift-left with pre-commit hooks.',
+      'Run SAST with Bandit and secret scanning with Gitleaks.',
+      'Audit dependencies with pip-audit and Dependabot.',
+      'Scan container images for CVEs with Trivy.',
+      'Generate and track SBOMs for compliance.'
+    ]
+  },
+  logging: {
+    title: 'Structured Logging',
+    icon: 'bi-file-text',
+    color: '#f59e0b',
+    purpose: 'Make logs queryable, correlated, and useful during incidents.',
+    tools: ['structlog', 'python-json-logger', 'contextvars', 'middleware'],
+    practices: [
+      'Emit JSON logs, not plain text.',
+      'Bind request-scoped correlation IDs.',
+      'Use stdout in containers; rotate files on hosts.',
+      'Log events, not sentences: item_created not "Item created".',
+      'Include context fields: request_id, user_id, duration_ms.'
+    ]
+  },
+  apm: {
+    title: 'APM, Tracing & Metrics',
+    icon: 'bi-activity',
+    color: '#8b5cf6',
+    purpose: 'Understand performance, errors, and distributed request flow in real time.',
+    tools: ['OpenTelemetry', 'Prometheus', 'Jaeger', 'RED method', 'SLOs'],
+    practices: [
+      'Auto-instrument FastAPI with OpenTelemetry.',
+      'Collect RED metrics: Rate, Errors, Duration.',
+      'Send traces to Jaeger for latency analysis.',
+      'Define SLOs and alert on error budget burn.',
+      'Keep metric cardinality under control.'
+    ]
+  },
+  observability: {
+    title: 'Observability Platform',
+    icon: 'bi-eye',
+    color: '#06b6d4',
+    purpose: 'Centralize, enrich, and visualize telemetry at scale.',
+    tools: ['Vector', 'Kafka', 'Elasticsearch', 'Kibana', 'Grafana'],
+    practices: [
+      'Collect logs with lightweight Vector agents.',
+      'Buffer and fan-out telemetry with Kafka.',
+      'Parse, enrich, and route with Vector aggregators.',
+      'Store and search logs in Elasticsearch.',
+      'Visualize with Kibana dashboards and Grafana.'
+    ]
+  }
+};
+
+function bpShowArea(area) {
+  const d = bpData[area];
+  if (!d) return;
+  const panel = document.getElementById('bp-details');
+  panel.innerHTML = `
+    <h3><i class="bi ${d.icon}" style="color:${d.color}"></i> ${d.title}</h3>
+    <p>${d.purpose}</p>
+    <h5>Key Tools</h5>
+    <div class="bp-detail-tools">${d.tools.map(t => `<span>${t}</span>`).join('')}</div>
+    <h5>Best Practices</h5>
+    <ul>${d.practices.map(p => `<li>${p}</li>`).join('')}</ul>
+  `;
+  document.querySelectorAll('.bp-layer').forEach(el => el.classList.remove('active'));
+  document.querySelector(`.bp-layer[data-area="${area}"]`).classList.add('active');
+}
+
+document.querySelectorAll('.bp-layer').forEach(layer => {
+  layer.addEventListener('mouseenter', () => bpShowArea(layer.dataset.area));
+  layer.addEventListener('click', () => bpShowArea(layer.dataset.area));
+});
+</script>
