@@ -1,9 +1,19 @@
 services:
   site:
     container_name: jinnabalu
-    command: jekyll serve
-    image: jekyll/jekyll:latest
+    image: ruby:3.2-bookworm
+    working_dir: /srv/jekyll
+    command: >
+      bash -c "
+        bundle install &&
+        bundle exec jekyll serve --host 0.0.0.0 --livereload
+      "
     volumes:
-      -  .:/srv/jekyll:Z
+      - .:/srv/jekyll
+      - bundle:/usr/local/bundle
     ports:
-      - 4000:4000
+      - "4000:4000"
+      - "35729:35729"
+
+volumes:
+  bundle:
