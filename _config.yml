@@ -1,5 +1,5 @@
 name: "Jinna Balu"
-description: "Lead SRE | Site Reliability Engineering | Platform Engineering | DevSecOps"
+description: "Lead SRE | Platform Architect | Enterprise Migration Specialist"
 meta_description: "Lead Site Reliability Engineer focused on platform reliability, observability, and secure delivery for global teams"
 logo: 'assets/img/logo.png'
 favicon: 'assets/img/icon/favicon.ico'
@@ -25,7 +25,7 @@ authors:
     email: https://www.linkedin.com/in/jinnabaalu/
     web: https://jinnabalu.com
     twitter: https://twitter.com/JinnaBalu
-    description: "Lead SRE | Site Reliability Engineering | Platform Engineering | DevSecOps"
+    description: "Lead SRE | Platform Architect | Enterprise Migration Specialist"
 
 
 plugins: 
