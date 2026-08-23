@@ -1,13 +1,13 @@
 summary:
-  total_count: 50
+  total_count: 51
   total_stars: 153
   personal_count: 38
   personal_stars: 84
-  organization_count: 12
+  organization_count: 13
   organization_stars: 69
   personal_url: "https://github.com/jinnabaalu"
   organization_url: "https://github.com/orgs/VibhuviOiO"
-  last_updated: "2026-08-16"
+  last_updated: "2026-08-23"
 
 featured_repositories:
   - name: infinite-containers
@@ -65,7 +65,7 @@ featured_repositories:
     description: "Jinna Balu Profile"
     stars: 3
     language: "HTML"
-    updated: "2026-08-14"
+    updated: "2026-08-16"
   - name: verdaccio-docker-compose
     owner: jinnabaalu
     source: Personal
