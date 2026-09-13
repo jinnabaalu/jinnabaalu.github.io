@@ -6,14 +6,14 @@ profile:
   user_id: 4348824
   profile_url: "https://stackoverflow.com/users/4348824/jinna-baalu"
   website_url: "https://jinnabalu.com"
-  reputation: 8013
-  reputation_display: "8,013"
+  reputation: 8023
+  reputation_display: "8,023"
   badges:
     gold: 1
     silver: 41
     bronze: 51
   summary: "High-signal answers focused on Docker, Elasticsearch, and production operations."
-  last_updated: "2026-09-06"
+  last_updated: "2026-09-13"
 
 top_tags:
   - name: docker
@@ -51,7 +51,7 @@ top_answers:
     question_id: 46907558
     question_url: "https://stackoverflow.com/questions/46907558/docker-compose-relative-paths-vs-docker-volume"
     title: "Docker Compose Relative paths vs Docker volume"
-    score: 88
+    score: 89
     accepted: true
     created: "2017-10-24"
     tags: [docker, docker-compose, docker-volume]
