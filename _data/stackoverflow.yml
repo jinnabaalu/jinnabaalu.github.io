@@ -13,18 +13,18 @@ profile:
     silver: 41
     bronze: 51
   summary: "High-signal answers focused on Docker, Elasticsearch, and production operations."
-  last_updated: "2026-09-13"
+  last_updated: "2026-09-20"
 
 top_tags:
   - name: docker
     answer_count: 59
-    answer_score: 496
+    answer_score: 497
   - name: docker-compose
     answer_count: 31
-    answer_score: 230
+    answer_score: 231
   - name: docker-volume
     answer_count: 6
-    answer_score: 179
+    answer_score: 180
   - name: docker-image
     answer_count: 1
     answer_score: 101
