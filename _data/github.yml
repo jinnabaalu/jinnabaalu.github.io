@@ -1,13 +1,13 @@
 summary:
-  total_count: 41
+  total_count: 42
   total_stars: 147
-  personal_count: 29
+  personal_count: 28
   personal_stars: 78
-  organization_count: 12
+  organization_count: 14
   organization_stars: 69
   personal_url: "https://github.com/jinnabaalu"
   organization_url: "https://github.com/orgs/VibhuviOiO"
-  last_updated: "2026-09-20"
+  last_updated: "2026-09-27"
 
 featured_repositories:
   - name: infinite-containers
@@ -31,9 +31,9 @@ featured_repositories:
     source: Organization
     url: "https://github.com/VibhuviOiO/docker-registry-ui"
     description: "Enterprise-ready Docker Registry UI with built-in Trivy scanning, multi-registry management, bulk retention policies, repository analytics, and secure image lifecycle operations."
-    stars: 16
+    stars: 17
     language: "JavaScript"
-    updated: "2026-09-17"
+    updated: "2026-09-25"
   - name: caddy-operations
     owner: jinnabaalu
     source: Personal
@@ -49,7 +49,7 @@ featured_repositories:
     description: "Production-ready OpenLDAP container with TLS, replication, overlays, and security hardening. Docker image: docker.io/vibhuvioio/openldap"
     stars: 4
     language: "Shell"
-    updated: "2026-08-15"
+    updated: "2026-09-24"
   - name: jekyll-seed
     owner: jinnabaalu
     source: Personal
@@ -65,7 +65,7 @@ featured_repositories:
     description: "Jinna Balu Profile"
     stars: 3
     language: "HTML"
-    updated: "2026-09-13"
+    updated: "2026-09-20"
   - name: verdaccio-docker-compose
     owner: jinnabaalu
     source: Personal
